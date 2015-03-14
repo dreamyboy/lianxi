@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+(function(){
+    var db = openDatabase('todo','1.0','ToDoList',2*1024*1024);
+ 
+    function add(){
+        var date = new Date().getDate(),
+            text = document.getElementById('J_text').value;
+        db.transaction(function(tx){
+            tx.executeSql('create table if not exists list (date TEXT, text TEXT)', []);
+        });
+ 
+        db.transaction(function(tx){
+            tx.executeSql('insert into list values(?,?)',[date, text], function(tx,rs){
+                console.log(rs);
+            }, function(tx, err){
+                console.log(err);
+            });
+        });
+ 
+    }
+    function searchAll(){
+        var ul = document.getElementById('J_list');
+        ul.innerHTML = '';
+        db.transaction(function(tx){
+            tx.executeSql('select * from list', [], function(tx, rs){
+                for(var i = 0, l = rs.rows.length; i < l; i += 1){
+                    var li = document.createElement('li');
+                    li.innerHTML = rs.rows.item(i).text;
+                    ul.appendChild(li);
+                }
+            });
+        });
+    }
+ 
+    function init(){
+        searchAll();
+        document.getElementById('J_add').addEventListener('click',function(e){
+            add();
+            searchAll();
+        });
+    }
+ 
+    init();
+})();
+</script>
+</head>
+
+<body>
+<h1>ToDo List</h1>
+<div class="addPanel">
+<form>
+<input id="J_text" type="text" />
+<input value="add" id="J_add" type="button" />
+</form>
+</div>
+<ul id="J_list">
+</ul>
+</body>
+</html>

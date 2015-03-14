@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+
+</head>
+<!--比如：-->
+<!--var A = [1,3,4,5,6,7,8,9];-->
+<!--var B = [12,10,9,8,7,1];-->
+<!--相同的有：-->
+<!--1,7,8,9-->
+<!--那最大的一个数就是9。-->
+
+
+<script type="text/javascript">
+
+    function sortNumber(a,b)
+    {
+        return b - a
+    }
+    var arr1=[1,7,9];
+    var arr2=[,7,1];
+    var arr3=[];
+    for(var s in arr1){
+        for(var x in arr2){
+            if(arr1[s]==arr2[x]){
+                arr3.push(arr1[s]);
+            }
+        }
+    }
+
+    console.log("相同的元素有"+arr3);
+    console.log("其中最大的一个是"+arr3.sort(sortNumber)[0]);
+
+
+</script>
+
+<body>
+
+
+</body>
+
+</html>

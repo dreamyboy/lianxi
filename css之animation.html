@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="http://lib.sinaapp.com/js/jquery/1.8/jquery.js"></script>
+<!--参考文章-->
+<!--http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html-->
+<!--http://www.w3cplus.com/content/css3-animation-->
+<style>
+    @-webkit-keyframes 'wobble' {
+        0% {
+            margin-left: 100px;
+            background: green;
+        }
+        40% {
+            margin-left: 150px;
+            background: orange;
+        }
+        60% {
+            margin-left: 75px;
+            background: blue;
+        }
+        100% {
+            margin-left: 100px;
+            background: red;
+        }
+    }
+
+    .tbox{
+        width: 50px;
+        height: 50px;
+        margin-left: 100px;
+        background: blue;
+    }
+    .bcolor{
+        -webkit-animation-name:'wobble';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+        -webkit-animation-duration: 10s;/*动画持续时间*/
+        -webkit-animation-timing-function: ease-in-out; /*动画频率，和transition-timing-function是一样的*/
+        -webkit-animation-delay: 2s;/*动画延迟时间*/
+        -webkit-animation-iteration-count: 10;/*定义循环资料，infinite为无限次*/
+        -webkit-animation-direction: alternate;/*定义动画方式*/
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    @-webkit-keyframes 'round' {
+        from{
+            -webkit-transform: rotate(36deg);
+            -webkit-border-radius: 2px;
+        }
+        10%{
+            -webkit-transform: rotate(72deg);
+            -webkit-border-radius: 4px;
+        }
+        20% {
+            -webkit-transform: rotate(108deg);
+            -webkit-border-radius: 6px;
+        }
+        30% {
+            -webkit-transform: rotate(144deg);
+            -webkit-border-radius: 9px;
+        }
+        40%{
+            -webkit-transform: rotate(180deg);
+            -webkit-border-radius: 12px;
+        }
+        50%{
+            -webkit-transform: rotate(216deg);
+            -webkit-border-radius: 14px;
+        }
+        60% {
+            -webkit-transform: rotate(252deg);
+            -webkit-border-radius: 16px;
+        }
+        70% {
+            -webkit-transform: rotate(288deg);
+            -webkit-border-radius: 19px;
+        }
+        80%{
+            -webkit-transform: rotate(324deg);
+            -webkit-border-radius: 22px;
+        }
+        to {
+            -webkit-transform: rotate(360deg);
+            -webkit-border-radius: 25px;
+        }
+    }
+
+
+
+    .box {
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin-bottom: 20px;
+    }
+
+
+    .round {
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+        background: green;
+        -webkit-animation-name: 'round'; /*动画名称*/
+        -webkit-animation-duration: 60s;/*播放一次所持续时间*/
+        -webkit-animation-timing-function: ease;/*动画的速度方式,linear:动画从头到尾的速度是相同的。*/
+        -webkit-animation-iteration-count: infinite;/*动画播放次数为无限次*/
+    }
+
+</style>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".click-btn").click(function(){
+            $(this).siblings().addClass("round");
+        });
+    });
+</script>
+</head>
+
+<body>
+<div class="tbox">我们的祖国是花朵</div>
+<a href="#" class="box"></a>
+
+
+<span class="click-btn">Click</span>
+
+</body>
+</html>

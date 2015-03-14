@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+* { padding: 0; margin:0; }
+li { list-style: none; }
+img { border: 0; }
+
+.roll{width:680px;height:110px;overflow:hidden;margin:50px auto 0;position:relative;}
+
+.btn_left{background:url(images/btn.jpg) -0px -68px no-repeat;position:absolute;left:1px;top:20px;display:block;width:68px;height:68px;float:left;}
+.btn_right{background:url(images/btn.jpg) -68px -68px no-repeat;position:absolute;right:0;top:20px;display:block;width:68px;height:68px;float:left;}
+.btn_left:hover{background:url(images/btn.jpg)  0px 0px no-repeat;}
+.btn_right:hover{background:url(images/btn.jpg)  -68px 0px no-repeat;}
+
+.roll .wrap{width:540px; height:110px; overflow:hidden; margin:0 auto; position:relative;border:1px solid #0F0;}
+.roll ul { position: absolute; top: 0; left: 0; width:1000px}/*有了position: absolute才能动起来*/
+
+
+.wrap li{float:left;width:180px;}
+</style>
+<script>
+window.onload=function()
+{
+	var vroll=document.getElementById('roll');
+	var oUl=vroll.getElementsByTagName('ul')[0];
+	var oli=oUl.getElementsByTagName('li');
+	var aBt=vroll.getElementsByTagName('a');
+	var iSpeed=-5;
+	
+	timer=null;
+	
+	oUl.style.width=oli[0].offsetWidth*oli.length+'px';
+	
+	
+	timer=setInterval(function(){
+		oUl.style.left=oUl.offsetLeft+iSpeed+'px';
+		
+		if(oUl.offsetLeft<-oUl.offsetWidth/2)
+		{
+			oUl.style.left='0px';
+		}	
+		
+		else if(oUl.offsetLeft>0 )
+		{
+			oUl.style.left=-oUl.offsetWidth/2+'px';
+			
+		}
+		
+		
+	    }, 20);
+		
+		
+	aBt[0].onmouseover=function()
+	{
+	    iSpeed=-5;	
+	};
+	
+	aBt[1].onmouseover=function()
+	{
+	    iSpeed=5;	
+	};
+	
+	
+
+	oUl.onmouseover=function()
+	{
+		
+		clearTimeout(timer);
+	}
+	
+	
+
+	oUl.onmouseout=function()
+    {
+		
+		timer=setInterval(function(){
+		oUl.style.left=oUl.offsetLeft+iSpeed+'px';
+		
+		if(oUl.offsetLeft<-oUl.offsetWidth/2)
+		{
+			oUl.style.left='0px';
+		}	
+		
+		else if(oUl.offsetLeft>0 )
+		{
+			oUl.style.left=-oUl.offsetWidth/2+'px';
+			
+		}
+		
+	    }, 20);
+	}
+		
+	
+}
+</script>
+</head>
+<body>
+
+<div class="roll" id="roll">
+    <a href="javascript:void(0);" class="btn_left"></a>
+    <a href="javascript:void(0);" class="btn_right"></a>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" /></a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a></li>
+            <li><a href="#"><img src="images/1.jpg" /></a></li>
+            <li><a href="#"><img src="images/2.jpg" /></a></li>
+            <li><a href="#"><img src="images/3.jpg" /></a></li>
+            <li><a href="#"><img src="images/4.jpg" /></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+	$('.linkShowMore').toggle(function(){
+		$(this).find('em').html('收起');
+		$('.show-more-items').show();
+		},
+		
+		function(){
+			
+		$(this).find('em').html('展开');
+		$('.show-more-items').hide();
+
+			}
+		)
+	 
+	 })
+</script>
+</head>
+
+<body>
+<div class="arry-items">
+        <dl class="item logo">
+          <dt>公司LOGO：</dt>
+          <dd><img width="87" height="40" alt="IBM中国营销管理平台" src="../img/test/logo_ibm.png"></dd>
+        </dl>
+        <dl class="item">
+          <dt>公司全称：</dt>
+          <dd>博众互动(北京)网络科技有限公司</dd>
+        </dl>
+        <dl class="item">
+          <dt>公司建成：</dt>
+          <dd>博众互动</dd>
+        </dl>
+        <dl class="item">
+          <dt>公司简介：</dt>
+          <dd> 博众互动(北京)网络科技有限公司,公司拥有完善的国际高水准管理体系，本着"为投资人创造价值，为职员创造机会"的经营理念，努力实现投资人资产的保值增值，追求公司与投资人的双赢，并为职员提供长期专业的技术培训、广阔的发展空间、优厚的福利待遇和完善的晋升机会。</dd>
+        </dl>
+        <div class="show-more-items none" style="display: none;">
+          <dl class="item">
+            <dt>所处行业：</dt>
+            <dd>电子商务</dd>
+          </dl>
+          <dl class="item">
+            <dt>公司规模：</dt>
+            <dd>50--100人</dd>
+          </dl>
+          <dl class="item">
+            <dt>公司所在省：</dt>
+            <dd>内蒙古省</dd>
+          </dl>
+          <dl class="item">
+            <dt>公司所在市：</dt>
+            <dd>呼和浩特市</dd>
+          </dl>
+          <dl class="item">
+            <dt>详细地址：</dt>
+            <dd>呼和浩特市X街X号</dd>
+          </dl>
+          <dl class="item">
+            <dt>公司邮编：</dt>
+            <dd>100010</dd>
+          </dl>
+          <dl class="item">
+            <dt>联系电话：</dt>
+            <dd>010-64232712</dd>
+          </dl>
+        </div>
+        <div class="show-more"><a class="linkShowMore" href="javascript:;"><span class="yd-icon"></span><em>展开</em>所有公司信息</a></div>
+      </div>
+</body>
+</html>

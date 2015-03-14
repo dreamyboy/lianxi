@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+var btn=document.getElementById("btn");
+btn.click=function(){
+var arrays=new Array();
+var items=document.getElementsByName("check");
+for(i=0; i<items.length; i++){
+if(items[i].checked){
+arrays.push(items[i].value);
+}
+}
+alert("选中的个数为："+ arrays.length)
+}
+</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+</head>
+
+<body>
+<input type="checkbox" value="1" name="check" checked/>
+<input type="checkbox" value="2" name="check" />
+<input type="checkbox" value="3" name="check" checked/>
+<input type="button" value="你选中的个数" id="btn" />
+<form>
+your name:
+<input type="text" name="yourname" size="30" maxlength="20" value="输入框的长度为30，允许最大字符数为20" /><br />
+<input type="text" name="yourname" size="30" maxlength="20" readonly value="你只能读不能修改" />
+</form>
+<form name="form1">
+your button:
+<input type="button" name="yourhiddeninfo" value="Go，Go，Go！" onclick="window.open('http://www.cnbruce.com')" />
+</form>
+<form name="form1">
+your hidden info here:
+<input type="hidden" name="yourhiddeninfo" value="cnbruce.com" />
+</form>
+<script>
+alert("隐藏域的值是 "+document.form1.yourhiddeninfo.value)
+</script>
+
+</body>
+</html>

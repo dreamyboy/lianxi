@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{width:100px;height:100px;background:#000;position:absolute;right:0px;}
+</style>
+<script>
+window.onscroll=function()
+{
+	var odiv=document.getElementById('div1');
+	var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+	
+	//odiv.style.top=scrollTop+(document.documentElement.clientHeight-odiv.     offsetHeight)/2+'px';
+	t=scrollTop+(document.documentElement.clientHeight-odiv.offsetHeight)/2;
+	startMove(parseInt(t));
+	}
+
+var timer=null;
+function startMove(iTarget)
+{
+	var odiv=document.getElementById('div1');
+	var otxt=document.getElementById('txt1');
+	clearInterval(timer);
+	
+	timer=setInterval(function(){
+		
+	var iSpeed=(iTarget-odiv.offsetTop)/8;
+	iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+	
+	if(odiv.offsetTop==iTarget)
+	{
+		clearInterval(timer);
+	}
+	else
+	{
+	   	odiv.style.top=odiv.offsetTop+iSpeed+'px';	 
+	}
+	
+	otxt.value=odiv.offsetTop;
+	},30)
+	
+
+	}
+</script>
+</head>
+
+<body style="height:2000px;">
+<div id="div1" ></div>
+<input type="text" id="txt1" style="position:fixed;top:20px;"/>
+</body>
+</html>

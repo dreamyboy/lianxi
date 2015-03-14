@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{width:400px;height:200px;background:#F00;}
+</style>
+<script src="ajax.js">
+</script>
+<script>
+window.onload=function()
+{
+	var abtn=document.getElementsByTagName('input');
+	var odiv=document.getElementById('div1');
+	
+	for(i=0;i<abtn.length;i++)
+	{
+		abtn[i].index=i;
+		abtn[i].onclick=function()
+		{
+		       ajax(this.index+1+'.txt',function(str){
+			     
+				  odiv.innerHTML=str;
+				  
+			   })
+		}
+	}
+	
+}
+</script>
+</head>
+<body>
+<input type="button" value="按钮1" />
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+<div id="div1">
+</div>
+</body>
+</html>

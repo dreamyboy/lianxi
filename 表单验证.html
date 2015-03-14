@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+* { margin: 0; padding: 0 }
+body { font: 17px/1.5 SimSun, verdana, tahoma, arial, sans-serif; }
+a:hover { text-decoration: none }
+a:visited { color: #555; text-decoration: none }
+.entry strong{color:#F00;}
+</style>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+$(function(){
+	
+$('form :input').blur(function(){//form后面要有空格！！
+		
+		
+		$(this).parent().find('.formtips').remove();//删除以前的提醒元素
+		
+		if($(this).is('#username'))
+		 {
+			 if(this.value==''||this.value.length<6)
+			 {
+				
+				var errorMsg='请输入至少6个用户名';
+				$(this).parent().append('<span class="formtips onError">'+errorMsg+'</span>');	 
+			 }
+			 
+			 else
+			 {
+                 var okMsg='输入正确';
+				 $(this).parent().append('<span class="formtips">'+okMsg+'</span>');
+			 }
+			 
+		 }
+		 
+		 
+		if($(this).is('#email'))
+		 {
+			if( this.value=="" || ( this.value!="" && !/.+@.+\.[a-zA-Z]{2,4}$/.test(this.value) ) )
+			{
+                var errorMsg='请输入正确Email';
+				$(this).parent().append('<span class="formtips onError">'+errorMsg+'</span>');	 
+			 }
+			 
+			 else
+			 {
+                 var okMsg='输入正确';
+				 $(this).parent().append('<span class="formtips">'+okMsg+'</span>');
+			 }
+			 
+		 }
+		
+		
+		})
+		
+	.keyup(function(){
+		
+		$(this).triggerHandler('blur');
+		})	
+		
+		
+		
+	.focus(function(){
+		
+		$(this).triggerHandler('blur');
+		
+		
+		})
+	
+	$('#send').click(function(){
+		
+		$('form :input').trigger('blur');//提交的时候再进行一次验证
+		var numError=$('form .onError').length;
+		if(numError)
+		{
+			return false;
+	    }
+		
+		alert('提交成功！');
+		})
+	
+
+	})
+</script>
+</head>
+
+<body>
+<form method="post" action="">
+   <div class="entry">
+   <label>用户名：</label>
+   <input type="text" id="username"/>
+   <strong>*</strong>
+   </div> 
+   
+   <div class="entry">
+   <label>邮箱：</label>
+   <input id="email" type="text" />
+   <strong>*</strong>
+   </div>
+   
+   <div class="entry">
+   <label>个人资料：</label>
+   <input type="text" />
+   
+   </div>
+   <div class="sub">
+   <input type="button" value="提交" id="send"/><input type="reset" />
+   </div>
+   
+   
+</form>
+</body>
+</html>

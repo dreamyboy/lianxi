@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="jquery-1.6.1.min.js"></script>
+<style>
+.imgtype{width:300px;height:300px;display:block;}
+</style>
+<script>
+  $(function(){
+	 $('.btn').bind('click',function(){
+		 
+		  alert('北京天安门');
+		  
+		  var img=$('<img>').attr({
+			  
+		       src:'http://bozhonghd.com/images/sinaweibologo.jpg',
+			   class:'imgtype'
+			  })
+		 
+		   $(this).after(img);
+		 
+		 })
+		
+		
+		})
+
+//    $(function(){
+//		
+//		$('img').attr({ src:'http://bozhonghd.com/images/sinaweibologo.jpg',
+//		                alt:'test image'
+//		})
+//		
+//		
+//		})
+//
+//$("img").attr({ src: "test.jpg", alt: "Test Image" });
+
+
+</script>
+</head>
+
+<body>
+<button class="btn">我们的爱~</button>
+</body>
+</html>

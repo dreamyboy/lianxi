@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="jquery-1.6.1.min.js"></script>
+<style>
+*{margin:0;padding:0}
+.main{border:1px solid #000;margin:0 auto;min-height:220px;}
+.wrapper-list{float:left;background:#999;width:30px;min-height:220px;}
+#list{list-style:none;}
+#content{float:left;width:300px;}
+textarea{min-height:220px;}
+.main2{border:1px solid #000;margin:0 auto;min-height:220px;float:right;width:450px}
+
+
+.clearfix:after{ visibility: hidden; display: block; font-size: 0; content: "."; clear: both; height: 0; overflow: hidden }
+.clearfix{ *zoom:1}
+</style>
+
+<script>
+
+window.onload=function()
+{   
+    var obt=document.getElementById('btn1');
+	var ocont=document.getElementById('content');
+	var olist=document.getElementById('list');
+	var oli=olist.getElementsByTagName('li');
+	var tarea=ocont.getElementsByTagName('textarea')[0];//记住哦！！
+	var iNow=1;
+	var i=0;
+	oli[i].index=i;
+	
+	
+ var attr=tarea.innerHTML;
+ var ftt=attr.split('\r\n');
+	tarea.onkeydown=function(ev)
+	{
+		
+		var oEvent=ev||event;
+		
+		if(oEvent.keyCode==13)
+		{  
+			iNow++;
+			var oli=document.createElement('li');
+			oli.innerHTML=iNow;
+			olist.appendChild(oli);			
+		}
+       tarea.style.height=olist.offsetHeight+'px';
+	
+	//alert(ftt[this.index]);
+	}
+		   
+		
+//	  for(i=0;i<ftt.length;i++)
+//	   {
+//		   if(ftt[this.index]=='2')
+//		   {
+//			 alert('3');  
+//			}
+//		   
+//	   }
+
+	}
+</script>
+
+</head>
+
+<body>
+  <div class="main clearfix">
+   <div class="wrapper-list">
+     <ul id="list">
+     <li>1</li>
+     </ul>
+   </div>
+   <div id="content">
+   <textarea name="textarea"></textarea>
+   </div>
+  </div>
+
+</body>
+</html>

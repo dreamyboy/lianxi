@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>营 道企业营销管理平台</title>
+    <style>
+        body
+        {
+            font: 13px/1.5 SimHei, Microsoft YaHei, Arial, sans-serif;
+            color: #555;
+            overflow-x: hidden;
+        }
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, del, input, textarea, select, img, dl, dt, dd, ol, ul, li, dfn, em, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, big, font, small, strong, b, center
+        {
+            margin: 0;
+            padding: 0;
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, mark, audio, video
+        {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3, h4, h5, h6, button, input, select, textarea
+        {
+            font-size: 100%;
+        }
+        address, cite, dfn, em, var
+        {
+            font-style: normal;
+        }
+        code, kbd, pre, samp
+        {
+            font-family: courier new, courier, monospace;
+        }
+        fieldset, img
+        {
+            border: 0;
+        }
+        li
+        {
+            list-style: none;
+        }
+        table
+        {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        iframe
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #407db3;
+            cursor: pointer;
+            outline: none;
+        }
+        a:visited
+        {
+            color: #407db3;
+        }
+        a:hover
+        {
+            color: #407db3;
+            text-decoration: underline;
+        }
+        
+        .yd-web-preview
+        {
+            background: none repeat scroll 0 0 #FFFFFF;
+            border: 1px solid #7DC3C5;
+            position: relative;
+            width: 520px;
+            z-index: 999;
+            margin: 0 auto;
+        }
+        
+        .yd-web-preview .head
+        {
+            background: none repeat scroll 0 0 #7DC3C5;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 10px;
+            position: relative;
+        }
+        .yd-web-preview .head h2
+        {
+            color: #FFFFFF;
+            float: left;
+            font-size: 14px;
+        }
+        
+        .yd-web-preview .items
+        {
+            padding: 25px 15px 0px;
+        }
+		
+		.yd-web-preview .items table
+        {
+            line-height:30px;
+        }
+        
+        .yd-web-preview .item
+        {
+            line-height: 40px;
+        }
+        .yd-web-preview .item dt
+        {
+            float: left;
+            font-weight: bold;
+            text-align: right;
+            width: 160px;
+			margin-right:10px;
+        }
+        .yd-web-preview .item dd
+        {
+            margin-left: 60px;
+        }
+        .yd-web-preview .item ul li
+        {
+            float: left;
+            margin-right: 10px;
+			margin-top:-4px;
+        }
+        .yd-web-preview .item ul li label, .yd-web-preview .item ul li input
+        {
+            vertical-align: middle;
+        }
+        .yd-web-preview .item ul li input
+        {
+            margin-right: 9px;
+            height: 11px;
+        }
+        
+        .yd-input, .yd-seclect, .yd-search-input, .yd-textarea
+        {
+            border: 1px solid #D9D9D9;
+            color: #777777;
+            height: 20px;
+            outline: medium none;
+            padding: 4px;
+            width: 20em;
+        }
+        .yd-web-preview .yd-button-wrap
+        {
+            height: 40px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .yd-button
+        {
+            background: none repeat scroll 0 0 #7DC4C6;
+            border: 0 none;
+            border-radius: 3px 3px 3px 3px;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 14px;
+            height: 30px;
+            text-align: center;
+            width: 90px;
+            position: absolute;
+            bottom: 0px;
+            left: 40%;
+            margin-bottom: 15px;
+        }
+        .yd-web-preview .button-gray
+        {
+            width: 140px;
+        }
+        .button-gray
+        {
+            background: none repeat scroll 0 0 #F8F8F8;
+            border: 1px solid #7DC3C5;
+            color: #7DC3C5;
+            width: 100px;
+        }
+        .clearfix:after, dl:after
+        {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: ".";
+            clear: both;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        function iframeAutoFit() {
+            var ex;
+            try {
+                if (window != parent) {
+                    var a = parent.document.getElementsByTagName("IFRAME");
+
+                    for (var i = 0; i < a.length; i++) //author:meizz
+                    {
+                        if (a[i].contentWindow == window) {
+                            var h1 = 0, h2 = 0, h3 = 0, h4 = 0;
+                            if (document.documentElement && document.documentElement.scrollHeight) {
+                                h1 = document.documentElement.scrollHeight;
+                                h3 = document.documentElement.scrollWidth;
+                            }
+                            if (document.body) h2 = document.body.scrollHeight; h4 = document.body.scrollWidth;
+
+
+                            var h = Math.max(h1, h2);
+                            var h0 = Math.max(h3, h4);
+
+                            a[i].style.height = h + "px";
+                            a[i].style.width = h0 + "px";
+                        }
+                    }
+                }
+            }
+            catch (ex) { }
+        }
+        function f_frameStyleResize(targObj) {
+            var targWin = targObj.parent.document.all[targObj.name];
+            if (targWin != null) {
+                var HeightValue = targObj.document.body.scrollHeight || targObj.document.documentElement.scrollHeight;
+                if (HeightValue < 600) { HeightValue = 600 }
+                targWin.style.pixelHeight = HeightValue;
+            }
+        }
+        function f_iframeResize() {
+            bLoadComplete = true; f_frameStyleResize(self);
+        }
+        var bLoadComplete = false;
+        //判断浏览器版本
+        if (navigator.userAgent.indexOf("MSIE") > 0) {
+            window.onload = f_iframeResize;
+        }
+        else {
+            if (document.attachEvent) {
+                window.attachEvent("onload", iframeAutoFit);
+                window.attachEvent("onresize", iframeAutoFit);
+            }
+            else {
+                window.addEventListener('load', iframeAutoFit, false);
+                window.addEventListener('resize', iframeAutoFit, false);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form style="height: 100%;" name="form1" method="post" action="blank.aspx" id="form1">
+    <div>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTQyODE1MzUxNmQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgMFDXNlbGVjdGlvbl80JDAFDXNlbGVjdGlvbl80JDEFDXNlbGVjdGlvbl80JDEbqG/jC73Q95K/O7U0HFzq4FeG13liO51VUsGC4qznnQ==" /></div>
+    <div>
+        <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWDALn9Y0eArL//8sGAq///8sGAqKQ1aUKAvGM6bAKArL/98sGAq3/98sGAqz/98sGAq//98sGAqKQ3aUKAtTKqtEOAtPKqtEOrT/FVEOhi0HQBRE1NxsZariCzwfxGnwXT4vQsJuXzeA=" /></div>
+    <div id="yd-main-wrapper">
+        <div class="yd-web-preview clearfix">
+            <div class="head">
+                <h2>
+                    WEB表单预览</h2>
+            </div>
+            <div class="items">
+                <div id="Panel1">
+                    <dl class="item">
+                        <dt><table><tr><td>性别性别性别性别性别性别性别性别性别性别性别性别性别性别性别：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input id="list_1_0" type="radio" name="list_1" value="0" /><label for="list_1_0">女</label></li>
+                                <li>
+                                    <input id="list_1_1" type="radio" name="list_1" value="3" /><label for="list_1_1">男</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                          <dt><table><tr><td>马力蓝妹妹绵绵密密么么么么么么么么么么么么：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt><table><tr><td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                         <dt><table><tr><td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                         <dt><table><tr><td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                         <dt><table><tr><td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                         <dt><table><tr><td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input name="text_2" type="text" id="text_2" class="yd-input" />
+                                </li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                         <dt><table><tr><td style="text-align:right">天气气如气如如何：</td></tr></table></dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input id="list_3_0" type="radio" name="list_3" value="0" /><label for="list_3_0">好</label></li>
+                                <li>
+                                    <input id="list_3_1" type="radio" name="list_3" value="1" /><label for="list_3_1">大炮</label></li>
+                                <li>
+                                    <input id="list_3_2" type="radio" name="list_3" value="2" /><label for="list_3_2">火车</label></li>
+                                <li>
+                                    <input id="list_3_3" type="radio" name="list_3" value="3" /><label for="list_3_3">原子弹</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>xxx1：</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                    <input id="selection_4_0" type="checkbox" name="selection_4$0" /><label for="selection_4_0">女</label></li>
+                                <li>
+                                    <input id="selection_4_1" type="checkbox" name="selection_4$1" /><label for="selection_4_1">男</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="yd-button-wrap">
+                <button type="button" class="yd-button">
+                    保 存</button>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

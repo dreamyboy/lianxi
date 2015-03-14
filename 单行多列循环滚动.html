@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<TITLE>单行多列</TITLE>
+<style type="text/css">
+ul {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+    padding-top: 0px
+}
+#announcement {
+    width:100%;
+    background:url() repeat;
+    overflow: hidden;
+}
+#announcement div {
+    border: #e6e6e6 1px solid;
+    padding:0px 10px 0px 10px;
+    overflow-y:hidden;
+    line-height: 24px;
+    height: 24px
+}
+#announcement li {
+    font-size: 12px;
+    float: left;
+    list-style-type: none;
+    margin-right: 20px;
+    padding-left: 10px;
+    background: url() no-repeat 0px 50%;
+}
+#announcement a {
+    text-decoration: none;
+}
+#announcement a:hover {
+    text-decoration:underline;
+}
+</style>
+</HEAD>
+<BODY>
+<DIV id="announcement" onMouseOver="if(!anncount) {clearTimeout(timer);timer = 0}" onMouseOut="if(!timer) timer = setTimeout('announcementScroll()', anndelay);">
+  <DIV id="announcementbody">
+    <UL>
+<li><a href="/soft/18571.shtml" target="_blank">我们的爱你你的</a></li>
+<li><a href="/soft/18572.shtml" target="_blank">国外的CSS3叠加效果</a></li>
+<li><a href="/soft/18546.shtml" target="_blank">dbexpress与元数据的Delphi结合实例</a></li>
+<li><a href="/soft/18547.shtml" target="_blank">使用Delphi开发高效的数据库应用系统（实例源码）</a></li>
+<li><a href="/soft/18570.shtml" target="_blank">CSS3网页平滑滚动过渡动画效果</a></li>
+<li><a href="/soft/18627.shtml" target="_blank">C#使用FileSystemWatcher组件监视系统日志文件是否被更改</a></li>
+<li><a href="/soft/18569.shtml" target="_blank">CSS3+jQuery完成3D缩略图悬浮提示效果</a></li>
+<li><a href="/soft/18568.shtml" target="_blank">jQuery与Js实现屏幕蒙层效果，Div层窗口</a></li>
+<li><a href="/soft/18661.shtml" target="_blank">Java 记事本源码+程序</a></li>
+<li><a href="/soft/18563.shtml" target="_blank">VC++视频目标检测演示框架【源代码】</a></li>
+    </UL>
+  </DIV>
+</DIV>
+
+<script type="text/javascript">
+function $(id)
+{
+   return document.getElementById(id);
+}
+var anndelay = 500;
+var anncount = 0;
+var annheight = 24;
+var timer = 0;
+function announcementScroll()
+{
+   if( ! timer)
+   {
+      $('announcementbody').innerHTML += '<br style="clear:both"/>' + $('announcementbody').innerHTML;
+      $('announcementbody').scrollTop = 0;
+      if($('announcementbody').scrollHeight > annheight * 3)
+      {
+        
+		 timer = setTimeout('announcementScroll()', anndelay);
+	
+      }
+      else
+      {
+         $('announcement').onmouseover = $('announcement').onmouseout = null;
+      }
+      return;
+   }
+   if(anncount == annheight)
+   {
+      if($('announcementbody').scrollHeight - annheight <= $('announcementbody').scrollTop)
+      {
+         $('announcementbody').scrollTop = $('announcementbody').scrollHeight / 2 - annheight;
+      }
+      anncount = 0;
+      timer = setTimeout('announcementScroll()', anndelay);
+   }
+   else
+   {
+      $('announcementbody').scrollTop ++ ;
+      anncount ++ ;
+      timer = setTimeout('announcementScroll()', 10);
+   }
+}
+announcementScroll();
+</script>
+</BODY>
+</HTML>

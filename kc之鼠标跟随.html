@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{height:100px;width:100px;background:#F00;position:absolute;}
+</style>
+<script>
+document.onmousemove=function(ev)
+{
+     var oEvent=ev||event;
+	 odiv=document.getElementById('div1');
+	 
+	 var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+	 odiv.style.left=oEvent.clientX+'px';
+	 odiv.style.top=oEvent.clientY+scrollTop+'px';
+}
+
+
+</script>
+</head>
+
+<body style="height:2000px">
+<div id="div1">
+</div>
+</body>
+</html>

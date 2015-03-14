@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+input{background:#FFf;}
+.active{background:#0F0;}
+</style>
+<script>
+window.onload=function(){
+	   var obt=document.getElementsByTagName('input');
+	   
+	   for(i=0;i<obt.length;i++)
+	   {
+		   
+		   obt[i].onclick=function()
+		   {
+			   for(i=0;i<obt.length;i++)
+			   {
+				  obt[i].className=''; 
+			   }
+			    
+			   this.className='active';
+		   }
+		   
+		   
+	   }
+	   
+}
+</script>
+</head>
+
+<body>
+
+<input type="button" classs="active" value="1"/>
+<input type="button"  value="2"/>
+<input type="button"  value="3"/>
+
+
+</body>
+</html>

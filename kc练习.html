@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#ul1{width:300px;height:400px;border:1px solid #06C;margin:0 auto;}
+#ul1 li{border-bottom:1px dashed #999;list-style:none;overflow:hidden;}
+</style>
+<script src="move3.js"></script>
+<script>
+ window.onload=function()
+ {
+	var obtn=document.getElementById('btn1');
+	var oul=document.getElementById('ul1');
+	var otxt=document.getElementById('txt1');
+	
+	obtn.onclick=function()
+	{
+		var oli=document.createElement('li');
+		var ali=oul.getElementsByTagName('li');
+		
+		oli.innerHTML=otxt.value;
+		
+		otxt.value='';
+		
+		if(ali.length)
+		{
+			oul.insertBefore(oli,ali[0]);
+			
+		}
+		
+		else
+		{
+			oul.appendChild(oli);
+		}
+		
+		
+		var iHeight=oli.offsetHeight;
+		oli.style.height=0;
+		
+		startMove(oli,{height:iHeight})
+		
+		
+		
+		
+		
+    } 
+	 
+	 
+	 
+ }
+</script>
+</head>
+
+<body>
+<textarea rows="10" cols="40" id="txt1"></textarea><br />
+<button id="btn1">发布</button>
+<ul id="ul1">
+</ul>
+</body>
+</html>

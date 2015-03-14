@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <style type="text/css">
+        *{margin:0;
+            padding:0;
+        }
+        body{
+            height: 2000px;
+        }
+        .gotoTop{
+            width: 100px;height: 100px;background: red;position: fixed;right: 10px;bottom: 20px;
+            border-radius:50%;vertical-align: middle;text-align: center;line-height: 100px;
+        }
+
+        .box,blockquote{width:600px;margin:20px auto 10px auto;border-radius:5px;border:solid 1px #ccc;padding:20px;box-shadow:inset 0 0 6px rgba(0,0,0,0.2),0 0 6px rgba(0,0,0,0.1);background:-moz-linear-gradient(#fcfcfc,#fff) repeat;}
+
+        a{display:block;width:100px;height:30px;background:#fcfcfc;border:solid 1px #cccccc;margin:20px auto;text-align:center;border-radius:5px;line-height:30px;-moz-transition:all 0.5s ease;}
+
+        .ts:hover{-moz-transform:translate(50px);-moz-transition:all 0.3s ease;}/*移动*/
+
+        .big{-moz-transform:scale(1);-moz-transition:all 0.3s ease;}
+
+        .big:hover{-moz-transform:scale(5);-moz-transition:all 0.3s ease; }/*放大*/
+
+        .rotage:hover{-moz-transform:rotate(360deg);-moz-transition:width 0.3s ease;}/*旋转*/
+
+        .img{height:200px;width:200px;border-radius:50%;-moz-transform:rotate(0deg);display:block;margin:0 auto;-moz-transition:all 0.4s ease;line-height:200px;text-align:center;background:-moz-linear-gradient(#fcfcfc,#f0f0f0) repeat;font-size:24px;font-family:Arial, Helvetica, sans-serif;box-shadow:0 0 6px rgba(0,0,0,0.1);}
+
+        .img:hover{-moz-transform:rotate(360deg);}
+
+        h1{text-align:center;font-size:24;font-family:"微软雅黑";margin:0;}
+
+        h3{margin:0;}
+
+        blockquote{margin:0 auto;}
+
+        p{line-height:24px;text-align:justify;text-justify:inter-ideograph;font-familY:"微软雅黑";font-size:14px;}
+
+
+
+    </style>
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="js/dong.js"></script>
+</head>
+
+<body>
+
+<div class="gotoTop">点我点我嘛</div>
+<button style="position:fixed;right:50px;bottom:0;">点点</button>
+
+
+<form id="mform">
+    <input type="radio" value="11" name="r1" checked="checked"/>
+    <input type="radio" value="22" name="r1"/>
+    <input type="radio" value="33" name="r1"/>
+</form>
+
+<canvas id="myCanvas"></canvas>
+
+
+
+
+
+
+<h1>Css3动画之移动、放大、旋转</h1>
+
+<div class="box">
+
+    <a class="ts">移动</a>
+
+    <a class="big">放大</a>
+
+    <a class="rotage">旋转</a>
+
+    <a class="img">Rotate</a>
+
+</div>
+
+<blockquote>
+
+    <h3>Css3动画的实际应用:</h3>
+
+    <p>css3越来越被大家所接触到了，各大巨头公司后期做的项目都纷纷用到了点Css3效果来做差异化体验。我个人也非常喜欢，真的很不错。
+
+        今天我就拿几个简单的例子来表达下我个人对Css3动画学习的理解。
+
+        Css3动画，我这里牵涉到两个属性:transition和transform属性，这两个属性搭配起来可以达到非常动感的效果。
+
+        我这里做了3个例子，分别是平移，缩放和旋转。只要你能够合理的应用这个参数，就可以做出动感的效果出来。
+
+        <span class="property">-moz-transform</span>:translate(50px);-moz-transition:all 0.3s ease;/*移动主要是用到translate这个参数，50是代表他距离X方向上的值，也可以为负数*/
+
+        -moz-transform:scale(5);-moz-transition:all 0.3s ease;/*放大主要是用到了scale这个参数，里面的5是他放大的倍数*/
+
+        -moz-transform:rotate(45deg);-moz-transition:all 0.3s ease;/*旋转主要是用到了rotate这个参数，里面的值是他旋转的角度，为负数是就代表是反方向*/
+
+    </p>
+
+</blockquote>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<meta http-equiv="refresh" content="5; url=http://www.baidu.com">-->
+<title>无标题文档</title>
+<script>
+ window.onload=function()
+ {
+    var osj=document.getElementById('sj');
+	var timer=null;
+	var time=3;
+	osj.innerHTML=time;
+	
+	timer=setInterval(function(){
+		
+		if(time<0)
+		{
+			clearTimeout(timer);
+			window.location.href='http://www.baidu.com';
+		}
+		else
+		{
+			 showTime();  
+		}
+		},300);
+		
+		
+	 function showTime()
+	 {
+		osj.innerHTML=time;
+		time--; 
+	 }
+		 
+	 
+	 
+ }
+</script>
+</head>
+
+<body>
+<p>
+<span id="sj"></span>秒后返回
+<a href="http://www.baidu.com">直接跳转</a>
+</p>
+</body>
+</html>

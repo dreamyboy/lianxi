@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{width:100px;height:50px;background:#F00;margin:10px;filter:alpha(opacity:30);opacity:0.3;}
+</style>
+<script>
+ window.onload=function()
+ {
+     var adiv=document.getElementsByTagName('div');
+	 
+	 for(i=0;i<adiv.length;i++)
+	 {
+		
+		adiv[i].alphaaa=30;
+		adiv[i].onmouseover=function()
+		{
+		   startMove(this, 100);		
+		}
+		  
+		adiv[i].onmouseout=function()
+		{
+		   startMove(this, 30);		
+		}
+		 
+	 } 
+	 
+	 
+ }
+
+ var timer=null;
+ //var alpha=30;这个变量是公用的，如果移动的比较快，会出现问题，所以给每个div都加一个alpha
+ function startMove(obj,iTarget)
+ {
+	
+	 clearInterval(obj.timer);
+	 
+	 obj.timer=setInterval(function(){
+		 
+		 var iSpeed=(iTarget-obj.alphaaa)/8;
+		 
+		 iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+		 
+		 if(obj.alphaaa==iTarget)
+		 {
+			 clearInterval(obj.timer);
+		 } 
+		 
+		 else
+		 {
+			obj.alphaaa+=iSpeed;
+			obj.style.filter='alpha(opacity:'+obj.alphaaa+')';
+			obj.style.opacity=obj.alphaaa/100;
+		 }
+		 },30)
+ 
+ }
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+</body>
+</html>

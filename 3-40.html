@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){ 
+var x=10;
+var y=20;
+$("a.tooltip").mouseover(function(e){
+this.mytitle==this.title;
+this.title=="";
+var imgtitle=this.mytitle ? "<div>"+this.mytitle+"</div>":"";
+var tooltip="<div id='tooltip'><img src='"+ this.href + "'/>" +imgtitle+"</div>";
+$("body").append(tooltip);
+$("#tooltip").css({
+position:"absolute",
+"top": (e.pageY+y) +"px",
+"left": (e.pageX+x) +"px"
+}).show("fast");
+})
+.mouseout(function(){
+$("#tooltip").remove();
+this.title==this.mytitle;
+})
+.mousemove(function(e){
+$("#tooltip").css({
+"top": (e.pageY+y) +"px",
+"left": (e.pageX+x) +"px"
+})
+
+});
+
+})
+</script>
+<style type="text/css">
+ul li{float:left;}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+<li ><a class="tooltip" href="images/20110119zzjs_net_5.jpg" title="苹果ff"><img src="images/1.jpg" /></a></li>
+<li ><a class="tooltip" href="images/gongzuoshi.jpg" title="苹果dd"><img src="images/03.jpg" /></a></li>
+<li ><a class="tooltip" href="images/niuyue.jpg" title="苹果ee"><img src="images/1.jpg" /></a></li>
+<li ><a  class="tooltip" href="images/20110119zzjs_net_5.jpg"  title="苹果fef"><img src="images/03.jpg" /></a></li>
+<div style="clear:both"></div>
+</ul>
+
+
+</body>
+</html>

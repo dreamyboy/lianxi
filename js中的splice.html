@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+ var lang = ["php","java","javascript"];
+//删除
+// var removed = lang.splice(1,1);
+// alert(lang);  //php,javascript
+// alert(removed);  //java ,返回删除的项
+ 
+ 
+ //插入
+//var insert = lang.splice(0,0,"asp"); //从第0个位置开始插入
+//alert(insert); //返回空数组
+//alert(lang);  //asp,php,java,javascript
+
+ //替换
+ var replace = lang.splice(1,1,"c#","ruby"); //删除一项，插入两项
+ alert(lang); //php,c#,ruby,javascript
+ alert(replace);  //java,返回删除的项
+
+ //根据上面的代码想到的一些
+ console.log(lang);  //  ["php", "c#", "ruby", "javascript"]
+ //其实是一个数组。alert出来就变成一个字符串了,因为alert会自动调用toString()方法,把其中的内容转成字符串。
+
+
+</script>
+
+<!--substr和substring函数的区别:-->
+
+<!--String.substr(N1,N2) 这个就是我们常用的从指定的位置(N1)截取指定长度(N2)的字符串;-->
+<!--String.substring(N1,N2) 这个就是我们常用的从指定的位置(N1)到指定的位置(N2)的字符串;-->
+
+<!--举个例子：-->
+<!--alert("abcdefg".substr(2,5)) 它显示的是 "cdefg"-->
+<!--alert("abcdefg".substring(2,5)) 则显示的为 "cde"-->
+</head>
+
+<body>
+</body>
+</html>

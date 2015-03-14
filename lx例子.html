@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+	 
+	 $('li').mouseover(function(){
+		 
+        $('li').removeClass('current');
+		$(this).addClass('current');
+	 })
+ })
+</script>
+<style>
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "微软雅黑","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+input{border:0px;font-family:微软雅黑}
+
+
+
+
+
+
+
+li{width:200px;height:40px;background:#Fff;border:1px solid #E6E6E6}
+li img{display:none;float:left;}
+.current{widht:200px;height:80px;background:#Fff;}
+.current .price{height:80px;padding-top:10px}
+.price:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.price a{float:right;margin-top:-18px}
+.current img{display:block} 
+.current .price a{display:block;float:none;margin-top:0px;}
+</style>
+</head>
+
+<body>
+<div class="xxk">
+  <ul>
+     <li class="current">
+     <div class="price"><img src="http://image2.m.gd.ct10000.com/wcsstore/gdtel/resource/catalog/EsurfingPhone/COOLPAD/COOLPAD_1606/COOLPAD_1606_35x53.jpg" />
+     <span>华为C5070易通卡</span><br />
+     <b>含650元话费</b>
+     <a href="#">300元</a>
+     </div>
+     </li>
+     
+     
+     <li><div class="price"><img  src="http://image2.m.gd.ct10000.com/wcsstore/gdtel/resource/catalog/EsurfingPhone/HUAWEI/HUAWEI_C5070/HUAWEI_C5070_35x53.jpg" />
+  <span>华为C5070易通卡</span><br />
+     <b>含650元话费</b>
+     <a href="#">300元</a>
+     </div>
+    </li>
+     <li><div class="price"><img src="http://image2.m.gd.ct10000.com/wcsstore/gdtel/resource/catalog/EsurfingPhone/SAMSUNG/SAMSUNG_E329i/SAMSUNG_E329i_35x53.jpg" />
+     <span>华为C5070易通卡</span><br />
+     <b>含650元话费</b>
+     <a href="#">300元</a>
+     </div>
+    </li>
+ 
+  </ul>
+</div>
+</body>
+</html>

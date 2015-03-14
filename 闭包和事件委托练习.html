@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+// window.onload=function()
+// {
+//	 var odiv=document.getElementById('div1');
+//	 var oinput=odiv.getElementsByTagName('input');
+//	 var l=oinput.length;
+//	 
+//	 for(i=0;i<l;i++)
+//	 {
+//		  oinput[i].onclick=function()
+//		  {
+//			  alert(i);
+//			  
+//		  }
+//	 }
+//	 
+//	 
+// }//点击每个按钮，弹出的都是5
+
+
+// window.onload=function()
+// {
+//	 var odiv=document.getElementById('div1');
+//	 var oinput=odiv.getElementsByTagName('input');
+//	 var l=oinput.length;
+//	 
+//	 for(i=0;i<l;i++)
+//	 {
+//		  (function(cur){
+//		      oinput[cur].onclick=function()
+//		      {
+//			    alert(cur);  
+//		      }
+//		  })(i);
+//	 }
+//	 
+//	 
+// }//利用闭包特性把for循环中的i值保存在内存中
+
+
+ window.onload=function()
+ {
+	 var odiv=document.getElementById('div1');
+	 var oinput=odiv.getElementsByTagName('input');
+	 
+	 
+	 odiv.onclick=function(ev)
+	 {
+		 var oinput=odiv.getElementsByTagName('input');
+		 var ev=ev||window.event;
+		 var target=ev.srcElement||ev.target;
+		 
+		 
+		 for(i=0,l=oinput.length;i<l;i++)
+		  {
+			 if(oinput[i]==target)
+			 {
+				 
+				 alert(i);
+			 } 
+			   
+		  }
+		 
+		 
+		 
+	 }
+	 
+	          //创建一个新元素
+	     var newInput = document.createElement('input');
+         newInput.setAttribute('type', 'button');
+         newInput.setAttribute('value', '按钮六');
+         odiv.appendChild(newInput);
+ }
+//使用了事件委托，将事件加到父元素上
+
+     
+	 
+	 
+
+</script>
+</head>
+
+<body>
+  <div id="div1">
+     
+     <input type="button" value="按钮一" />
+     <input type="button" value="按钮一" />
+     <input type="button" value="按钮一" />
+     <input type="button" value="按钮一" />
+     <input type="button" value="按钮一" />
+  </div>
+</body>
+</html>

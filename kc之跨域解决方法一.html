@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+//a.com
+function creatJs(surl){
+
+       var oScript=document.createElement('script');
+	   oScript.type="text/javascript";
+	   oScript.src=surl;
+	   document.getElementsByTagName('head')[0].appendChild(oScript);
+	   
+}
+
+creatJs('jsonp.js');
+   
+function box(json){
+      alert(json.age)
+}
+</script>
+</head>
+
+<body>
+    
+</body>
+</html>

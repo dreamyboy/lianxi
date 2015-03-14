@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+<style>
+*{margin:0;padding:0;}
+#nav li{list-style:none;} 
+#nav{width:263px;}
+.firstnav{position:relative;}
+.secondnav{position:absolute;right:0px;display:none;}
+.bg_hover{background:#0F0;}
+</style>
+<script>
+$(function(){
+  
+  $('.firstnav li').hover(
+       function(){
+	     $(this).addClass('bg_hover');
+	     $(this).find('.secondnav').show();
+	   
+	   
+	   },
+	   
+	   function(){
+	     $(this).removeClass('bg_hover');
+	     $(this).find('.secondnav').hide();
+	   
+	   
+	   }
+	  
+     
+  )
+	
+	
+	
+	
+	
+	})
+</script>
+</head>
+
+<body>
+<div id="nav">
+  <ul class="firstnav">
+    <li>
+     <a>第一项</a>
+       <ul class="secondnav">
+         <li>星期一</li>
+         <li>星期二</li>
+         <li>星期三</li>
+         <li>星期四</li>
+       </ul>
+    </li>
+    <li>
+     <a>我们的爱</a>
+       <ul class="secondnav">
+         <li>流星雨</li>
+         <li>留下来</li>
+         <li>没想好</li>
+         <li>我急哦及哦</li>
+       </ul>
+    </li>
+    <li>
+     <a>我们的爱</a>
+       <ul class="secondnav">
+         <li>流星雨</li>
+         <li>留下来</li>
+         <li>没想好</li>
+         <li>我急哦及哦</li>
+       </ul>
+    </li>
+    <li>
+     <a>我们的爱</a>
+       <ul class="secondnav">
+         <li>流星雨</li>
+         <li>留下来</li>
+         <li>没想好</li>
+         <li>我急哦及哦</li>
+       </ul>
+    </li>
+
+  
+  
+  
+  
+  </ul>
+</div>
+
+</body>
+</html>

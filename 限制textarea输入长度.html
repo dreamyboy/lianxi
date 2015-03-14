@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<!--maxlength是对firefox和chrome兼容，而那js代码是对IE兼容。所以就ok啦！！
+参考文章：http://www.cnblogs.com/damonlan/archive/2012/12/16/2820224.html
+-->
+<textarea name="txt1" cols="45" maxlength="2" rows="2" 
+onKeyDown='if (this.value.length>=2){event.returnValue=false}'>b</textarea>
+</body>
+</html>

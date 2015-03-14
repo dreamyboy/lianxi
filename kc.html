@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById('daohang');
+	var ali=oDiv.getElementsByTagName('li');
+	
+	for(i=0;i<ali.length;i++)
+	{
+	  if(ali[i].className=='contentk')
+	  {
+		  ali[i].onmouseover=function()
+		  {
+			  var odivlist=this.getElementsByTagName('div')[0];
+			  odivlist.style.display='block';  
+		  }
+		  
+		   ali[i].onmouseout=function()
+		  {
+			  var odivlist=this.getElementsByTagName('div')[0];
+			  odivlist.style.display='none';  
+		  }
+	  }
+	  
+	  
+	  else if (ali[i].className=='lili')
+	  {
+		  ali[i].onmouseover=function()
+		  {
+			  var odivul=this.getElementsByTagName('ul')[0];
+			  odivul.style.display='block';
+			  
+		  }
+		  
+	  }
+	  
+	  
+		
+	}
+	
+	
+	
+}
+
+</script>
+<style>
+* { padding: 0; margin: 0; }
+li { list-style: none; }
+.contentk{float:left;width:300px;}
+.childul {position:relative;}
+.childul{display:none;}
+.lili ul{display:none;position:absolute;left:80px;top:0;}
+.childul p{width:80px;}
+</style>
+</head>
+
+<body>
+<div id="daohang">
+ <ul class="content">
+  <li class="contentk">
+    <h2>这里是北京</h2>
+     <div class="childul">
+        <p>海南岛椰子</p>
+      <ul>
+        <li class="lili">
+            <ul>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+            </ul>
+        </li>
+
+        <p>海南岛椰子</p>
+        <li class="lili">
+            <ul>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+           </ul>
+        </li>
+        </ul>
+      </div>  
+    </li>
+   
+   <li class="contentk">
+    <h2>这里是北京</h2>
+     <div class="childul">
+        <p>海南岛椰子</p>
+            <ul>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+            </ul>
+ 
+
+        <p>海南岛椰子</p>
+            <ul>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+              <li>山东煎饼</li>
+            </ul>
+      </div>  
+    </li>
+    
+ </ul>
+
+</div>
+
+
+
+
+</body>
+</html>

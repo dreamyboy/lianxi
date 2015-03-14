@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+$(document).ready(function () {
+    $("#collect").click(function () {
+        var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL';
+        if (document.all) {
+            window.external.addFavorite('http://55778.net', '55778商城');
+        }
+        else if (window.sidebar) {
+            window.sidebar.addPanel('55778商城', 'http://55778.net', "");
+        }
+        else {
+            alert('对不起，您的浏览器不支持此方法，您可以通过快捷键' + ctrl + ' + D 加入到收藏夹');
+        }
+    });
+});
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

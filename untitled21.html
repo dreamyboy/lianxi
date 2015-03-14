@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+body{height:2000px}
+#foo{width:100px;height:100px;background:#F00;position:absolute;bottom:0}
+</style>
+<script>
+  
+   window.onscroll=function(){
+		var obj = document.getElementById('foo');
+		var timer;
+		
+		timer=setTimeout(function(){
+		  var scrolltop=document.body.scrollTop || document.documentElement.scrollTop || 0;
+		  
+		  obj.style.bottom=0-scrolltop+'px';
+		  
+		  
+		  },300)	  
+			  
+			  }
+		  
+</script>
+</head>
+
+<body>
+ <div id="foo">fff</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href="hlsy.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="header">
+
+<ul id="nav">
+<li><a href="http://pupuhi.cn/">首页</a></li>
+<li class="menu"><a href="#">关于蕙兰</a>
+<dl id="subnav">
+<dd><a href="#">huilan</a></dd>
+<dd><a href="#">huilan</a></dd>
+<dd><a href="#">huilan</a></dd>
+<dd><a href="#">huilan</a></dd>
+</dl>
+</li>
+<li><a href="#">了解瑜伽</a></li>
+<li><a href="#">瑜伽练习</a></li>
+<li class="rightnav"><a href="#">瑜伽影音</a></li>
+<li class="rightnav"><a href="#">蕙兰产品</a></li>
+<li class="rightnav"><a href="#">蕙兰社区</a></li>
+</ul>
+</div>
+
+
+
+<div id="main"></div>
+<div id="footer"></div>
+<script type="text/javascript">
+<!--
+var nav = document.getElementById("nav").childNodes;
+for (var i=0;i<nav.length;i++)
+{//欢迎来到站长特效网，我们的网址是www .zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+ if (nav[i].className=="menu")
+ {
+  nav[i].onmouseover = function(){fnNav(this,"block")};
+  nav[i].onmouseout = function(){fnNav(this,"none")};
+ }
+}//欢迎来到站长特x效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+function fnNav(obj,flag)
+{
+ obj.getElementsByTagName("dl")[0].style.display = flag;
+}//欢迎来到站长特效网，我们的网址是www.zzjs.net，很好记，zz站长，js就是js特效，本站收集大量高质量js代码，还有许多广告代码下载。
+//-->
+</script>
+</body>
+</html>

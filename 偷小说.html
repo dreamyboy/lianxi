@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	var txt1=document.getElementById('tex1');
+	var txt2=document.getElementById('tex2');
+	var obt=document.getElementById('btn1');
+	
+	var re=/<[^<>]+>/g;
+	obt.onclick=function()
+	{
+	    
+	  	txt2.value=txt1.value.replace(re,'');
+    }
+	
+}
+</script>
+</head>
+
+<body>
+<textarea id="tex1" rows="10" cols="15"></textarea>
+<input id="btn1" type="button" value="转换"/>
+<textarea id="tex2" rows="10" cols="15"></textarea>
+</body>
+</html>

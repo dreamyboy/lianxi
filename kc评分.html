@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>妙味课堂</title>
+<style>
+*{margin:0;padding:0;}
+#pingfen{ width:135px;margin:10px auto;height:28px;}
+#pingfen li{ width:27px;float:left;height:28px; cursor:pointer;background:url(images/star.gif) no-repeat 0 0; list-style:none;}
+#pingfen li.active{background:url(images/star.gif) no-repeat 0 -29px;}
+</style>
+<script type="text/javascript">
+adata=["一般","很好","非常好","特别好","力荐"];
+
+window.onload=function()
+{
+	var ODiv=document.getElementById('pingfen');
+	var ali=ODiv.getElementsByTagName('li');
+	var op=ODiv.getElementsByTagName('p')[0];
+	
+	
+	for(i=0;i<ali.length;i++)
+	{
+	  ali[i].index=i;
+	  ali[i].onmouseover=function ()
+	  {
+	     op.style.display='block';
+		 
+		 op.innerHTML=adata[this.index];
+		 
+		 for(i=0;i<=this.index;i++)
+		 {
+			 ali[i].className='active';
+			 
+		 }
+		  
+	  }
+	
+	    ali[i].onmouseout=function ()
+	  {
+         op.style.display='none'; 
+		                                               
+		 for(i=0;i<ali.length;i++)
+		 {
+			 ali[i].className='';
+		
+		 }
+	  }
+	  
+	  
+	  ali[i].onclick=function()
+	  {
+		  
+		  alert('感谢，您投了'+(this.index+1)+'分');
+		  
+	  }
+		
+	}
+	
+	
+	
+}
+</script>
+</head>
+
+<body>
+<div id="pingfen">
+	<ul>
+    	<li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p style="display:none">一般</p>
+</div>
+</body>
+</html>

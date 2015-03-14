@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+
+<script>
+$(function(){
+   $('li:first').css('background','red');
+   $('ul li:last-child').css('background','green');
+  $('p').eq(2).animate({fontSize: "10em", },30)
+  
+  $('li').each(function()
+  {
+	  
+	alert($(this).text())
+	  })
+	  
+  $('p').blur( function () { alert("Hello World!"); } );
+  $("p").blur();
+});
+
+    
+</script>
+<script>
+/*  window.onload=function()
+  {
+	var odiv=document.getElementById('div1');
+	
+	odiv.onclick=function()
+	{
+		alert(this.innerHTML);
+		
+	}  
+	  
+  }*/
+  
+  $(function(){
+	
+	 $('#div1').click(function(){
+ 
+		 alert($(this).html());
+
+		 })
+	  
+	  })
+</script>
+
+<script>
+$(function(){
+	
+	$('div').has('p').css('background','blue')
+
+	})
+</script>
+<script>
+ $(function(){
+	 
+	  $('#lianshi').find('h3').eq(2).html('hello');
+	 
+	 })
+
+</script>
+
+</head>
+
+<body style="height:2000px;">
+
+<div id="lianshi">
+<h3>链式链式</h3>
+<h3>链式链式</h3>
+<h3>链式链式</h3>
+<h3>链式链式</h3>
+<h3>链式链式</h3>
+</div>
+
+
+
+
+<div>womendei<p></p></div>
+<ul><li>fdef</li></ul>
+<div>fefefe<span></span></div>
+
+
+
+
+
+<div id="div1">aaa</div>
+<ul>
+  <li>fff</li>
+  <li>fefe</li>  
+  
+</ul>
+<p> This is just a test.</p> <p> So is this</p>
+<!--注意：IE6不支持position:fixed-->
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+ window.onload=function(){
+	 
+	 var otab=document.getElementById('tab1');
+	 var obtn=document.getElementById('btn');
+	 var otxt=document.getElementById('txt1');
+	 var i=0;
+	 var oldbgcolor='';
+	 for(i=0;i<otab.tBodies[0].rows.length;i++)
+	 {
+		otab.tBodies[0].rows[i].style.background=i%2?'#ccc':''; 
+		
+		otab.tBodies[0].rows[i].onmouseover=function()
+		{
+			oldbgcolor=this.style.background;
+			this.style.background='yellow';
+		}
+		
+		otab.tBodies[0].rows[i].onmouseout=function()
+		{
+			this.style.background=oldbgcolor;
+		}
+		
+	  }
+      
+	  obtn.onclick=function()
+	  {
+		  var otr=document.createElement('tr');
+		  var otd=null;
+		  
+		  otd=document.createElement('td');
+		  otd.innerHTML=otab.tBodies[0].rows.length;
+		  otr.appendChild(otd);
+		  
+		  otd=document.createElement('td');
+		  otd.innerHTML=otxt.value;
+		  otr.appendChild(otd);
+		  
+		  otd=document.createElement('td');
+		  otd.innerHTML='&nbsp;';
+		  otr.appendChild(otd);
+		  		  
+		  otab.tBodies[0].appendChild(otr);
+		    
+	  }
+	 
+	 }
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1"/><input type="button" value="添加" id="btn"/>
+<table border="1" width="400" id="tab1">
+    <thead>
+       <th>ID</th>
+       <th>姓名</th>
+       <th>操作</th>
+    </thead>
+    
+    <tbody>
+      <tr>
+      <td>1</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>2</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>3</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>4</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>5</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>6</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>7</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+      
+      <tr>
+      <td>8</td>
+      <td>大大</td>
+      <td></td>
+      </tr>
+    </tbody>
+</table>
+</body>
+</html>

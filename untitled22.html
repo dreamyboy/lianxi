@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body,ul,p,dl,dt,dd,h2,h3,hr{ margin:0;padding:0;}
+body{font-size:12px;}
+ul,li{ list-style:none;}
+#cur{height:20px; background:#CCC; overflow:hidden; line-height:20px; padding-left:4px;width:330px;margin:40px auto; cursor:pointer;}
+#cur li{height:20px; }
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+</head>
+
+<body>
+ <ul id="cur">
+   <li>1吾十有五而志干学，三十而立，四十而不惑，五十而知天命</li>
+   <li>2吾十有五而志干学，三十而立，四十而不惑，五十而知天命</li>
+   <li>3吾十有五而志干学，三十而立，四十而不惑，五十而知天命</li>
+   
+  </ul>
+<script>
+(function(win){
+  var repeat;
+  var ul=$('#cur')
+  var li=ul.find('li')
+  var len=li.length;
+  var liHeight=li.first().outerHeight();
+  win.autoMarquee=function(){
+	  if(len<=1) return;
+	  
+	var self=arguments.callee 
+	//返回函数本身
+	var firstli=$('#cur li').first();
+	firstli.stop().animate({marginTop:-liHeight},2000,function(){
+	firstli.appendTo(ul).css({marginTop:0})
+	clearTimeout(repeat)
+	repeat=setTimeout(self,2000)
+	})
+ }
+ $('#cur').mouseenter(function(){
+	clearTimeout(repeat)						   
+ })
+ $('#cur').mouseleave(function(){
+	repeat=setTimeout(win.autoMarquee,2000)						   
+ })
+})(window)
+setTimeout(window.autoMarquee)
+</script>
+</body>
+</html>

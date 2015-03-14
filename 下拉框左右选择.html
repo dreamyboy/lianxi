@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>下拉框左右选择 </title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){	
+	$(".toRt").click(function(){
+		$(".left option:selected").appendTo(".right");
+	})
+
+	$(".toRt_all").click(function(){
+		$(".left option").appendTo(".right");
+	})
+
+	$(".toLt").click(function(){
+		$(".right option:selected").appendTo(".left");
+	})
+
+	$(".toLt_all").click(function(){
+		$(".right option").appendTo(".left");
+	})
+
+
+/*双击option*/
+
+	$(".left").dblclick(function(){
+		$("option:selected",this).appendTo('.right');
+	})
+
+	$(".right").dblclick(function(){
+		$("option:selected",this).appendTo('.left');
+	})
+});
+</script>
+<style>
+*{padding:0;margin:0;}
+body{font-family:"宋体";font-size:12px;padding:50px;}
+select{width:100px;height:150px;border:1px solid;}
+div{float: left;width:100px;margin:5px;}
+</style>
+</head>
+<body>
+<div>
+	<select multiple="multiple" class="left">
+		<option value="1">选项1</option>
+		<option value="2">选项2</option>
+		<option value="3">选项3</option>
+		<option value="4">选项4</option>
+		<option value="5">选项5</option>
+		<option value="6">选项6</option>
+		<option value="7">选项7</option>
+	</select>
+	<input type="button" value="选中右移>>" class="toRt"/>
+	<input type="button" value="全部右移>>" class="toRt_all"/>
+</div>
+<div>
+	<select multiple="multiple" class="right">
+		<option value="8">选项8</option>
+		<option value="9">选项9</option>
+	</select>
+	<input type="button" value="选中左移<<" class="toLt"/>
+	<input type="button" value="全部左移<<" class="toLt_all"/>
+</div>
+</body>
+</html>

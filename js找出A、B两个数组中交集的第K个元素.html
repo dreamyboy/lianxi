@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>找出A、B两个数组中交集的第K个元素</title>
+<!--来自：https://gist.github.com/jikeytang/ed0e8d171b1788240d40#file-javascript-20140901-1-->
+
+<!--题目：-->
+    <!--A,B有两个数组，A递增数组，B递减数组。-->
+    <!--请用最优的js代码找出A、B两个数组中交集的第K个元素。-->
+    <!--比如：-->
+    <!--var A = [3,4,5,6,7,8,9];-->
+    <!--var B = [12,10,8,6];-->
+    <!--交集的元素有6,8,-->
+    <!--第1个元素是6，第2个元素是8。-->
+    <!--那么js是这样：-->
+    <!--function getNum(a, b, k){-->
+    <!--// code-->
+    <!--}-->
+    <!--getNum(A, B, 1) -> 6,-->
+    <!--getNum(A, B, 2) -> 8,-->
+
+
+
+
+
+<script type="text/javascript">
+    function getNum(a, b, k){
+        var num=[];
+        for(i=0;i<a.length;i++){
+            if(b.indexOf(a[i])!=-1){
+                num.push(a[i]);
+            }
+        }
+
+        if(k<num.length){
+            return num[k];
+        }
+
+        else {
+            return null;
+        }
+    }
+    var a = [3,4,5,6,7,8,9];
+    var b = [12,10,8,6];
+    getNum(a,b,0);
+    console.log(getNum(a,b,0));
+
+</script>
+</head>
+<body>
+<form>
+  <fieldset style="width:300px">
+    <legend>health information</legend>
+    height: <input type="text" />
+    weight: <input type="text" />
+  </fieldset>
+</form>
+</body>
+</html>

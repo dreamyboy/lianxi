@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+
+    var str = "abaasdffggghhjjkkgfddsssss";
+         var arr = new Array();
+         var i = 0;
+         while (str.charAt(0)) {
+             arr[i] = str.charAt(0) + "=" + (str.split(str.charAt(0)).length - 1);
+             str = str.split(str.charAt(0)).join("");
+             i++;
+         }
+         alert(arr);
+         for (var j = 0,temp=0; j < arr.length; j++) {
+             if (temp <= Number(arr[j].split("=")[1])) {
+                 temp = Number(arr[j].split("=")[1]);
+                 i = j;
+             }
+         }
+         alert(arr[i]);
+
+
+
+
+</script>
+
+
+</head>
+
+<body>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<script>
+
+    function fash(){
+        return this;
+    }
+    console.log(fash());
+</script>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8/jquery.min.js">
+</script>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <input type="radio" name="radio" id="we" value="we" />
+  <label for="we"></label>
+  <input type="radio" name="radio" id="uy" value="uy" />
+  <label for="uy"></label>
+  <input type="radio" name="radio" id="radio" value="radio" />
+  <p>
+    <label>
+      <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_0" checked="checked"  />
+      单选</label>
+    <br />
+    <label>
+      <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_1" checked="checked" />
+      单选</label>
+    <br />
+    <label>
+      <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_2" />
+      单选</label>
+    <br />
+    <label>
+      <input type="radio" name="RadioGroup1" value="单选" id="RadioGroup1_3" />
+      单选</label>
+    <br />
+  </p>
+</form>
+
+
+<div class="btn">按钮</div>
+<div class="btn1">按钮1</div>
+
+<script>
+    $('.btn').on('mouseover',function(){
+        alert('点击了');
+    });
+
+    $('.btn1').on('click',function(){
+        $('.btn').trigger('mouseover');
+    })
+
+    $.each( [3,7,192], function(i, n){
+        alert( "Item #" + i + ": " + n );
+    });
+
+</script>
+
+
+</body>
+</html>

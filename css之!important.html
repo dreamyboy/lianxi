@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+/*#div{width:100px;height:200px;background:red!important;background:blue;}*/
+ 
+/*除了IE6其他浏览器都会显示背景为红色正是!important的作用意思就是只要我在这里我就是最重要的啦任何东西都不能取代我没看见都是一个外加一个英文单词 important 吗很形象很贴切了。
+IE6这里会显示背景为蓝色并不是IE6不支持!important而是它会按照样式声明顺序后出现的覆盖前面的此时它已经不认识!important了它六亲不认了。这正是广为流传的IE6 hack之一。
+而如果这样写会正常显示背景为红色:*/
+
+#div{background:blue;width:100px;height:200px;background:red!important;}
+</style>
+</head>
+
+<body>
+<div id="div" style="background:#FF0">我们的祖国是花朵</div>
+</body>
+</html>

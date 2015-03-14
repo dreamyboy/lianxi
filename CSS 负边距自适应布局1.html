@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>单列定宽单列自适应布局</title>
+    <style type="text/css">
+        * {margin:0;padding:0;}
+        .cont, .side, .sub-main {float:left;}
+		.cont {width:100%;}
+		.main {margin-right:200px;margin-left:300px;background:#DDDDDD;}
+        .side {margin-left:-200px;width:200px;background:#F7F7F7;}
+		.sub-main {margin-left:-100%;width:300px;background:#F7F7F7;}
+
+
+/*
+margin-left:-100%的解释：
+http://bbs.blueidea.com/thread-2956530-1-1.html*/
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="main">main</div>
+    </div>
+    
+    <div class="side">side</div>
+    <div class="sub-main">sub-main</div>
+
+</body>
+</html>

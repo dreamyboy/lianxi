@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="move3.js"></script>
+<style>
+#ul1{width:500px;position:relative;}
+#ul1 li{height:20px;width:100px;border:1px solid #6F0;text-align:center;background:#9C0;float:left;list-style:none;}
+#ul1 li div{overflow:hidden;background:#999;position:absolute;top:20px;
+filter:alpha(opacity:30);opacity:0.3;height:0;}
+
+</style>
+<script>
+window.onload=function()
+{
+	oul=document.getElementById('ul1');
+	ali=oul.getElementsByTagName('li');
+	
+	for(i=0;i<ali.length;i++)
+	{
+		ali[i].onmouseover=function()
+		{
+		    var odiv=this.getElementsByTagName('div')[0];
+			odiv.style.height='auto';
+			var iHeight=odiv.offsetHeight;
+			
+			//alert(iHeight);
+		    startMove(odiv,{opacity: '100',height:iHeight})
+		}
+		
+		ali[i].onmouseout=function()
+		{
+		    var odiv=this.getElementsByTagName('div')[0];
+			odiv.style.height='auto';
+			var iHeight=odiv.offsetHeight;
+			
+			//alert(iHeight);
+		    startMove(odiv,{opacity: '30',height:0})
+		}
+	}
+	
+	
+}
+ 
+</script>
+</head>
+
+<body>
+  <ul id="ul1">
+   <li>
+     首页
+      <div>
+        fefejfejfe</br>
+        fefejfejfe</br>
+        fefejf飞ejfe</br>
+        fefejfejfe</br>
+            fefejfejfe</br>
+        ffejfejfe</br>
+        fefejf飞eejfe</br>
+        fefejfejfe</br>
+            fefejfejfe</br>
+            fefejfejfe</br>
+        fefejfejfe</br>
+        fefejf飞ejfe</br>
+        fefejfejfe</br>
+      </div>
+    </li>
+    
+        <li>
+    石头
+      <div>
+        fefejfejfe</br>
+        fefejfejfe</br>
+        fefejf飞ejfe</br>
+        fefejfejfe</br>
+      </div>
+    </li>
+    
+    
+        <li>
+    产品
+      <div>
+        fefejfejfe</br>
+        fefejfejfe</br>
+        fefejf飞ejfe</br>
+        fefejfejfe</br>
+      </div>
+    </li>
+  </ul>
+
+
+</body>
+</html>

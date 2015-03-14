@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{width:100px;height:100px;position:absolute;background:#F00;left:500px;top:50px;}
+</style>
+<script>
+var timer=null;
+function startMove(iTarget)
+{
+	
+	var oDiv=document.getElementById('div1');
+	
+	clearInterval(timer);
+	timer=setInterval(function(){
+		
+		var iSpeed=0;
+		if(oDiv.offsetLeft<iTarget)
+		{
+			
+			iSpeed=10;
+		}
+		
+		else
+		{
+		    iSpeed=-10;	
+		}
+		
+		if(Math.abs(oDiv.offsetLeft-iTarget)<7)//给他一个距离范围;abs是取绝对值
+		{
+			clearInterval(timer);  //到达终点
+			
+			//oDiv.style.left=iTarget;//如果不是严丝合缝到终点，加上这一句即可
+		     
+		}
+		
+		else
+		{
+	     oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';  //到达之前
+	    }
+	
+	},30)
+	
+}
+
+</script>
+</head>
+
+<body>
+<input type="button"  value="开始运动" onclick="startMove(300)"/>
+<div id="div1"></div>
+<div style="height:100px;width:1px;background:#000;position:absolute;left:300px;">
+</div>
+</body>
+</html>

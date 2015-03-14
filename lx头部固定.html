@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<style>
+body { font:14px/1.5 SimHei, Microsoft YaHei, Arial, sans-serif; color:#555;}
+html,body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, del, input, textarea, select, img, dl, dt, dd, ol, ul, li, dfn, em, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, big, font, small, strong, b, center { margin: 0; padding: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, mark, audio, video { display: block; margin: 0; padding: 0 }
+h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-size: 100% }
+address, cite, dfn, em, var { font-style: normal }
+code, kbd, pre, samp { font-family: courier new, courier, monospace }
+sup { vertical-align: text-top }
+sub { vertical-align: text-bottom }
+fieldset, img { border: 0 }
+li { list-style: none }
+table { border-collapse: collapse; border-spacing: 0 }
+iframe { margin: 0; padding: 0; border: 0; font-size: 100% }
+a { text-decoration: none; color:#407db3; cursor: pointer; outline:none }
+a:visited { color:#407db3 }
+a:hover { color:#407db3; text-decoration:underline }
+
+#header{width:100%;border-top:solid 1px #ccc;border-bottom:solid 1px #ccc;text-align:center;font-size:30px;}
+.nav{text-align:center;width:1000px;margin:0 auto;border:1px solid #F00;}
+.nav_scroll{position:fixed;left:0;top:0;width:100%;}
+</style>
+<script>
+$(function(){
+	var topheight=$('#header').height();
+	$(window).scroll(function(){
+		var nav=$('.nav');
+		if($(window).scrollTop()>topheight)
+		{
+			
+			nav.addClass('nav_scroll');
+			
+		}
+		
+		else
+		{
+			
+			nav.removeClass('nav_scroll');
+		}
+
+		})
+
+	})
+</script>
+
+</head>
+
+<body>
+<div id="header"><h1>我爱北京天安门</h1></div>
+
+<div class="nav">
+<p>二级导航二级导航</p>
+</div>
+<div class="content" style="height:2000px">
+
+  
+  
+  
+</div>
+
+</body>
+</html>

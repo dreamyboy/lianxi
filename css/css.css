@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0;
+padding:0;}
+img{border:0;}
+body {font:12px/normal Verdana, Arial, Helvetica, sans-serif;background:#fff;}
+ul,li {list-style-type:none; text-transform:capitalize;}
+.clear {clear:both; *display:inline;/*IE only*/}
+
+/*menu*/
+#nav {margin:0 auto; width:960px; display:block;}
+
+#nav .jquery_out {float:left;line-height:32px;display:block; border-right:1px solid #fff; text-align:center; color:#fff;font:18px/32px "微软雅黑"; background:#062723 url(../images/slide-panel_03.png) 0 0 repeat-x;}
+#nav .jquery_out .smile {padding-left:1em;}
+#nav .jquery_inner {margin-left:16px;}
+#nav .jquery {margin-right:1px;padding:0 2em;}
+
+
+
+#nav .mainlevel {background:#383838; float:left; border-right:1px solid #fff; width:90px;/*IE6 only*/}
+#nav .mainlevel a {color:#fff; text-decoration:none; line-height:32px; display:block; padding:0 20px; width:100px;}
+#nav .mainlevel a:hover {color:#fff; text-decoration:none; background-color:#625B55;}
+#nav .mainlevel ul {display:none; position:absolute;}
+#nav .mainlevel li {border-top:1px solid #fff; background:#625B55; width:140px;/*IE6 only*/}
+
+
+#header{margin:0 auto;width:960px;background:url(../images/header.jpg) no-repeat;height:90px;}
+#header h1{width:272px;float:left;}
+#header h1 a{width:272px;background:url(../images/logo.jpg) no-repeat;height:90px;display:block;text-indent:-9999em;}
+.headerright{float:right;}
+.followus{padding-top:15px;}
+.followus span{display:block;text-align:right;margin-bottom:5px;}
+#main{margin:0 auto;width:960px;}
+#imgPlay{z-index:-1;}
+.mainbottoml{width:642px;float:left;color:#fff;}
+.mainbottomr{width:316px;float:left;}
+.mainbottomr p{background:#2B2B2B;padding:5px 7px;color:#fff;}
+.mbrt a{display:block; margin:15px 10px;}
+.mbrt ul{padding:10px 0px 0 30px;}
+.mbrt ul li{margin-bottom:5px;}
+.yfzstop li{float:left;width:145px;padding:5px 7px;background:#383838;border-left:1px solid #ffffff;}
+.more{margin-left:50px;font-size:11px;}
+.morer{margin-left:190px;}
+.yfzs li{float:left;border-right:1px dashed #D2CCC1;}
+.yfzs img{width:159px;}
+.zs{width:960px;background:url(../images/zs.jpg) no-repeat;height:8px;margin:0 auto;}
+.footer{margin:0 auto;width:960px;background:url(../images/footer.jpg) no-repeat;height:112px;}
+.footab{float:left;}
+.footer p{width:455px;margin-left:50px;float:left;margin-top:35px;}
+.footerb{margin:5px auto;text-align:center;}

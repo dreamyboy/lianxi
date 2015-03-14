@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <script type="text/javascript">
+     var str="www.baidu.com/?page";
+    // str=str.replace('?page',"");
+    // alert(str);
+
+    str=str.substring(0,str.indexOf("/"));
+    alert(str);
+
+
+  </script>
+
+</head>
+<body>
+  <input type="button" value="查询"  id="btn_code_query" style="width:60px" />
+  <div id="show_choose_row" style="margin-top:20px;display:none">
+    <table>
+      <tr>
+        <td>
+          <input id="Checkbox6" type="checkbox"  value="订单编号"/>
+          订单编号
+        </td>
+        <td>
+          <input id="Checkbox7" type="checkbox"  value="流水线编码"/>
+          流水线编码
+        </td>
+        <td>
+          <input id="Checkbox8" type="checkbox"  value="库位类型"/>
+          库位类型
+        </td>
+        <td>
+          <input id="Checkbox9" type="checkbox"  value="产品名称"/>
+          产品名称
+        </td>
+        <td>
+          <input id="Checkbox10" type="checkbox"  value="单板数目"/>
+          单板数目
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <input id="btn_confirm" type="button" value="确认" />
+        </td>
+        <td>
+          <input id="btn_full_Check" type="button" value="全选" />
+        </td>
+        <td>
+          <input id="btn_cleardate" type="button" value="清空" />
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <table id="date_List" ></table>
+  </div>
+
+</body>
+</html>

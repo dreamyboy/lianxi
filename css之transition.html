@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+.fs{
+    font-size: 15px;
+    transition-property:font-size;
+    transition-duration:0.5s;
+    transition-delay:0;
+    transition-timing-function: linear;
+}
+.fs:hover{font-size:50px}
+
+
+
+
+
+/*animation用法*/
+span{display: block;width:70px;height:70px;background: url('http://i.meilishuo.net/css/images/webwap/pull-icon@2x.png') left -85px no-repeat;}
+
+@-webkit-keyframes 'rotation'{
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(360deg);}
+}
+
+span:hover{
+    -webkit-animation-name:'rotation';
+    -webkit-animation-duration:2s;
+    -webkit-animation-timing-function:ease;
+    -webkit-animation-iteration-count:infinite;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<span></span>
+
+
+<div class="fs">
+    transition用法
+</div>
+
+</body>
+</html>

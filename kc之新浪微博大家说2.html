@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#ul1{width:400px;height:300px;margin:0 auto;border:1px solid #000;margin:0 auto;}
+#ul1 div{border-bottom:1px dashed #999;list-style:none;padding:5px;overflow:hidden;filter:alpha(opacity:0);opacity:0;}
+</style>
+<script src="move3.js">
+</script>
+<script>
+ window.onload=function()
+ {
+	 var otxt=document.getElementById('txt1');
+	 var obtn=document.getElementById('btn');
+	 var oul=document.getElementById('ul1');
+	 
+	 
+	 obtn.onclick=function()
+	 {
+		 var oli=document.createElement('div');
+		 var ali=oul.getElementsByTagName('div');
+		 
+		 oli.innerHTML=otxt.value;
+		 otxt.value='';
+		 
+		 if(ali.length)
+		 {
+		    oul.insertBefore(oli,ali[0]);
+			
+		 }
+		 else
+		 {
+			oul.appendChild(oli); 
+		 }
+		 
+		 var iHeight=oli.offsetHeight;
+		 oli.style.height=0;
+		 
+		 startMove(oli,{height:iHeight},function(){
+			 
+			 startMove(oli,{opacity:100})
+			 });
+		 
+		  
+	 }
+	 
+ }
+
+
+
+</script>
+</head>
+
+<body>
+<textarea rows="10" cols="40" id="txt1"></textarea></br>
+<input type="button" id="btn" value="发布" />
+<div id="ul1">
+
+</div>  
+</body>
+</html>

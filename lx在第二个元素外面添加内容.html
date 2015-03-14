@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+	 
+	$("button").click(function(){
+	$('ul li:nth-child(2)').after('<li>新加的</li>');
+	})
+ })
+</script>
+<style>
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "微软雅黑","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%;}
+a{color:#2d374b;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+input{border:0px;font-family:微软雅黑}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+  <ul>
+     <li>飞飞飞飞</li> 
+     <li>飞飞</li>
+     <li>凤飞飞</li>
+  </ul>
+  <button>在第二个元素外面添加内容</button>
+
+
+</body>
+</html>

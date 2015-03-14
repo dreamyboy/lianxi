@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>无标题文档</title>
+        <script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+        <script>
+                window.onload=function(){
+                        var otxt1=document.getElementById('text1');
+                        var otxt2=document.getElementById('text2');
+                        var obtn1=document.getElementById('btn1');
+                        obtn1.onclick=function(){
+                                $('#btn1').next().remove();
+                                var sum=parseInt(otxt1.value)+parseInt(otxt2.value);
+
+                                if(isNaN(sum)){
+                                   $('#btn1').after("<p>您输入的有误</p>");     
+                                }
+
+                                else{
+                                        alert(sum);
+                                }
+                                
+                        }
+                }
+        </script>
+
+</head>
+<body>
+        <input type="text" id="text1"/>
+        <input type="text" id="text2"/>
+        <input type="button" id="btn1" value="点我求和"/>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<style>
+*{margin:0;padding:0;}
+body{background:#FC0;}
+#interaction-record{margin:0 auto}
+</style>
+<script>
+function abb(url){
+	$("body").append("<div id='interaction-record'><iframe style='width:800px;height:600px;' src='"+url+"'></iframe></div>");
+	$('#interaction-record').show();
+
+	}
+</script>
+<script>
+$(function(){
+
+		$('input').eq(0).click(function(){
+      $('#interaction-record').remove();
+			abb('http://alice-zhang.iteye.com/blog/370759')
+
+			})
+			
+		$('input').eq(1).click(function(){
+		$('#interaction-record').remove();
+		abb('http://wenku.baidu.com/view/c79106245901020207409c5d.html')
+
+			})
+		$('input').eq(2).click(function(){
+		$('#interaction-record').remove();
+		abb('http://wang153723482.blog.163.com/blog/static/118649845201171215355884/')
+			
+		
+			})
+
+
+	})
+</script>
+</head>
+
+<body>
+<input type="button" id="a1" value="点我1111"/>
+<input type="button" id="a2" value="点我2222"/>
+<input type="button" id="a3" value="点我3333"/>
+</body>
+</html>

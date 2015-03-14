@@ -1,0 +1,6 @@
+.to_top {
+width: 120px; height: 34px; background:url('images/ToTop.png') !important; background:none; filter:none!important; 
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (src='images/ToTop.png',sizingMethod='image'); 
+cursor: pointer;
+ z-index:9000; 
+ display:none;}

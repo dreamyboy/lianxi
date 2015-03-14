@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{ margin:0; padding:0;font:normal 12px/17px Arial; }
+.msg {width:300px; margin:100px; }
+.msg_caption { width:100%; overflow:hidden; margin-bottom:1px;}
+.msg_caption span { display:block; float:left; margin:0 2px; padding:4px 10px; background:#898989; cursor:pointer;color:white; }
+.msg textarea{ width:300px; height:80px;height:100px;border:1px solid #000;}
+
+
+</style>
+<script type="text/javascript" src="jquery-1.6.1.min.js"></script>
+
+<script>
+// var name = 'window下的name<br/>';
+// var resultCon;
+// function fn1() {
+//     resultCon.innerHTML += this.name;
+// }
+
+// function MyObj() {
+//     var name = 'MyObj下的name<br/>';
+//     this.doFunction = function() {
+//         resultCon.innerHTML += this.name;
+//     };
+// }
+
+
+// window.onload = function() {
+//     resultCon = document.getElementById('result');
+//     var name = "onload下的name<br/>";
+//     var fn2 = function() {
+//         resultCon.innerHTML += this.name;
+//     };
+//     var myThis = {
+//         name: "自定义的this的name属性<br/>"
+//     };
+//     fn1.call(myThis);//自定义的this的name属性
+//     fn2.call(myThis);//自定义的this的name属性
+//     var obj = new MyObj();
+//     obj.doFunction.call(myThis);//自定义的this的name属性
+// };
+
+
+// var ary = [1,2,3,4];
+// ary.splice(0,1,3,8,7);
+// console.log(ary);
+
+
+$(function(){
+	var hc=$('#comment');	
+	$('.bigger').click(function(){
+		if(hc.height()<500){
+			hc.height(hc.height()+50);
+		}	
+	})
+	$('.smaller').click(function(){
+		if(hc.height()>50){
+			hc.height(hc.height()-50);
+		}		
+	})
+})
+
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+<div id="result">代码输出结果：<br/></div>
+
+
+<form action="" method="post">
+<div class="msg">
+	<div class="msg_caption">
+		<span class="bigger">放大</span>
+		<span class="smaller">缩小</span>
+	</div>
+	<div>
+		<textarea id="comment" rows="8" cols="20">多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.多行文本框高度变化.</textarea>
+	</div>
+</div>
+</form>
+
+
+</body>
+</html>
+
+
+

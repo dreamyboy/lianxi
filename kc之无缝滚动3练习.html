@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0}
+#div1{border:1px solid #999;position:relative;width:530px;height:145px;margin:20px auto;overflow:hidden;}
+#div1 ul{position:absolute;left:0;padding:10px;}
+#div1 ul li{list-style:none;float:left;width:150px;height:122px;}
+#div1 ul li img{width:150px;}
+</style>
+<script>
+
+
+ $(function(){
+     $('#div1 ul').innerHTML+= $('#div1 ul').innerHTML;
+     $('#div1 ul').style.width=$('#div1 li').length*('#div1 li:eq(0)').offsetWidth+'px';
+
+
+     function fnMove(){
+        if ($('#div1 ul').left()<-$('#div1 ul').width()/2){
+
+        }
+
+
+     }
+
+
+ })
+window.onload=function()
+{
+	var odiv=document.getElementById('div1');
+	var oul=odiv.getElementsByTagName('ul')[0];
+	var ali=oul.getElementsByTagName('li');
+	var obtz=document.getElementById('zuo');
+	var obty=document.getElementById('you');
+	var timer=null;
+	var iSpeed=-5;
+	oul.innerHTML+=oul.innerHTML;
+	oul.style.width=ali.length*ali[0].offsetWidth+'px';
+	
+	function fnMove(){
+
+	  if(oul.offsetLeft<-oul.offsetWidth/2) 
+	  {
+		  
+		 oul.style.left=0;//往左运动时
+	  }
+	  
+	  else if(oul.offsetLeft>=0)//往右运动时
+      {
+		  
+		 oul.style.left=-oul.offsetWidth/2+'px';
+		  
+	  }	//在这出了问题..写成if了...应该是else if
+	  
+	  oul.style.left=oul.offsetLeft+iSpeed+'px';   
+	 
+    }
+	
+	
+	timer=setInterval(fnMove,30);
+	
+	
+	 obtz.onclick=function()
+	  {
+		  iSpeed=-5;
+		   
+	  }
+	  
+	 obty.onclick=function()
+	  {
+		  iSpeed=5;
+		   
+	  }
+	  
+	  
+	 odiv.onmouseover=function()
+	 {
+		clearInterval(timer); 
+		 
+	 }
+	
+	 odiv.onmouseout=function()
+	 {
+		timer=setInterval(fnMove,30)
+		 
+	 }
+	
+}
+</script>
+</head>
+
+<body>
+<a id="zuo" href="javascript:;">←</a>
+<a id="you" href="javascript:;">→</a>
+<div id="div1">
+  <ul>
+    <li><img src="images/1.jpg" /></li>
+    <li><img src="images/2.jpg" /></li>
+    <li><img src="images/3.jpg" /></li>
+    <li><img src="images/4.jpg" /></li>
+  </ul>
+  
+</div>
+</body>
+</html>

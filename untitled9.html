@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+/*!
+ * CSS - Module & Basic Layouts
+ * Version - 1.0.0
+ * Modify By Wang Ping
+ * Blog: http://www.frontexplore.com
+ * Date: 02-11-2012 23:45:48 (GMT Time)
+ */
+body { font:12px/1.5 SimHei, Microsoft YaHei, Arial, sans-serif; color:#555}
+html,body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, del, input, textarea, select, img, dl, dt, dd, ol, ul, li, dfn, em, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, big, font, small, strong, b, center { margin: 0; padding: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, mark, audio, video { display: block; margin: 0; padding: 0 }
+h1, h2, h3, h4, h5, h6, button, input, select, textarea { font-size: 100% }
+address, cite, dfn, em, var { font-style: normal }
+code, kbd, pre, samp { font-family: courier new, courier, monospace }
+sup { vertical-align: text-top }
+sub { vertical-align: text-bottom }
+fieldset, img { border: 0 }
+li { list-style: none }
+table { border-collapse: collapse; border-spacing: 0 }
+iframe { margin: 0; padding: 0; border: 0; font-size: 100% }
+a { text-decoration: none; color:#407db3; cursor: pointer; outline:none }
+a:visited { color:#407db3 }
+a:hover { color:#407db3; text-decoration:underline }
+.tac { text-align: center }
+.tar { text-align: right }
+.none { display: none }
+.visible { display: block }
+.fl { float: left; display: inline }
+.fr { float: right }
+/* fix global */
+.clearfix:after,.yd-wrap:after{ visibility: hidden; display: block; font-size: 0; content: "."; clear: both; height: 0; overflow: hidden }
+.clearfix,.yd-wrap{ *zoom:1}
+.yd-icon{ width:16px; height:16px; display:inline-block; text-indent:-9999em; overflow:hidden; font-size:0; line-height:normal; background:url(../img/yd_icons.png) no-repeat} 
+/*layout*/
+.wrap{ width:960px; margin:50px auto; height:500px}
+.yd-head{ min-width:700px; clear:both; height:85px; position:relative; z-index:99; border-bottom:5px solid #f2f2f2}
+.yd-wrap{min-width:700px; padding-left:5px; overflow:hidden}
+.yd-side{ width:138px; min-height:500px; float:left; display:inline; margin-bottom:-10000px; padding-bottom:10000px; background:#f8f8f8; border-left:1px solid #d9d9d9; border-right:1px solid #d9d9d9}
+.yd-main{ min-height:500px; margin:0 0 -10000px 145px; padding-bottom:10000px; border-left:1px solid #d9d9d9; position:relative}
+.yd-foot{ min-width:700px; clear:both; height:30px; line-height:30px; background:#d7d7d7; text-align:center}
+.yd-state-open,.yd-state-hide{ width:5px; height:60px; font-size:0; overflow:hidden; line-height:0; position:fixed; left:145px; top:50%; margin-top:-30px; border-top:1px solid #d9d9d9; border-bottom:1px solid #d9d9d9; background:#f8f8f8; cursor:pointer; display:none}
+.yd-state-open .yd-icon,.yd-state-hide .yd-icon{ background-position:-159px -5px; width:4px; height:7px; position:absolute; left:50%; top:50%; margin:-4px 0 0 -3px}
+.yd-state-hide{ left:0}
+.yd-state-hide .yd-icon{ background-position:-143px -5px}
+/*header*/
+.yd-logo{ position:absolute; right:20px; top:22px}
+.ltd-logo{ height:40px; position:absolute; left:20px; top:22px}
+.ltd-logo h3{ float:left; display:inline; margin-right:20px}
+.ltd-logo h3 img{ display:block}
+.ltd-logo h2{ float:left; display:inline; border-left:1px solid #ccc; height:40px; line-height:40px; font-weight:normal; padding-left:10px; font-size:20px}
+
+.yd-bar{ height:30px; line-height:30px; position:relative; min-width:700px}
+.yd-bar .arr{ position:absolute; left:10px; top:0; font-size:14px}
+.yd-bar .ydc{ position:absolute; right:10px; top:0}
+/*footer*/
+.yd-foot a,.yd-foot a:visited{ color:#555}
+
+/* title */
+.yd-title{ color:#fff; background:#407db4; font-family:Microsoft YaHei; height:35px; position:relative}
+.yd-title a,.yd-title a:visited{ color:#fff}
+.yd-title h2{font-size:16px; height:35px; line-height:35px; font-weight:normal; padding-left:10px; float:left}
+.yd-title .back{ font-size:12px; line-height:normal; position:absolute; right:5px; top:15px}
+
+.works-title{ color:#7dc3c5; position:relative; border-bottom:1px solid #7dc3c5; margin:0 10px; height:30px}
+.works-title h2{ font-size:14px; position:absolute; left:0; bottom:0}
+.works-title .w-eml{ position:absolute; right:0; bottom:0px; color:#7dc3c5; padding-left:10px; float:right; height:16px; line-height:normal}
+.works-title .w-eml .yd-icon{ background-position:-72px -4px; position:absolute; left:0; top:3px; width:8px; height:8px}
+.works-title .w-eml:visited{ color:#7dc3c5}
+.works-title .w-plus{ font-size:14px; position:absolute; right:0; top:-15px; color:#555}
+
+.crumbs{ color:#7ec4c6; height:30px; line-height:30px; padding:0 10px}
+.crumbs a,.crumbs a:visited{ color:#7ec4c6}
+/* menu */
+.yd-menu{ padding:10px}
+.yd-menu li{ font-size:14px; height:30px; line-height:30px; position:relative; padding-left:18px}
+.yd-menu li.current{ font-weight:bold}
+.yd-menu .yd-icon{ position:absolute; left:0px; top:5px}
+.yd-menu .icon_01{ background-position:0 -17px}
+.yd-menu .icon_02{ background-position:-17px -17px}
+.yd-menu .icon_03{ background-position:-34px -17px}
+
+/* imtes */
+.arry-items{ border-bottom:1px solid #d9d9d9; padding:10px 0; margin-bottom:30px}
+.arry-items .item{ padding:5px 25px; line-height:22px}
+.arry-items .item dt{ float:left; display:inline; width:90px; text-align:right}
+.arry-items .item dd{ margin-left:90px}
+.arry-items dl.logo dt{ height:40px; line-height:40px}
+.arry-items .show-more{ height:24px; position:relative}
+.arry-items .show-more a{ float:right; position:absolute; right:0; bottom:0; font-size:14px; padding-left:8px}
+.arry-items .show-more .yd-icon{ background-position:-22px -5px; width:5px; height:6px; position:absolute; left:0; top:8px}
+.arry-fw{ margin:0 10px}
+.arry-fw dt{ font-weight:bold}
+
+/* Records */
+.records-modify{ width:110px; border:1px solid #7dc3c5; background:#fff; position:absolute; right:10px; top:45px; z-index:9}
+.records-modify .button{ background:#7dc3c5; width:110px; height:38px; font-size:14px; color:#fff; text-align:center; line-height:38px; font-weight:bold; float:right; position:absolute; right:0; top:0; cursor:pointer}
+.records-modify .yd-icon{ width:11px; height:11px; border:1px solid #7dc3c5; background-position:-241px -3px; position:absolute; left:10px; top:10px; cursor:pointer}
+.records-modify h2{ color:#7dc3c5; font-size:14px; height:24px}
+.records-modify .list{ position:relative; padding:40px 10px 5px; overflow:hidden; zoom:1; display:none}
+.records-modify .list li{ height:25px; line-height:25px; overflow:hidden; position:relative}
+.records-modify .list li .time{ position:absolute; right:0; top:0}
+.records-modify a,.records-modify a:visited{ color:#555}
+.records-show{ width:260px}
+.records-show .button{ cursor:default}
+
+
+
+
+
+
+
+
+
+/* for ie6 */
+*html,*html body{background-image:url(about:blank); background-attachment:fixed}
+*html .min-widht,*html .yd-wrap,*html .yd-head,*html .yd-foot,*html .yd-bar{ width:expression((document.documentElement.clientWidth || document.body.clientWidth) < 700 ? "700px":"auto")} 
+*html .yd-side,*html .yd-main{ height:expression((documentElement.clientHeight < 500) ? "500px":"500" )}
+*html .yd-state-open,*html .yd-state-hide{width:8px; position:absolute; bottom:auto; top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||300)))}
+</style>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+	 var rm=$('.records-modify');
+     rm.find('.button').bind('click',function(){
+         rm.addClass('records-show');
+		 rm.find('.list').show();
+		 });
+                         // click(function(){
+                        //rm.addClass('records-show');
+                       //rm.find('.list').show();})
+	 rm.find('.yd-icon').bind('click',function(){	
+	    
+		rm.removeClass('records-show'); 
+		rm.find('.list').hide(); 
+	 })
+	 
+	 
+					   
+	 })
+</script>
+
+<style>
+
+</style>
+</head>
+
+<body>
+<div class="yd-head">
+  <div class="ltd-logo">
+    <h3><a href="index.php"><img src="../img/test/logo_ibm.png" width="87" height="40" alt="IBM中国营销管理平台"></a></h3>
+    <h2>中国营销管理平台</h2>
+  </div>
+  <div class="yd-logo"><a href="index.php"><img src="../img/logo.png" width="170" height="43" alt="营道企业营销管理平台"></a></div>
+</div>
+<div class="yd-bar">
+  <div class="arr"> 当前工作组：硬件部 </div>
+  <div class="ydc">您好，张三！<a href="#">设置</a> <a href="#">退出</a></div>
+</div>
+<div class="yd-wrap"> 
+  <!--side-->
+  <div class="yd-side">
+    <div class="yd-title">
+  <h2>设置</h2>
+  <a class="back">&lt;返回首页</a></div>
+<div class="yd-menu">
+  <ul class="items">
+    <li class="current"><span class="yd-icon icon_01"></span><a href="index_ltd.php">公司首页</a></li>
+    <li><span class="yd-icon icon_02"></span><a href="#">个人账户设置</a></li>
+    <li><span class="yd-icon icon_03"></span><a href="#">工作组设置</a></li>
+  </ul>
+</div>
+  </div>
+  <!--/side--> 
+  <!--main-->
+  <div class="yd-main">
+    <div class="yd-title">
+      <h2>公司首页</h2>
+    </div>
+    <div class="crumbs">当前位置：<a href="#">设置</a> &gt; <a href="#"><strong>公司首页</strong></a></div>
+    <div class="arry-items">
+      <dl class="item logo">
+        <dt>公司LOGO：</dt>
+        <dd><img src="../img/test/logo_ibm.png" width="87" height="40" alt="IBM中国营销管理平台"></dd>
+      </dl>
+      <dl class="item">
+        <dt>公司全称：</dt>
+        <dd>博众互动(北京)网络科技有限公司</dd>
+      </dl>
+      <dl class="item">
+        <dt>公司建成：</dt>
+        <dd>博众互动</dd>
+      </dl>
+      <dl class="item">
+        <dt>公司简介：</dt>
+        <dd>
+          <div class="sim">博众互动(北京)网络科技有限公司,公司拥有完善的国际高水准管理体系，本着"为投资人创造价值，为职员创造机会"的经营理念，努力实现投资人资产的保值增值，追求公司与投资人的双赢，并为职员提供长期专业的技术培训、广阔的发展空间、优厚的福利待遇和完善的晋升机会。公司坚持合规、守法经营，构建稳健的业务组合，促使公司长期健康、稳定持续地发展。 公司集合了众多在证券、基金、期货、黄金等行业有多年从业经验并在金融研究、投资实践、投资管理，培训教育方面有广泛影响力的资深理财专家、行业专家团队。 为加快全国性布局、积极发展大中华区（国内）庞大而优质的市场，我们邀请有才华、有见识的人士共同加盟。</div>
+          <div class="show-more"><a href="#"><span class="yd-icon"></span>展开所有公司信息</a></div>
+        </dd>
+      </dl>
+    </div>
+    <!--works-->
+    <div class="works-title">
+      <h2>现有工作组</h2>
+      <a href="#" class="w-eml"><span class="yd-icon"></span>创建工作组</a> <span class="w-plus">加入工作组请联系管理员发邮件邀请</span></div>
+    <div class="arry-items arry-fw">
+      <dl class="item">
+        <dt>工作组名称：</dt>
+        <dd>工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组级别：</dt>
+        <dd>普通工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组描述：</dt>
+        <dd>博众互动(北京)网络科技有限公司,公司拥有完善的国际高水准管理体系，本着"为投资人创造价值，为职员创造机会"的经营理念，努力实现投资人资产的保值增值，追求公司与投资人的双赢，并为职员提供长期专业的技术培训、广阔的发展空间、优厚的福利待遇和完善的晋升机会。公司坚持合规、守法经营，构建稳健的业务组合，促使公司长期健康、稳定持续地发展</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组成员：</dt>
+        <dd>张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)</dd>
+      </dl>
+    </div>
+    <div class="arry-items arry-fw">
+      <dl class="item">
+        <dt>工作组名称：</dt>
+        <dd>工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组级别：</dt>
+        <dd>普通工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组描述：</dt>
+        <dd>博众互动(北京)网络科技有限公司,公司拥有完善的国际高水准管理体系，本着"为投资人创造价值，为职员创造机会"的经营理念，努力实现投资人资产的保值增值，追求公司与投资人的双赢，并为职员提供长期专业的技术培训、广阔的发展空间、优厚的福利待遇和完善的晋升机会。公司坚持合规、守法经营，构建稳健的业务组合，促使公司长期健康、稳定持续地发展</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组成员：</dt>
+        <dd>张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)</dd>
+      </dl>
+    </div>
+    <div class="arry-items arry-fw">
+      <dl class="item">
+        <dt>工作组名称：</dt>
+        <dd>工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组级别：</dt>
+        <dd>普通工作组</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组描述：</dt>
+        <dd>博众互动(北京)网络科技有限公司,公司集合了众多在证券、基金、期货、黄金等行业有多年从业经验并在金融研究、投资实践、投资管理，培训教育方面有广泛影响力的资深理财专家、行业专家团队。 为加快全国性布局、积极发展大中华区（国内）庞大而优质的市场，我们邀请有才华、有见识的人士共同加盟。</dd>
+      </dl>
+      <dl class="item">
+        <dt>工作组成员：</dt>
+        <dd>张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)，张三(管理员)</dd>
+      </dl>
+    </div>
+    <!--/works--> 
+    <!--records-->
+    <div class="records-modify"> <span class="button">修改公司信息</span>
+      <div class="list"> <span class="yd-icon">Colse</span>
+        <h2>历史修改记录：</h2>
+        <ul>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+          <li><a href="#">张三修改了公司简介</a><span class="time">[2012.11.19]</span></li>
+        </ul>
+      </div>
+    </div>
+    <!--/records--> 
+  </div>
+  <!--/main--> 
+</div>
+<div class="yd-foot">
+  <a href="#">隐私策略</a> | <a href="#">服务条款</a> &copy;博众互动(北京)网络科技有限公司 版权所有
+</div>
+<script type="text/javascript" src="../js/global-min.js"></script>
+</body>
+</html>

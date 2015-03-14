@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+<!--http://blog.csdn.net/on_my_way20xx/article/details/7791769
+jQuery.each( collection, callback(indexInArray, valueOfElement) )
+
+collection   遍历的对象或数组
+
+callback(indexInArray, valueOfElement) 在每一个对象上调用的函数
+
+-->
+<script>
+
+$.each([52, 97], function(index, value) {
+alert(index + ': ' + value);
+});
+
+</script>
+</body>
+</html>

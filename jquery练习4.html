@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>超链接提示效果</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+</script>
+<style>
+#tooltip{
+    background-color: green;
+    border: 1px solid #ccc;
+    color:#fff;
+    font-size:12px;
+    position: absolute;
+    padding:2px;
+}
+</style>
+<script>
+ 	$(function(){
+
+ 		$('a.tooltip').mouseover(function(e){
+ 			this.myTitle = this.title;//将title里的内容赋值给自己定义的myTitle变量里
+ 			this.title='';
+ 			var tooltip='<div id="tooltip">'+this.myTitle+'</div>';
+ 			$('body').append(tooltip);
+ 			$('#tooltip').css({
+ 				top:e.pageY+'px',
+ 				left:e.pageX+'px'
+ 			}).show('fast');
+ 			
+ 		})
+ 		.mouseout(
+ 			function(){
+ 				this.title = this.myTitle;
+ 				$('#tooltip').remove();
+ 			}
+ 		)
+        .mousemove(function(e){   //鼠标跟随
+            $("#tooltip").css({
+ 				top:(e.pageY+10)+'px',
+ 				left:(e.pageX+10)+'px'
+            })
+        });
+ 	})  
+</script>
+</head>
+
+<body>
+<p><a href="#" class="tooltip" title="这是我的超链接提示1.">我的文字提示1.</a></p>
+<p><a href="#" class="tooltip" title="这是我的超链接提示2.">我的文字提示2.</a></p>
+<p><a href="#" title="这是自带提示1.">自带提示1.</a></p>
+<p><a href="#" title="这是自带提示2.">自带提示2.</a></p>
+
+</body>
+</html>

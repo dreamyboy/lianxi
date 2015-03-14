@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+    <!--参考文章：http://blog.sina.com.cn/s/blog_780a942701014xl8.html-->
+<style>
+
+.heart{ position:relative; width:100px; height:80px; background:blue;}
+.heart:before{ position:absolute; content:""; left:50px;top:0;width:50px;height:80px; background:red;border-radius: 50px 50px 0 0;}
+
+
+.heart:before{ position:absolute; content:""; left:50px;top:0;width:50px;height:80px; background:red;border-radius: 50px 50px 0 0; -webkit-transform: rotate(-45deg); -webkit-transform-origin:center top;}
+.heart:after{ position:absolute; content:""; left:0px;top:0;width:50px;height:80px; background:yellow;border-radius: 50px 50px 0 0; -webkit-transform: rotate(45deg); -webkit-transform-origin: 100% 100%;}
+</style>
+
+</head>
+
+<body>
+
+<div class="heart"></div>
+
+</body>
+</html>

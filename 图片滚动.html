@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8/jquery.js"></script>
+<style type="text/css">
+    #ico {
+        top:0px;
+        margin:0px;
+        padding:0px;
+        list-style:none;
+    }
+</style>
+</head>
+<body>
+
+    <div id="up" style="background:#CCC;width:200px;cursor:pointer;">up</div>
+    <div id="content" style="height: 182px;overflow: hidden;cursor:pointer;">
+    <ul id="ico" style="position:relative;">
+        <li><img src="http://hiphotos.baidu.com/sghrwh/pic/item/5ef1f10b3feed4bdab6457a3.jpg" style="height:80px;width:80px;"/></li>
+        <li><img src="http://hiphotos.baidu.com/sghrwh/pic/item/5ef1f10b3feed4bdab6457a3.jpg" style="height:80px;width:80px;"/></li>
+        <li><img src="http://hiphotos.baidu.com/sghrwh/pic/item/5ef1f10b3feed4bdab6457a3.jpg" style="height:80px;width:80px;"/></li>
+        <li><img src="http://hiphotos.baidu.com/sghrwh/pic/item/5ef1f10b3feed4bdab6457a3.jpg" style="height:80px;width:80px;"/></li>
+        <li><img src="http://hiphotos.baidu.com/sghrwh/pic/item/5ef1f10b3feed4bdab6457a3.jpg" style="height:80px;width:80px;"/></li>
+    </ul>
+    </div>
+    <div id="down" style="background:#666;width:200px;cursor:pointer;">down</div>
+    <div id="test"></div>
+    <script type="text/javascript">
+    <!--
+        var scroll = {};                        //  滚动类
+        scroll.top = 0;                            //  初始化 top 距离
+        scroll.h = $('#ico').height();        //  图片容器的实际高度
+        scroll.current_h = scroll.h - 182;    //    图片容器中可用高度
+        $('#test').append(scroll.h + '<br /><br /><br />');
+
+        $(function(){
+            $('#up').click(function(){
+                if (scroll.current_h > 0)
+                {
+                    scroll.top += - 80;
+                    $('#ico').animate({
+                        top:scroll.top
+                    },300);
+                    scroll.current_h += - 80;
+                }
+            });
+
+            $('#down').click(function(){
+                if (scroll.current_h < scroll.h-182)
+                {
+                    scroll.top += 80;
+                    $('#ico').animate({
+                        top:scroll.top
+                    },300);
+
+                    scroll.current_h += 80;
+                }
+            });
+        });
+
+
+    //-->
+    </script>
+
+</body>
+</html>
+

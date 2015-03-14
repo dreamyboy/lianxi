@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>console控制台命令使用</title>
+    <script>
+        function add(a,b){
+            console.trace();
+            return a+b;
+        }
+        var x = add3(1,1);
+
+        function add3(a,b){return add2(a,b);}
+
+        function add2(a,b){return add1(a,b);}
+
+        function add1(a,b){return add(a,b);}
+
+
+    </script>
+</head>
+
+<body>
+<div class="wrap"></div>
+<div class="wrap"></div>
+<div class="wrap"></div>
+
+<ul id="jlnav">
+    <li><a href="?type=p0&t=1">首页</a></li>
+    <li><a href="?type=p1">冰雪度测试</a></li>
+    <li><a href="?type=p2">投票参与区</a></li>
+</ul>
+
+</body>
+</html>

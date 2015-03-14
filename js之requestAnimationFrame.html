@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.1.min.js"></script>
+</head>
+<body>
+<div id="test" style="width:1px;height:17px;background: #0f0">0%</div>
+<input id="run" type="button" value="run"/>
+
+
+
+<div class="wrap">
+    <p class="pele">1</p>
+    <p class="pele">2</p>
+    <p class="pele">3</p>
+    <p class="pele">4</p>
+</div>
+<script>
+    $(function(){
+       var res=$('.wrap').find('p');
+       var ptext=[];
+       res.each(function(index,aaa){
+           ptext.push($(aaa).text())
+       })
+       alert(ptext);
+       return ptext;
+    })
+</script>
+
+
+
+
+
+
+<script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    var ele=document.getElementById('test');
+    var run=document.getElementById('run');
+    var progress=0;
+
+    function step(){
+        progress+=1;
+        ele.style.width=progress+'%';
+        ele.innerHTML=progress+'%';
+        if(progress<100){
+            requestAnimationFrame(step);
+        }
+
+    }
+
+    step(); //这样写也可以--->  requestAnimationFrame(step)
+
+
+    run.addEventListener('click',function(){
+        progress=0;
+        ele.style.width=1+'px';
+        step();
+    },false)
+
+</script>
+
+
+</body>
+</html>

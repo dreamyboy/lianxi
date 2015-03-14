@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+
+</head>
+<!--如何用非正则的方式找出一个字符串中出现的数字序列。-->
+<!--比如：var str = 'asdfasdf213sdd123aaa123aad123fdssaa'; -> arr = [213, 123, 123, 123]-->
+
+
+<script type="text/javascript">
+    function find_number(str){
+        var str=String(str+'n');  //避免最后一个是数字，cache没有加入到result中，n可以是任何其他别的字母
+        var c,i= 0,len=str.length,result=[],cache='';
+        while(i<len){
+            c=str.charAt(i);
+            if(c*1>=0){
+                cache+=c;
+            }
+            else if(cache.length){
+                result.push(cache);
+                cache='';
+            }
+            i++;
+        }
+
+        return result;
+    }
+
+    console.log(find_number('aa2222ff33542kkk3424'));
+
+
+
+</script>
+
+<body>
+</body>
+
+</html>

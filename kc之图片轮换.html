@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="move.js"></script>
+<script>
+function getByClass(oParent, sClass)
+{
+   	var aEle=document.getElementsByTagName('*');
+	var i=0;
+	var aResult=[];
+	
+	for(i=0;i<aEle.length;i++)
+	{
+		if(aEle[i].className==sClass)
+		{
+			aResult.push(aEle[i]);
+		}
+		
+	}
+    return aResult;
+}
+
+window.onload=function()
+{
+     var odiv=document.getElementById('playimages');
+	 var oprev=getByClass(odiv,'prev')[0];
+	 var onext=getByClass(odiv,'next')[0];
+	 var omarkleft=getByClass(odiv,'mark_left')[0];
+	 var omarkright=getByClass(odiv,'mark_right')[0];
+	 var osmallul=getByClass(odiv,'small_pic')[0].getElementsByTagName('ul')[0];
+	 var asmallli=osmallul.getElementsByTagName('li');
+	 var obigul=getByClass(odiv,'big_pic')[0];
+	 var abigli=obigul.getElementsByTagName('li');
+	 
+	 var iNow=0;
+	 var iMinZindex=2;
+	 
+	 osmallul.style.width=asmallli.length*asmallli[0].offsetWidth+'px';
+	 
+	 //上面的左右按钮
+	 oprev.onmouseover=omarkleft.onmouseover=function()
+	 {
+		 startMove(oprev,'opacity',100);
+	 }
+	 
+	 oprev.onmouseout=omarkleft.onmouseout=function()
+	 {
+		 startMove(oprev,'opacity',0);
+	 }
+	 
+	 onext.onmouseover=omarkright.onmouseover=function()
+	 {
+		 startMove(onext,'opacity',100);
+	 }
+	 
+	 onext.onmouseout=omarkright.onmouseout=function()
+	 {
+		 startMove(onext,'opacity',0);
+	 }
+	
+	//小图点击，大图显示
+	for(i=0;i<asmallli.length;i++)
+	{
+	   asmallli[i].index=i;
+	   asmallli[i].onmouseover=function()
+	   {     
+		   startMove(this,'opacity',100);  
+	   }
+	   
+	   asmallli[i].onmouseout=function()
+	   {     
+		   if(this.index!=iNow)
+		   {
+		      startMove(this,'opacity',60);
+		   }
+	   }
+	   
+	   
+	   asmallli[i].onclick=function()
+	   {
+		   
+		   if(this.index==iNow) return;
+		   iNow=this.index;
+		   
+		   
+		for(i=0;i<asmallli.length;i++)
+		{
+		   startMove(asmallli[i],'opacity',60);
+		}
+		   
+		startMove(this,'opacity',100);
+		   
+	    abigli[this.index].style.zIndex=iMinZindex++;
+		abigli[this.index].style.height=0;
+		startMove(abigli[this.index], 'height' ,obigul.offsetHeight);
+		   
+		if(iNow==0)
+		{
+			startMove(osmallul,'left',0)
+		}
+		else if(iNow==asmallli.length-1)
+		{
+		   	startMove(osmallul,'left',-(iNow-2)*asmallli[0].offsetWidth);//这有点疑问，为啥是iNow-2
+		}
+		else
+		{
+		startMove(osmallul,'left',-(iNow-1)*asmallli[0].offsetWidth);
+		}
+		 
+		
+	   }	
+		
+		
+	}
+	
+	
+	
+	
+	
+}
+
+
+</script>
+<style>
+body { background: #666; } 
+ul { padding: 0; margin: 0; } 
+li { list-style: none; } 
+img { border: 0; }
+
+.play { width: 400px; height: 430px; margin: 50px auto 0; background: #999; font: 12px Arial; }
+
+.big_pic { width: 400px; height: 320px; overflow: hidden; border-bottom: 1px solid #ccc; background: #222; position: relative; }
+.big_pic li { width: 400px; height: 320px; overflow: hidden; position: absolute; top: 0; left: 0; z-index: 0; background: url(images/loading.gif) no-repeat center center; }
+
+.mark_left { width: 200px; height: 320px; position: absolute; left: 0; top: 0; background: red; filter: alpha(opacity:0); opacity: 0; z-index:3000; }
+.mark_right { width: 200px; height: 320px; position: absolute; left: 200px; top: 0; background: green; filter: alpha(opacity:0); opacity: 0; z-index:3000; }
+.big_pic .prev { width: 60px; height: 60px; background: url(images/btn.gif) no-repeat; position: absolute; top: 130px; left: 10px; z-index: 3001; cursor: pointer; filter:alpha(opacity: 0); opacity:0; }
+.big_pic .next { width: 60px; height: 60px; background: url(images/btn.gif) no-repeat 0 -60px; position: absolute; top: 130px; right: 10px; z-index: 3001;cursor: pointer; filter:alpha(opacity: 0); opacity:0; }
+
+.big_pic .text { position: absolute; left: 10px; top: 302px; z-index: 3000; color: #ccc; }
+.big_pic .length { position: absolute; right: 10px; bottom: 4px; z-index: 3000; color: #ccc; }
+.big_pic .bg { width: 400px; height: 25px; background: #000; filter: alpha(opacity=60); opacity: 0.6; position: absolute; z-index: 2999; bottom: 0; left: 0; }
+.small_pic { width: 380px; height: 94px; position: relative; top: 7px; left: 10px;  overflow:hidden;}
+.small_pic ul { height: 94px; position: absolute; top: 0; left: 0; }
+.small_pic li { width: 120px; height: 94px; float: left; padding-right: 10px; background: url(images/loading.gif) no-repeat center center; cursor: pointer; filter: alpha(opacity=60); opacity: 0.6; }
+.small_pic img { width: 120px; height: 94px; }
+</style>
+</head>
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic">
+		<div class="prev"></div>
+		<div class="next"></div>
+
+		<div class="text">加载图片说明……</div>
+		<div class="length">计算图片数量……</div>
+		
+		<a class="mark_left" href="javascript:;"></a>
+		<a class="mark_right" href="javascript:;"></a>
+		<div class="bg"></div>
+		
+        <li style="z-index:1;"><img src="images/1.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        <li><img src="images/6.jpg" /></li>
+    </ul>
+    <div class="small_pic">
+        <ul>
+            <li style="filter: 100; opacity: 1;"><img src="images/1.jpg" /></li>
+            <li><img src="images/2.jpg" /></li>
+            <li><img src="images/3.jpg" /></li>
+            <li><img src="images/4.jpg" /></li>
+            <li><img src="images/5.jpg" /></li>
+            <li><img src="images/6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

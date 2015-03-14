@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+ #back{width:200px;height:50PX;background:#45567;position:fixed;
+ bottom:100px;
+left:80px;cursor:pointer;}
+/*IE6不支持position:fixed;*/
+</style>
+
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+ </script>
+ <script type="text/javascript">
+ $(document).ready(function(){
+   
+   $("#back").hide();
+   
+   $(function(){
+   
+   $(window).scroll(function(){
+      
+	  if($(window).scrollTop()>100)
+	  {
+	     $("#back").fadeIn(1550);
+	  }
+      
+	  else
+	  {
+	     $("#back").fadeOut(1330);
+	  }
+   })
+   
+   $("#back").click(function(){
+      
+   $('body,html').animate({scrollTop:0},1000);
+   
+   return false;
+   })
+
+   }) 
+ })
+ 
+ </script>
+
+</head>
+
+<body style="height:2000px;">
+<div id="back">返回顶部</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片展示</title>
+<script>
+	function showpic(whichpic){
+		var source=whichpic.getAttribute('href');
+		var zhanwei=document.getElementById('zhanwei');
+		zhanwei.setAttribute('src',source);
+	}
+	
+	window.onload=function(){
+		var oa=document.getElementsByTagName('a');
+		for(i=0;i<oa.length;i++){
+			oa[i].onclick=function(){
+				showpic(this);
+				return false;//阻止默认事件(点击链接出现图片)	
+			}
+		}
+	}
+	
+</script>
+</head>
+
+<body>
+<h1>图片展示</h1>
+<ul>
+	<li><a href="images/00.jpg">reo</a></li>
+    <li><a href="images/1.jpg">foo</a></li>
+    <li><a href="images/2.jpg">mvn</a></li>
+</ul>
+<img src="images/footab.jpg" id="zhanwei" alt="my image" />
+</body>
+</html>

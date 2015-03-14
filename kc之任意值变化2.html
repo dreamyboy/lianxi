@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+div{width:100px;height:80px;margin:15px;background:#F00;border:6px solid #000;font-size:18px;}
+</style>
+<script>
+
+ window.onload=function()
+ {
+	 var adiv=document.getElementsByTagName('div');
+	 
+	 adiv[0].onclick=function()
+	 {
+		 startMove(this,'height',300);
+		 
+	 }
+	 
+	  adiv[1].onclick=function()
+	 {
+		 startMove(this,'width',350);
+		 
+	 }
+	 
+	  adiv[2].onclick=function()
+	 {
+		 startMove(this,'fontSize',50);
+		 
+	 }
+	 
+
+	 
+ }
+ var timer=null;
+ 
+ function getStyle(obj, attr)
+{
+	
+	if(obj.currentStyle)//IE
+	{
+		return obj.currentStyle[attr];
+	}
+	
+	else
+	{
+	   	return getComputedStyle(obj,false)[attr] //FF,chrome  
+    }
+}
+
+ function startMove(obj,attr,iTarget)
+ {
+	clearInterval(obj.timer); 
+	obj.timer=setInterval(function(){
+		
+		var iCur=parseInt(getStyle(obj,attr));
+		
+		var iSpeed=(iTarget-iCur)/8;
+		iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+
+		if(iCur==iTarget)
+	    {
+	 	     clearInterval(obj.timer);
+	    }	
+        
+		else
+	    {
+		    obj.style[attr]=iCur+iSpeed+'px';
+	    }
+		
+		},30)
+ 
+	 
+ } 
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div>fefefefef</div>
+<div></div>
+</body>
+</html>

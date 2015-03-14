@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <script src="http://lib.sinaapp.com/js/jquery/1.8/jquery.js"></script>
+    <script>
+        $(function(){
+            $('p').on('click',function(e){
+                console.log(e.target.tagName+' is clicked;')
+                //event.stopPropagation();
+            })
+        })
+    </script>
+    <style>
+        div{ width: 100px; height: 50px; line-height: 50px; text-align: center; color: #fff; }
+        strong { background: #808080; }
+        em { background: #ffd800; }
+        span { background: #b6ff00; position: relative; top: 10px; left: 10px; width: 100px;}
+    </style>
+</head>
+
+<body ondblclick="alert('body')">
+<textarea name="txtAdCode" id="txtarea" rows="8" cols="40">
+这里填入要执行的完整html代码
+</textarea><br />
+<input type="button" onclick="runCode()" value="运行代码" />
+<script type="text/javascript" language="javascript">
+function runCode(){ //定义一个运行代码的函数，
+         var code = document.getElementById("txtarea").value;//即要运行的代码。
+         var newwin = window.open('', '', '');  //打开一个窗口并赋给变量newwin。
+         newwin.opener = null ;// 防止代码对论谈页面修改
+         newwin.document.write(code);  //向这个打开的窗口中写入代码code，这样就实现了运行代码功能。
+         newwin.document.close();
+}</script>
+<div onclick="alert(1);">dd<p>test</p></div>
+
+<button>test</button>
+
+
+<div style="background: blue"</div>">A</div>
+<div style="background: red; position: relative; top: 20px; left: 20px;">B</div>
+<div style="background: green">C</div>
+
+
+<strong>strong</strong><em>em</em><span>span</span>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div style="position: absolute; right:10px; top: 10px; float: left;background: #05407c">
+    我是一个应用了position：absolute和float：left的DIV，不过我还是在浏览器的右边，没有浮动到左边。
+</div>
+
+<script>
+    $(function(){
+        var html='<div style="background: red;font-size: 19px;">我是被append进来的</div>';
+        $('body').append(html);
+    })
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

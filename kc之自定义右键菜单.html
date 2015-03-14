@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+*{margin:0;padding:0}
+#ul1{width:100px;background:#396;position:absolute;display:none;}
+</style>
+<script>
+document.oncontextmenu=function(ev)
+{
+    var oul=document.getElementById('ul1');
+	var oEvent=ev||event;
+	
+	oul.style.display='block';
+	oul.style.left=oEvent.clientX+'px';
+	oul.style.top=oEvent.clientY+'px';
+	
+	return false;
+}
+
+document.onclick=function()
+{
+	var oul=document.getElementById('ul1');
+	oul.style.display='none';	
+}
+
+
+</script>
+</head>
+
+<body>
+
+<ul id="ul1">
+  <li>登录</li>
+  <li>登录</li>
+  <li>登录</li>
+  <li>登录</li>
+</ul>
+
+</body>
+</html>

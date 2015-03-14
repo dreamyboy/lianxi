@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.2.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("button").click(function(){
+    alert($("li").size());
+  });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('.heng').mouseover(function(){
+$(this).find('ul').slideDown();
+});
+
+$('.heng').mouseleave(function(){
+$(this).find('ul').slideUp("fast");
+});
+});
+</script>
+
+<title>无标题文档</title>
+	<style type="text/css">
+	ul{list-style:none;}
+	*{margin:0;padding:0;}
+	.scroll_list{overflow:hidden;position:relative;}
+	.scroll_ul{width:9999px;position:relative;overflow:hidden;clear:both;*zoom:1;}
+	.scroll_ul li{width:100px;height:100px;background:#ccc;margin:5px;line-height:100px;text-align:center;list-style:none;float:left;}
+	.heng{float:left;width:200px;
+	}
+	.shu{display:none;}
+	
+	
+	</style>
+
+</head>
+
+<body>
+<button>输出 li 元素的数目</button>
+<ul>
+<li>Coffee</li>
+<li>Milk</li>
+<li>Soda</li>
+</ul>
+<img src="images/00.jpg" />
+<div class="scroll_area">
+   <div class="scroll_list">
+      <ul class="scroll_ul">
+	     <li>1</li>
+	     <li>2</li>
+		 <li>3</li>
+		 <li>4</li>
+		 <li>5</li>
+		 <li>6</li>
+		 <li>7</li>
+	  </ul>
+   </div>
+   <a id="prev" class="btn_icon" href="javascript:;">上一个</a>
+   <a id="next" class="btn_icon" href="javascript:;">下一个</a>
+</div>
+<ul>
+   <li class="heng"><a href="#">dodo</a>
+      <ul class="shu">
+	    <li>ffff</li>
+		<li>ffff</li>
+		<li>ffff</li>
+	  </ul>
+   </li>
+   <li class="heng"><a href="#">dodo</a>
+      <ul class="shu">
+	    <li>ffff</li>
+		<li>ffff</li>
+		<li>ffff</li>
+	  </ul>
+   </li>
+   <li class="heng"><a href="#">dodo</a>
+      <ul class="shu">
+	    <li>ffff</li>
+		<li>ffff</li>
+		<li>ffff</li>
+	  </ul>
+   </li>
+</ul>
+
+<script type="text/javascript">
+
+$(function () {
+$('img').hover(
+function() {$(this).fadeTo("fast", 0.5);},
+function() {$(this).fadeTo("fast", 0.7);
+});
+});
+
+
+</script>
+
+</body>
+</html>

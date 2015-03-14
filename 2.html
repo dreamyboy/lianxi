@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+#resizer{float:right;}
+#resizer li{float:left;display:inline;border:1px #CCCCCC solid;}
+
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#resizer li').click(function() {
+var fontSize = 1.4;
+var name = $(this).attr('id');
+if (name == 'f_s') {
+fontSize -= 0.1
+} else if (name == 'f_l') {
+fontSize += 0.1
+} else if (name == 'f_m') {
+fontSize == 1.4
+}
+$('.entry p').css('font-size', fontSize + 'em')    // '.entry p' 就是要控制的正文的选择器
+});
+});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<div class="entry"><p>dfdfdsfdsfdsfdsfdsfdsfdsfdfdsfrfewfewfewfefdfdfdfdfdfdf</p></div>
+<ul id="resizer">
+<li id="f_text">字号：</li>
+<li id="f_s"><a href="javascript:void(0)">小</a></li>
+<li id="f_m"><a href="javascript:void(0)">中</a></li>
+<li id="f_l"><a href="javascript:void(0)">大</a></li>
+</ul>
+
+
+</body>
+</html>

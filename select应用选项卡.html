@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+#xxk{width:500px;}
+#xxk ul li{border:1px solid #000;display:none;}
+</style>
+<script src="jquery-1.6.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('#field').change(function(){
+		
+		var _this=$("#field").get(0).selectedIndex;
+
+			$('#xxk ul li').hide(); 
+
+           $('#xxk ul li:eq('+_this+')').show();
+		
+		})
+		
+
+
+
+	})
+</script>
+</head>
+
+<body>
+<select id="field">
+<option value="1" selected="selected">星期一</option>
+<option value="2">星期二</option>
+<option value="3">星期三</option>
+</select>
+<div id="xxk">
+  <ul>
+ 
+     <li style="display:block;">　渝水区是新余市的主城区，商业活动频繁，火灾高危场所较为集中。为此，新余市公安消防部门自去年６月以来选择渝水区等重点区域开展集中消防整治，仅在渝水区最大的、面积约９万平方米的新亚新商城内，当地公安消防部门就对２２名吸烟者处以行政拘留。
+</li>
+
+   <li>　fefefefefefefef留。
+</li>
+   <li>
+　　"惩罚力度的加强，确实起到了震慑作用，公共场所吸烟的少了，火灾隐患点也少了。"渝水区公安消防大队大队长廖海华说，大商场内服装鞋帽等易燃物品集中、加油站液化气站等场所易燃点多，稍有不慎很可能造成群死群伤火灾，但渝水区两年来未发生一起亡人火灾，正是得益于执法力度的加大。</li>
+     
+  </ul>
+  
+  </div>
+</body>
+</html>

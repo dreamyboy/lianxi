@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<!--一旦把节点添加到document.body(或其后的节点)中，页面就会立即反映出这个变化。对于少量的更新，这是很好的。然而，当要向document.body添加大量数据时，如果逐个添加这些节点，这个过程有可能会十分缓慢。为解决这个问题，可以创建一个文档碎片，把所有的新节点附加其上，然后把文档碎片的内容一次性添加到document中。-->
+<!--http://www.cnitblog.com/asfman/articles/32614.html-->
+<body>
+
+<script>
+    var arrtext=["1","2","3","4","5","6","7","8","9","10"];
+    var ofrag=document.createDocumentFragment();
+    for(var i=0;i<arrtext.length;i++){
+        var op=document.createElement("P");
+        var oText=document.createTextNode(arrtext[i]);
+        op.appendChild(oText);
+        ofrag.appendChild(op);
+    }
+    document.body.appendChild(ofrag);
+</script>
+
+<script>
+    var arrtext=["1","2","3","4","5","6","7","8","9","10"];
+    for(var i=0;i<arrtext.length;i++){
+        var op=document.createElement("P");
+        var oText=document.createTextNode(arrtext[i]);
+        op.appendChild(oText);
+        document.body.appendChild(op);
+    }
+</script>
+
+
+</body>
+</html>

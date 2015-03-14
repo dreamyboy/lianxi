@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+#resizer{float:right;}
+#resizer li{float:left;display:inline;border:1px #CCCCCC solid;}
+
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$('#resizer li').click(function() {
+var fontSize = 1.4;
+var name = $(this).attr('id');
+if (name == 'f_s') {
+fontSize -= 0.1
+} else if (name == 'f_l') {
+fontSize += 0.1
+} else if (name == 'f_m') {
+fontSize == 1.4
+}
+$('.entry p').css('font-size', fontSize + 'em')    // '.entry p' 就是要控制的正文的选择器
+});
+});
+</script>
+<script type="text/javascript">
+$("p").css("opacity","1");
+</script>
+<script type="text/javascript">
+$("#right").click(function(){
+  $(".block").animate({left: '+50px'}, "slow");
+});
+
+$("#left").click(function(){
+  $(".block").animate({left: '-50px'}, "slow");
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".but").click(function(){
+$("p").toggle(10000);
+
+
+});
+
+
+
+});
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>文字字号变换</title>
+</head>
+
+<body>
+<p>文字文字文字文字文字文字</p>
+<button class="but">点我</button>
+
+
+<div class="entry"><p>dfdfdsfdsfdsfdsfdsfdsfdsfdfdsfrfewfewfewfefdfdfdfdfdfdf</p></div>
+<ul id="resizer">
+<li id="f_text">字号：</li>
+<li id="f_s"><a href="javascript:void(0)">小</a></li>
+<li id="f_m"><a href="javascript:void(0)">中</a></li>
+<li id="f_l"><a href="javascript:void(0)">大</a></li>
+</ul>
+<p>dfasfdsfdsfdsf</p>
+
+
+<button id="left">《</button> <button id="right">》</button>
+<div class="block"></div>
+
+
+
+</body>
+</html>

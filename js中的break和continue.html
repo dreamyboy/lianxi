@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>js中的break 和 continue</title>
+<script type="text/javascript">
+var company=new Array('Adobe','Apple','Google','Intel','Microsoft','Oracle','IBM','SUN');
+for (var i in company)
+{
+    if (company[i]=='Microsoft'||company[i]=='IBM')
+    {
+        break;
+        //continue;
+    }
+    delete company[i];
+
+}
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

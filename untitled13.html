@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>视觉营销</title>
+    <script>
+
+        // antipattern
+        // for illustration only
+        // global functions
+        function foo() {
+            alert('global foo');
+        }
+        function bar() {
+            alert('global bar');
+        }
+        function hoistMe() {
+            console.log(typeof foo); // "function"
+            console.log(typeof bar); // "undefined"
+            foo(); // "local foo"
+            bar(); // TypeError: bar is not a function
+// function declaration:
+// variable 'foo' and its implementation both get hoisted
+            function foo() {
+                alert('local foo');
+            }
+            // function expression:
+            // only variable 'bar' gets hoisted
+            // not the implementation
+            var bar = function () {
+                alert('local bar');
+            };
+        }
+
+        hoistMe();
+
+    </script>
+</head>
+
+<body>
+<div style="margin:0 auto;width:781px;">
+<img src="http://www.cmo-view.com/wp-content/themes/theme-cmo/images/edm.jpg" border="0" usemap="#Map" />
+<map name="Map" id="Map">
+  <area shape="rect" coords="559,177,745,214" href="http://e.weibo.com/cmoview" />
+  <area shape="rect" coords="571,585,737,606" href="http://t.cn/zjVddGc" />
+  <area shape="rect" coords="572,653,739,698" href="http://www.cmo-view.com/?p=1389" />
+  <area shape="rect" coords="572,748,740,769" href="http://www.cmo-view.com/?p=2452" />
+  <area shape="rect" coords="570,829,742,862" href="http://cmo-view.com/" />
+</map>
+</div>
+</body>
+</html>

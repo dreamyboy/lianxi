@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{
+width:100px;height:80px;background:#335353;border:1px solid thin;display:none;
+
+}
+
+#div2{
+width:500px;height:80px;background:#335353;border:1px solid thin;
+
+}
+</style>
+<script>
+window.onload=function ()
+{
+    var Odiv=document.getElementById('div2');
+	
+	Odiv.onmouseover=toRed;
+}
+	
+
+
+function toRed(){
+	var DIVR=document.getElementById('div2');
+	DIVR.style.height='600px';
+	DIVR.style.background='red';
+	
+	
+	}
+
+function toBHU(){
+	
+	document.getElementById('div2').style.height='80px';
+	document.getElementById('div2').style.background='#335353';
+	
+	
+	
+	}
+</script>
+
+<script>
+
+window.onload=function ()
+{
+	var obtn=document.getElementById('btn');
+	var oul=document.getElementById('ul1');
+	
+	obtn.onclick=function ()
+	{
+		if(oul.style.display=='block')
+		
+		 {
+		    oul.style.display='none';
+			
+		 }
+		
+		else 
+		{
+		oul.style.display='block';
+	    }
+	
+		
+	};
+	
+	
+}
+
+</script>
+
+<script>
+
+window.onload=function()
+{
+	
+	 var obtn=document.getElementsByTagName('input');
+for(i=0;i<obtn.length;i++)
+{
+   
+    obtn[i].onclick=function()
+    {
+    
+        alert(this.value);
+    
+    };
+}
+}
+
+
+</script>
+
+</head>
+
+<body>
+<label onmouseover="document.getElementById('div1').style.display='block';" onmouseout="document.getElementById('div1').style.display='none';"><input type="checkbox">自动登录</label>
+<div id="div2"  onmouseout="toBHU()">
+</div>
+
+<div id="box">
+<p id="btn">输入法</p>
+   <ul id="ul1" style="display:block">
+   <li><a href="#">手写</a></li>
+   <li><a href="#">拼音</a></li>
+   <li><a href="#">关闭</a></li>
+   
+   </ul>
+
+
+</div>
+
+</body>
+</html>

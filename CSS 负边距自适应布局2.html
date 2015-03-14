@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>两列等高自适应布局</title>
+    <style type="text/css">
+        * {margin:0;padding:0;}
+        .layout {overflow:hidden;}
+		
+        .cont, .side {float:left;padding-bottom:9999px;margin-bottom:-9999px;}
+        .cont {width:100%;}
+        .main {margin-right:200px;background:#DDDDDD;}
+        .side {margin-left:-200px;width:200px;background:#F7F7F7;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="cont">
+            <div class="main">
+                main
+                <br/><br/><br/><br/><br/><br/><br/>
+            </div>
+        </div>
+        <div class="side">side</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+ #ul1 li{width:200px;}
+</style>
+<script>
+//事件源 
+  window.onload=function(){
+	  
+	  
+	  oul=document.getElementById('ul1');
+	  ali=oul.getElementsByTagName('li');
+	  
+	/*  for(i=0;i<ali.length;i++)
+	  {
+		  ali[i].onmouseover=function()
+		  {
+			   this.style.background='red';
+		  }
+		  
+		   ali[i].onmouseout=function()
+		  {
+			   this.style.background='none';
+		  }
+  
+	  }
+	  */
+	  
+
+	  oul.onmouseover=function(ev)
+	  {
+		  var ev=ev||event;
+		  var target=ev.target||ev.srcElement;
+		  
+		  //alert(target.innerHTML);
+	      
+		  //alert(target.nodeName);
+		  if(target.nodeName.toLowerCase()=='li')
+		  {
+		  target.style.background='red';
+		  }
+	  }
+	  
+	  
+	  oul.onmouseout=function(ev)
+	  {
+		  var ev=ev||event;
+		  var target=ev.target||ev.srcElement;
+		  
+		  target.style.background='none';  
+	  } 
+
+
+	  }
+</script>
+</head>
+
+<body>
+
+ <ul id="ul1">
+    <li>我们的爱在哪来啊啊啊啊</li>
+    <li>我们的爱在哪来啊啊啊啊</li>
+    <li>我们的爱在哪来啊啊啊啊</li>
+    <li>我们的爱在哪来啊啊啊啊</li>
+ 
+ </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style>
+#div1{width:300px;height:50px;background:#0F0;}
+#div2{width:150px;height:30px;background:#CF0;margin:10px;}
+</style>
+<script>
+window.onload=function()
+{
+	var odiv1=document.getElementById('div1');
+	var odiv2=document.getElementById('div2');
+	
+	var timer=null;
+	
+	odiv1.onmouseover=function()
+	{
+		
+		odiv2.style.display='block';
+		clearTimeout(timer);
+		
+	}
+	
+	
+	odiv1.onmouseout=function()
+	{
+		timer=setTimeout(function()
+		{odiv2.style.display='none';
+			
+		},900);	
+	}
+	
+	odiv2.onmouseover=function()
+	{
+		clearTimeout(timer);
+	}
+    
+	odiv2.onmouseout=function()
+	{
+		timer=setTimeout(function(){odiv2.style.display='none';},900);
+	
+	}
+
+}
+
+
+</script>
+</head>
+
+<body>
+<div id="div1" ></div>
+<div id="div2" style="display:none"></div>
+
+
+
+
+
+
+</body>
+</html>

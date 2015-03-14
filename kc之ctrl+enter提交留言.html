@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function(ev)
+{
+	var otxt1=document.getElementById('txt1');
+	var otxt2=document.getElementById('txt2');
+	var obtn=document.getElementById('btn1');
+	var oEvent=ev||event;
+	
+	obtn.onclick=function()
+	{
+		otxt1.value+=otxt2.value+'\n';
+		otxt2.value='';
+
+	}
+	
+	
+	
+}
+
+
+</script>
+</head>
+
+<body>
+<textarea id="txt1" rows="10" cols="40"></textarea><br/>
+<input id="txt2" type="text" />
+<input id="btn1" type="button"  value="提交留言"/>
+
+
+
+</body>
+</html>

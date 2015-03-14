@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+  *{margin:0;padding:0;}
+  .b{color:blue;font-weight:100}
+  .a{color:red;font-weight:600}
+  .c{color:green;font-weight:900}
+</style>
+
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8/jquery.min.js">
+</script>
+<script>
+function test() { // 一个作用域
+    for(var i = 0; i < 10; i++) { // 不是一个作用域
+        // count
+    }
+}
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        (function(){
+            var msgContainer=$('.msgContainer');
+            console.log(msgContainer);
+            var data=
+                    [
+                        {
+                            "id": 66475,
+                            "view_count": 10,
+                            "create_time": "2014-11-12 16:44:02",
+                            "index": 2,
+                            "question": "智能机器人为啥子叫MIXI呢？",
+                            "answer": "你猜"
+                        },
+                        {
+                            "id": 181,
+                            "view_count": 2,
+                            "create_time": "2014-10-30 20:00:33",
+                            "index": 1,
+                            "question": "商家在美丽说经营是如何收费的",
+                            "answer": "1、违约保证金：5000元\r\n      违约保证金：用以保证商家正常合规在美丽说平台经营的金额，在出现违反平台规定的情况下，美丽说有权进行扣收。\r\n      如没有违反美丽说的规范，清退时会返还。\r\n2、备用金：5000元\r\n      备用金：退款保证金，用以确保用户安全完成退款的金额。\r\n       如没有违反美丽说的规范，清退时会返还。\r\n3、技术服务费（佣金）：商家通过美丽说商城完成的每一单交易需支付的技术服务费，佣金为订单交易总金额的5% 。"
+                        },
+                        {
+                            "id": 251,
+                            "view_count": 2,
+                            "create_time": "2014-10-30 20:00:33",
+                            "index": 1,
+                            "question": "什么是联合登录方式？",
+                            "answer": "联合登录是指使用您已有的微信、新浪微博、QQ、淘宝、腾讯微博、人人网、网易、豆瓣、百度账号登录美丽说网站购买商品。"
+                        }
+                    ];
+            console.log(data);
+            var html='<div class="robot-answer"><div>推荐</div>';
+            console.log(html);
+            $.each(data,function(index,item){
+                html+='<div class="click_div">'+item.question+'</div>';
+            });
+            console.log(html);
+            html+='</div>';
+            console.log($(html));
+            $(html).appendTo(msgContainer);
+
+        })();
+
+    });
+
+</script>
+
+
+
+    <script>
+        //取url参数
+        $(function(){
+            var data={};
+            var param=location.search.substr(1).split('&');
+            for (var i=0;i<param.length;i++){
+                if(param[i]){
+                    var kv=param[i].split('=');
+                    data[kv[0]]=kv[1];
+                }
+            }
+            console.log(data);
+        })
+
+    </script>
+
+
+    <script>
+        //随机
+        var abc=['e:11','e:33','e:rfd'];
+        console.log(abc[parseInt(Math.random()*abc.length)]);
+    </script>
+
+    <script>
+        //end()使用方法
+        $(function(){
+            $('ul.first').find('.foo')
+                         .css('background-color','red')
+                         .end()
+                         .find('.bar')
+                         .css('background-color','green');
+        })
+
+    </script>
+
+
+    <script>
+        var abc=[1,2,34];
+        var cont=abc.push(56);
+        alert(cont);
+
+    </script>
+
+
+    <script>
+
+        $(function(){
+            $('.dz').on('click',function(ee){
+                alert($(this).text());
+                ee.preventDefault();
+                console.dir(ee);
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+  <div class="a b c">我们的歌声</div>
+
+  <div class="msgContainer" data-role="abc"></div>
+
+  <ul class="first">
+      <li class="foo">你好啊</li>
+      <li></li>
+      <li class="bar">今天星期一</li>
+
+  </ul>
+
+<a class="dz" href="http://www.baidu.com">点我会跳转到百度吗？</a>
+
+</body>
+</html>

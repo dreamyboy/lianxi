@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{
+	height:150px;
+	width:200px;
+	background:#666;
+	position:absolute;
+	left:0;
+}
+</style>
+<script>
+window.onload=function()
+{
+	odiv=document.getElementById('div1');
+	obt1=document.getElementById('bt1');
+	obt2=document.getElementById('bt2');
+	
+	var timer=null;
+	
+	obt1.onclick=function()
+	{
+		timer=setInterval(function(){ 
+		      odiv.style.left=odiv.offsetLeft+5+'px';
+		},1)
+	
+	}
+	
+	obt2.onclick=function()
+	{
+		clearTimeout(timer);
+	}
+	
+}
+</script>
+</head>
+
+<body>
+<input id="bt1" type="button" value="向右移动" />
+<input id="bt2" type="button" value="停止移动" />
+<div id="div1">
+</div>
+</body>
+</html>

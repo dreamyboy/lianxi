@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+<textarea rows="20" cols="20" id="area"></textarea>
+<span id="row">共有1行</span>
+<script type="text/javascript">
+(function(){
+	var oArea=document.getElementById("area");
+	var oRow=document.getElementById("row");
+	var iRow=1;
+	oArea.onkeyup=function(){
+		var m=this.value.match(/\n/g);
+		iRow=m?m.length+1:1;
+		oRow.innerHTML="共有"+iRow+"行";
+	}
+})();
+</script>
+</body>
+
+</HTML>

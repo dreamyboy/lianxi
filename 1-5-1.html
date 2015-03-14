@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<style type="text/css">
+#menu{width:300px;}
+.has_children{background:#CCCCCC;color:#FF0000;cursor:pointer;}
+.highlight{color:#fff;background:#33FF00;}
+div{padding:0;margin:10px 0;}
+div a{float:left;background:#FF0033;width:300px;display:none;}
+</style>
+<script type="text/javascript">
+$(".has_children").click(function(){
+$(this).addClass("highlight")
+.children("a").show().end()
+.siblings().removeClass("highlight")
+.children("a").hide();
+});
+</script>
+</head>
+
+<body>
+<div id="menu">
+<div class="has_children">
+<span>第1章-认识</span>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+</div>
+
+<div class="has_children">
+<span>第2章-认识</span>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+</div>
+
+<div class="has_children">
+<span>第3章-认识</span>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+<a href="#">womendejia</a>
+</div>
+
+</div>
+
+
+
+</body>
+</html>

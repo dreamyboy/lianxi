@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0;padding:0}
+        .bg{background: url(http://d03.res.meilishuo.net/img/_o/38/dc/3583f0ec76bd7989b28f5fa74306_444_262.cf.jpg) no-repeat;margin:0 auto;width:100%}
+        .btn1{display:inline-block;margin-top:20px;margin-bottom:20px;height:50px;width:100px;}
+    </style>
+</head>
+<!--很好的说明:-->
+<!--http://www.w3school.com.cn/js/pro_js_inheritance_implementing.asp-->
+<!--http://blog.csdn.net/myhahaxiao/article/details/6952321-->
+<body>
+<script>
+    function ClassA(sColor) {
+        this.color = sColor;
+        this.sayColor = function () {
+            alert(this.color);
+        };
+    }
+
+    function ClassB(sColor) {
+//        this.newMethod = ClassA;
+//        this.newMethod(sColor);
+//        delete this.newMethod;
+        ClassB.prototype = new ClassA();
+    }
+
+
+ var objB=new ClassB('blue');
+ objB.sayColor('blue');
+
+</script>
+
+
+<!--父元素无高度,可用margin撑开背景-->
+<div class="bg">
+    <span class="btn1"></span>
+</div>
+
+
+
+
+
+<!--<p></p>-->
+<!--<p></p>-->
+<!--<p></p>-->
+<!--<p></p>-->
+<!--<script>-->
+    <!--var pObj = document.getElementsByTagName('p');-->
+    <!--console.log( [].slice.call(pObj) );                // 返回数组形式[p,p,p]-->
+    <!--console.log( pObj.slice() );   -->
+<!--</script>-->
+
+
+
+<script>
+    var arguments=[2,3,4,5,6];
+    var params = Array.prototype.slice.call(arguments , 3);
+</script>
+</body>
+</html>

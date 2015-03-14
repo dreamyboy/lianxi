@@ -1,0 +1,21 @@
+/* CSS Document */
+body{margin:0;
+     padding:0;}
+#socialmedia ul{margin:0;
+             padding:0;
+			 list-style:none;}
+#socialmedia ul li{
+float:left; }
+#socialmedia ul li a{
+                    background:url(images/socialmedia.gif) no-repeat scroll ;
+					display:block;
+					height:32px;
+					width:32px;
+					margin:5px 9px;
+
+}
+#socialmedia .sina a{background-position:0 -32px;}
+#socialmedia .sina a:hover{background-position:-32px -32px;}	
+#socialmedia .tx a{background-position:0 -64px;}
+#socialmedia .tx a:hover{background-position:-32px -64px;}	
+	 

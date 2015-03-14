@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+		
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var i=0;
+
+	$('J_btn').onclick=function(){
+		i++;
+		if(i==1){
+			this.value="第二次";
+			$('J_div').innerHTML='你看我有变化了吧';
+		}
+
+		if(i==2){
+			$('J_div').style.background="#453289";
+			$('J_div').innerHTML='不让你变化';
+		}
+
+	}
+
+
+	function $(id) {
+	        return document.getElementById(id);       
+	}
+
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+
+	<input type="button" value="第一次" id="J_btn"/>
+	<div id="J_div" style="width:100px;height:100px;background:#832">有啥变化</div>
+
+</body>
+</html>
+
+
+

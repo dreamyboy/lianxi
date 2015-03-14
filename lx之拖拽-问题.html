@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+#div1{background:#F00;width:150px;height:150px;position:absolute;}
+</style>
+<script>
+window.onload=function()
+{
+	var odiv=document.getElementById('div1');
+	
+	odiv.onmousedown=function(ev)
+	{
+		var oEvent=ev||event;
+		
+		var disX=oEvent.clientX-odiv.offsetLeft;
+		var disY=oEvent.clientY-odiv.offsetTop;
+		
+		document.onmousemove=function(ev)
+		{
+		   var oEvent=ev||event; 
+		   odiv.style.left=oEvent.clientX-disX+'px';
+		   odiv.style.top=oEvent.clientY-disX+'px';
+
+		}
+		
+		document.onmouseup=function()
+		{
+			document.onmousemove=null;
+			document.onmouseup=null;
+			
+		}
+		
+		//拖拽的时候文字会被选中，要阻止这种默认行为...
+		return false;
+    }
+	
+	
+	
+}
+</script>
+</head>
+
+<body>
+fefefefefefefefef
+<div id="div1">丰富</div>
+</body>
+</html>

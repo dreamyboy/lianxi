@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+var myfunc = function ()
+        {
+            alert("hello");
+        };
+    myfunc(); //第一次调用myfunc，输出hello
+   
+    myfunc = function ()
+        {
+            alert("yeah");
+        };   
+    myfunc(); //第二次调用myfunc，将输出yeah
+	
+	
+	function myfunc ()
+    {
+        alert("hello");
+    };
+    myfunc(); //这里调用myfunc，输出yeah而不是hello
+   
+    function myfunc ()
+    {
+        alert("yeah");
+    };   
+    myfunc(); //这里调用myfunc，当然输出yeah
+	
+	   function myfunc ()
+    {
+        alert("ye飞的发的发的发ah");
+    };   
+    myfunc(); //这里调用myfunc，当然输出yea
+</script>
+</head>
+
+<body>
+</body>
+</html>

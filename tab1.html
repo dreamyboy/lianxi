@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>聂微东-页面滚动图片加载</title> 
+
+</head> 
+<body> 
+<style type="text/css">
+#tab_menu span{padding:5px;border:dashed 1px #333;margin:0 5px;}
+.none{display:none;}
+</style>
+<p>=====================================================</p>
+<h2>版本三</h2>
+
+<div id="demo3">
+<div id="tab_menu">
+	<span>menu1</span>
+	<span>menu2</span>
+	<span>menu3</span>
+	<span>menu4</span>
+</div>
+<div id="tab_content" class="mt30">
+	<div>11111</div>
+
+	<div class="none">22222</div>
+	<div class="none">33333</div>
+	<div class="none">44444</div>
+</div>
+</div>
+<script type="text/javascript">
+	(function(){
+		var menus = document.getElementById("tab_menu").getElementsByTagName("span"),
+			contents = document.getElementById("tab_content").getElementsByTagName("div");
+		for(var i = 0,n=menus.length;i<n;i++){
+			(function(n){
+				menus[n].onclick = function(){
+					showContent(n);
+				}
+			})(i);
+		}
+
+		function showContent(index){
+			for(var i=0,n=contents.length;i<n;i++){
+				if(i==index){
+					contents[i].style.display = "block";
+				} else {
+					contents[i].style.display = "none";
+				}
+			}
+		}
+	})();
+	
+	
+	
+	
+	
+	
+	
+</script>
+</body> 
+</html> 

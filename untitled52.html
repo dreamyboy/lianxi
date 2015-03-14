@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js">
+</script>
+<script type="text/javascript">
+    var dog={
+        name:"Fido",
+        dob:new Date(),
+        legs:[1,2,3,4]
+    };
+    var jsonstr=JSON.stringify(dog);
+
+    console.log(jsonstr);
+
+</script>
+
+
+
+</head>
+<body>
+	<div id="content">
+		<ul>
+			<li>fefe</li>
+			<li>fefefe</li>
+			<li>fef</li>
+			<li>fefe</li>
+		</ul>
+
+	</div>
+
+
+    <canvas id="myCanvas" width="578" height="200">
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context=canvas.getContext('2d');
+
+        // butt line cap (top line)
+        context.beginPath();
+        context.moveTo(200, canvas.height / 2 - 50);
+        context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+        context.lineWidth=20;
+        context.strokeStyle='#0000ff';
+        context.lineCap='butt';
+        context.stroke();
+
+
+
+        // round line cap (middle line)
+        context.beginPath();
+        context.moveTo(200, canvas.height / 2);
+        context.lineTo(canvas.width - 200, canvas.height / 2);
+        context.lineWidth = 20;
+        context.strokeStyle = '#0000ff';
+        context.lineCap = 'round';
+        context.stroke();
+
+        // square line cap (bottom line)
+        context.beginPath();
+        context.moveTo(200, canvas.height / 2 + 50);
+        context.lineTo(canvas.width - 200, canvas.height / 2 + 50);
+        context.lineWidth = 20;
+        context.strokeStyle = '#0000ff';
+        context.lineCap = 'square';
+        context.stroke();
+
+
+    </script>
+</body>
+</html>

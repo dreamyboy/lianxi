@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+  *{margin:0;padding:0;}
+  #ul1{width:366px;margin:0 auto;position:relative;}
+  #ul1 li{list-style:none;width:100px;height:100px;background:#666;border:1px solid #000;float:left;margin:10px;z-index:1;} 
+</style>
+<script src="move3.js">
+</script>
+<script>
+  window.onload=function()
+  {
+	  oul=document.getElementById('ul1');
+	  ali=oul.getElementsByTagName('li');
+	  var iMinZindex=2;
+	  
+	  //1.布局转换
+	  for(i=0;i<ali.length;i++)
+	  {
+	       //ali[i].innerHTML='left='+ali[i].offsetLeft+'top='+ali[i].offsetTop;
+		   ali[i].style.left=ali[i].offsetLeft+'px';
+		   ali[i].style.top=ali[i].offsetTop+'px';
+	  }
+	  
+	  for(i=0;i<ali.length;i++)
+	  {
+		   ali[i].style.position='absolute'; 
+		   ali[i].style.margin='0'; 
+	  }
+	  
+	  //2.加事件
+	  for(i=0;i <ali.length;i++)
+	  {
+		   ali[i].onmouseover=function()
+		   {
+			   
+			   this.style.zIndex=iMinZindex++;
+			   startMove(this,{height:200,width:200,marginLeft:-50,marginTop:-50})
+			   
+		   } 
+		   
+		   ali[i].onmouseout=function()
+		   {
+			   
+			   startMove(this,{height:100,width:100,marginLeft:0,marginTop:0})
+			   
+		   } 
+		  
+	  }
+	  
+	  
+	  
+	  
+	  
+  }
+</script>
+</head>
+
+<body>
+  <ul id="ul1"> 
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  
+  </ul>
+ 
+</body>
+</html>
