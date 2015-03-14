@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+<!--方法一：-->
+<div id="wrap"></div>
+<script>
+
+    $(function(){
+        $('<input/>',{
+            id :'cbx',
+            name:'cbx',
+            type:'checkbox',
+            click:function(){
+                alert("点我了~");
+            }
+        }).appendTo($('#wrap'));
+    })
+
+</script>
+
+<!--方法二-->
+
+<table>
+    <tr id="row"></tr>
+</table>
+<script>
+    $(function(){
+        var data=["a","b","c","d"];
+        var html='';
+        for(var i=0;i<data.length;i++){
+            html+='<td>'+data[i]+'</td>';
+        }
+        $('#row').append(html);
+    })
+</script>
+
+
+
+<!--方法三-->
+
+<div id="wrap1"><span id="" class="">123</span></div>
+<div id="wrap2"><input id="" type="button"/></div>
+
+
+
+
+
+
+
+
+
+<script>
+    $(function(){
+
+        function createtag(tag,html,attrs){
+            var abc='<'+tag;
+            for (attr in  )
+
+
+
+        }
+
+
+
+    })
+
+</script>
+</body>
+</html>
