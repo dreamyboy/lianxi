@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+<body>
+    <script>
+        function Stringbuild(){
+            this.__string__=new Array();
+        }
+        Stringbuild.prototype.append=function(str){
+            this.__string__.push(str);
+
+        }
+        Stringbuild.prototype.toString=function(){
+            return this.__string__.join('');
+
+        }
+        var d1=new Date();
+        var buffer=new Stringbuild();
+        for(i=0;i<10000;i++){
+            buffer.append('E3Card');
+        }
+
+        var strResult=buffer.toString();
+        var d2=new Date();
+
+        document.write("stringbuild用时"+(d2.getTime()-d1.getTime())+'<br/>');
+
+
+
+        var d3=new Date();
+        var str='';
+        for(i=0;i<10000;i++){
+            str+="E3Card";
+        }
+
+        var d4=new Date();
+        document.write("+方法用时"+(d4.getTime()-d3.getTime())+'<br/>');
+
+    </script>
+</body>
+</html>
