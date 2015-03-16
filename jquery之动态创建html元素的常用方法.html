@@ -44,31 +44,51 @@
 
 <!--方法三-->
 
-<div id="wrap1"><span id="" class="">123</span></div>
-<div id="wrap2"><input id="" type="button"/></div>
+<!--<div id="wrap1"><span id="" class="">123</span></div>-->
+<!--<div id="wrap2"><input id="" type="button"/></div>-->
+
+
+
+<div id="wrap1"></div>
+<div id="wrap2"></div>
 
 
 
 
 
-
-
-
-
+<!--开启之门，谢谢yq-->
 <script>
     $(function(){
 
         function createtag(tag,html,attrs){
-            var abc='<'+tag;
-            for (attr in  )
+            if(typeof (html) !='string'){//typeof返回的是字符串
+                attrs=html;
+                html=null;
+            }
 
+            var h='<'+tag;
+
+            for (attr in attrs){
+                h +=' '+attr+'="'+attrs[attr]+'"';
+            }
+
+            return h += html ? ">" + html + "</" + tag + ">" : "/>";
 
 
         }
 
+        var span=createtag('span','123',{'id':'ab','class':'ue'});
+        $('#wrap1').append(span);
 
+
+        var input=createtag('input',{'id':'ab','type':'button'});
+
+        $('#wrap2').append(input);
 
     })
+
+
+
 
 </script>
 </body>
