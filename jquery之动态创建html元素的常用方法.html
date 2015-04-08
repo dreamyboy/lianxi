@@ -5,7 +5,7 @@
 <title>无标题文档</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
-
+<!--http://www.jb51.net/article/54815.htm-->
 <body>
 <!--方法一：-->
 <div id="wrap"></div>
@@ -48,12 +48,8 @@
 <!--<div id="wrap2"><input id="" type="button"/></div>-->
 
 
-
 <div id="wrap1"></div>
 <div id="wrap2"></div>
-
-
-
 
 
 <!--开启之门，谢谢yq-->
@@ -65,18 +61,15 @@
                 attrs=html;
                 html=null;
             }
-
             var h='<'+tag;
 
             for (attr in attrs){
                 h +=' '+attr+'="'+attrs[attr]+'"';
             }
-
+            console.log(arguments);
             return h += html ? ">" + html + "</" + tag + ">" : "/>";
 
-
         }
-
         var span=createtag('span','123',{'id':'ab','class':'ue'});
         $('#wrap1').append(span);
 
@@ -86,9 +79,6 @@
         $('#wrap2').append(input);
 
     })
-
-
-
 
 </script>
 </body>

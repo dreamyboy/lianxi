@@ -3,28 +3,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>无标题文档</title>
+
+    <!--http://www.jb51.net/article/54639.htm-->
+    <!--内存泄漏指任何对象在您不再拥有或需要它之后仍然存在。-->
+    <!--内存里不能被回收也不能被利用的空间即为内存泄露-->
 <script>
+
+
+
 
 
 window.onload=function(){
  
     var ali=document.getElementsByTagName('li');
-	
-	
-	for(var i=0;i<ali.length;i++){   
+        for(var i=0;i<ali.length;i++){
 
-	           ali[i].onclick=(function(i){
-		          
-				  return function(){
-				  
-				       alert(i);
-				  
-				  }
-	 
-			   })(i);
-	
+                   ali[i].onclick=(function(i){
 
-	}
+                      return function(){
+
+                           alert(i);
+
+                      }
+
+                   })(i);
+        }
 	}
 	
 	
@@ -60,6 +63,37 @@ aaa();//3
 
 </script>
 
+
+
+
+    <!--返回函数-->
+    <script>
+        var setup=function(){
+            alert(1);
+            return function(){
+                alert(2);
+            }
+        }
+
+        var my=setup();
+
+        my();
+    </script>
+
+    <script>
+        var setup=function(){
+            var count=0;
+            return function(){
+                return (count+=1);
+            }
+        }
+
+        var next=setup();
+
+        next();//1
+        next();//2
+        next();//3
+    </script>
 
 </head>
 

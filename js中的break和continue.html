@@ -1,23 +1,64 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>js中的break 和 continue</title>
-<script type="text/javascript">
-var company=new Array('Adobe','Apple','Google','Intel','Microsoft','Oracle','IBM','SUN');
-for (var i in company)
-{
-    if (company[i]=='Microsoft'||company[i]=='IBM')
-    {
-        break;
-        //continue;
-    }
-    delete company[i];
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>js中的break 和 continue</title>
+    <!--http://www.webjx.com/javascript/jsajax-6286.html-->
 
-}
+    <script>
+        for(var i=0;i<=10;i++){
+            if(i==6) continue;
+            document.write(i);
+        }
+
+    </script>
+
+    <script>
+        for(var i=0;i<=10;i++){
+            if(i==6) break;
+            document.write(i);
+        }
+    </script>
 
 
-</script>
+    <script type="text/javascript">
+        var company=new Array('Adobe','Apple','Google','Intel','Microsoft','Oracle','IBM','SUN');
+
+        for (var i in company){
+            if (company[i]=='Microsoft'||company[i]=='IBM'){
+                break;
+                //continue;
+            }
+            delete company[i];
+        }
+    </script>
+
+
+    <script>
+        function xq(){
+            var day=new Date().getDay();
+            var x;
+            switch (day){
+                case 0:
+                    x="今天星期日";
+                    break;
+                case 1:
+                    x="今天星期一";
+                    break;
+                case 2:
+                    x="今天星期二";
+                    break;
+                case 3:
+                    x="今天星期三";
+                    break;
+            }
+
+            console.log(x);
+        }
+        xq();
+
+    </script>
+
 
 </head>
 <body>

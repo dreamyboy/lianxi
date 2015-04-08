@@ -18,6 +18,14 @@
 //=
 //135264
 
+
+
+
+//if(){} 只判断一次
+
+
+//while 语句执行后自动循环判断
+
 function test(str){
     var arr1=str.split("");
     var arr2=[];
@@ -27,10 +35,10 @@ function test(str){
             arr1.push(arr1.splice(0,1));
         }
     }
+
     console.log(arr2.toString());
-
-
 };
+
 test("123456");//135264
 
 
