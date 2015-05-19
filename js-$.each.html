@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
 </head>
 <body>
 <!--http://blog.csdn.net/on_my_way20xx/article/details/7791769
@@ -19,5 +19,13 @@ alert(index + ': ' + value);
 });
 
 </script>
+
+<script>
+
+    $.each( [10,20,30] , function(i){ alert("Item "+i+" is "+this); } );
+
+</script>
+
+
 </body>
 </html>

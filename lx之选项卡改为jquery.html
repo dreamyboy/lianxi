@@ -12,7 +12,7 @@
 .active{background:#FF9;}
 </style>
 
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<!--<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>-->
 <script>
 //  window.onload=function()
 //  {
@@ -124,10 +124,38 @@
   </ul>
   
   </div>
-  
-  
-  
-  
+
+
+<div class="a1">
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+</div>
+
+
+<script>
+    function Sf(title){
+        this.title=title;
+    }
+
+    Sf.prototype={
+        init:function(){
+            alert(11);
+        },
+        csh:function(){
+            var html=$('<div>222'+
+                '<span>我是被push进来的。</span></div>');
+            $('body').append(html);
+        }
+    }
+
+    var s1= new Sf('打');
+
+    s1.csh();
+
+
+</script>
 
 </body>
 </html>
