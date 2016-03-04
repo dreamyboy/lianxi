@@ -27,5 +27,31 @@ alert(index + ': ' + value);
 </script>
 
 
+<a href="" id="abc">点我</a>
+<script>
+    $('a').click(function(){
+        alert(this.id);
+        alert($('a'));
+        $('#abc').attr("data-opacity","0.8");
+    })
+</script>
+<a href="#a" id="abcd"></a>
+<script>
+    var num=$('#abcd').attr('href').split('#');
+    alert(num[num.length-1]);
+</script>
+
+<script>
+    var obj={};
+    obj.name='zhangming';
+    obj["scc"]={"name":"zhang","sex":"female"};
+    console.dir(obj);
+
+</script>
+<div class="bglayer" style="z-index:1050;opacity: 0.5;position: fixed;top:0;right:0;bottom: 0;left:0;background: #000;"></div>
+<div class="diacont-wrap" style="z-index:1060;opacity: 1;position: fixed;top:0;right:0;bottom: 0;left:0;overflow: hidden;">
+    <div class="cont" style="width: 600px;background: blue;margin:30px auto;height:100px;"></div>
+</div>
+
 </body>
 </html>

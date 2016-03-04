@@ -3,7 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 </head>
+<!--https://developer.mozilla.org/zh-CN/docs/Web/API/Document/createDocumentFragment-->
 <!--一旦把节点添加到document.body(或其后的节点)中，页面就会立即反映出这个变化。对于少量的更新，这是很好的。然而，当要向document.body添加大量数据时，如果逐个添加这些节点，这个过程有可能会十分缓慢。为解决这个问题，可以创建一个文档碎片，把所有的新节点附加其上，然后把文档碎片的内容一次性添加到document中。-->
 <!--http://www.cnitblog.com/asfman/articles/32614.html-->
 <body>
@@ -29,6 +31,40 @@
         document.body.appendChild(op);
     }
 </script>
+
+
+    <style>
+       .tan{display: none;}
+       .bg{position: absolute;left:0;top:0;background: rgba(0,0,0,0.5);width:100%;height:100%;}
+       .cont{position:absolute;left:50%;top:50%;width:300px;height:300px;background: green;}
+       .close{display: block;width: 20px;height: 20px;position: absolute;right:0;top:0}
+
+    </style>
+
+    <button class="dw">点我</button>
+    <div class="tan">
+        <div class="bg"></div>
+        <div class="cont">
+            我是弹窗内容哦。
+            <span class="close">X</span>
+        </div>
+
+    </div>
+
+
+    <div></div>
+    <script>
+        $('.dw').on('click',function(){
+            var $html=$('.tan');
+            $('.tan').css('display','block');
+            $('body').append($html);
+        })
+
+        $('body').find('.close').on('click',function(){
+            $('.tan').remove();
+        })
+
+    </script>
 
 
 </body>

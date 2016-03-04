@@ -1,13 +1,65 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://lib.sinaapp.com/js/jquery/1.8/jquery.js"></script>
 <title>无标题文档</title>
+    <style>
+        .fc-item{
+            border: 1px solid red;
+            position: relative;
+            left:20%;
+            top:5%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            will-change: transform;
+            width: 495px;
+            height:390px;
+            -webkit-perspective: 1000px;
+            -moz-perspective: 1000px;
+        }
+    </style>
 </head>
 
 <body>
-        <div style="position:absolute; left:50%; margin-left:-400px; width:800px;background-color:#0CC;">
-        纷纷种
-        </div>
+    <div style="position:absolute; left:50%; margin-left:-400px; width:800px;background-color:#0CC;">
+    纷纷种
+    </div>
+    <div class="fc-item">
+        <a href="http://promotion.meilishuo.com/promotion/sale_pro/act_venue/??aid=2148&amp;cid=14041&amp;pid=5300&amp;mid=141&amp;nid=2&amp;pstrc=" class="a_li_img img0" target="_blank">
+            <img src="http://i.meilishuo.net/css/images/biz/promotion/sale_11/za.png" alt="">
+        </a>
+    </div>
+
+    <script>
+        $('.fc-item').mousemove(function(e){
+            var xp=e.offsetX;
+            var yp=e.offsetY;
+            if(xp < 255 && yp < 195){
+                $(this).css({'transform':'rotateX(5.20782deg) rotateY(-5.1deg)'});
+            }
+            if(xp > 255 && yp < 195){
+                $(this).css({'transform':'rotateX(5.06112deg) rotateY(5.46468deg)'});
+            }
+            if(xp < 255 && yp > 195){
+                $(this).css({'transform':'rotateX(-5.17848deg) rotateY(-5.28625deg)'});
+            }
+            if(xp > 255 && yp > 195){
+                $(this).css({'transform':'rotateX(-5.20782deg) rotateY(5.5539deg)'});
+            }
+//            alert(e.offsetX)
+//            alert(e.offsetY)
+            console.log(11);
+//            $(this).css({'transform':'rotateX(15.03178deg) rotateY(25.33086deg)'});
+        })
+        $('.fc-item').mouseout(function(){
+            console.log(22);
+            $(this).css({'transform':'rotateX(0deg) rotateY(0deg)'});
+        })
+
+
+
+    </script>
 </body>
+
 </html>

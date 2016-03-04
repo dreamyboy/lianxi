@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+    <link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet"/>
+</head>
+<style>
+    .wrap{padding:5px;border:2px dashed #bbb;position:absolute;}
+    #preview,.map-area{
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 101;
+        border: solid 1px #ffffff;}
+    .litetooltip-hotspot-wrapper {
+        position: relative;
+        width: 100%;
+        height: auto;
+        z-index: 1;
+    }
+
+    .litetooltip-hotspot-container {
+        position: relative;
+        height: 0;
+    }
+
+    .litetooltip-hotspot-container{margin:0 auto}
+    .link-box{position:fixed;left:10%;top:15%;z-index: 6}
+    .litetooltip-hotspot-container .hotspot{
+        position: absolute;
+        z-index: 3;
+        cursor: pointer;
+        background: green;
+    }
+
+    #hotspot-creator .hotspot .data-container {
+        display: none;
+    }
+    .hotspot-properties-modal {
+        position: fixed;
+        top: 10%;
+        left: 50%;
+        z-index: 1050;
+        width: 560px;
+        margin-left: -280px;
+        background-color: #ffffff;
+        border: 1px solid #999;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        outline: none;
+        -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding-box;
+        background-clip: padding-box;
+        display: none;
+    }
+    .data-container{width: 100%;height:100%;}
+    .data-container a{width: 100%;height:100%;display: block;}
+    .delete{position: absolute;right:-5px;top:-5px;color:#000;display: block}
+    .ui-icon-gripsmall-diagonal-se{right:-5px;bottom:-5px;}
+    /*.hotspot{background: #cc0000;width: 20px;height:20px;border-radius: 20px;opacity: 0.8}*/
+</style>
+<body>
+<div class="map-area">
+    <img src="http://d05.res.meilishuo.net/img/_o/e3/93/be784de5f60cf084a7c2019aed1a_980_999.cf.jpg"/>
+</div>
+
+<div class="map-area">
+    <img src="http://d05.res.meilishuo.net/img/_o/4f/fa/0ae9575feefa13b133344759b5cb_980_999.cg.jpg"/>
+</div>
+
+
+
+<div class="to_html">转成HTML</div>
+
+<textarea id="data_code" rows="20" style="width: 90%"></textarea>
+<textarea id="data_code2" rows="20" style="width: 90%"></textarea>
+
+<div class="edit_cont">编辑内容</div>
+<div id="preview"></div>
+
+
+<div class="main">
+
+
+</div>
+
+
+<div class="hotspot-properties-modal">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Modal header</h3>
+    </div>
+    <div class="modal-body">
+        <div id="hotspot-properties">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="50%">属性</th>
+                        <th width="50%">值</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Hotspot Id</td>
+                        <td><input class="uneditable-input" id="data_id" type="text" disabled="disabled"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Hotspot Link</td>
+                        <td><input id="data_link"/></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>backcolor</label>
+                        </td>
+                        <td>
+                            <select id="data_backcolor">
+                                <option value="#000000" selected="selected">[ auto ]</option>
+                                <option>#df3030</option>
+                                <option>#ff1e53</option>
+                                <option>#f79992</option>
+                                <option>#a2d959</option>
+                                <option>#7fba00</option>
+                                <option>#4cc744</option>
+                                <option>#bfd9f0</option>
+                                <option>#6699cc</option>
+                                <option>#4182c2</option>
+                                <option>#ed9122</option>
+                                <option>#fecf3d</option>
+                                <option>#7c4d94</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button id="btn_data_delete" class="btn btn-danger pull-left" type="button"><i class="icon-trash icon-white"></i> Delete Hotspot</button>
+        <button id="btn_data_save" class="btn btn-primary" type="button"><i class="icon-share icon-white"></i> Save Hotspot</button>
+    </div>
+
+
+</div>
+
+<script>
+    $(document).on('mousedown','.map-area',function(a){
+        var c = {X: 0,Y: 0};
+        if (a.offsetX == undefined) {
+            c = {X: a.pageX - $(this).offset().left - 16,Y: a.pageY - $(this).offset().top - 16}
+        } else {
+            c = {X: a.offsetX - 16,Y: a.offsetY - 16}
+        }
+        var g = $.now();
+        var f = "selector_" + g;
+        var d = "hotspot_" + g;
+        var b=$('<div class="wrap" id="' + f + '" style="left:'+ c.X+'px;top:'+ c.Y+'px"><div id="' + d + '" class="hotspot ui-widget-content"><div class="data-container"><a target="_blank"></a></div><span class="delete">删除</span></div></div>');
+        b.css("position","absolute");
+        b.find(".hotspot").css({background: "#cc0000",width: "20px",height: "20px","border-radius": "20px",opacity: 0.8});
+        b.resizable({alsoResize: b.find(".hotspot")});
+        b.draggable({containment: "parent",scroll: false,start: function() {
+        }});
+        b.appendTo(this);
+        b.mousedown(function() {
+            return false
+        });
+
+        b.dblclick(function() {
+
+            setProperties(this);
+            return false
+        });
+    })
+
+    $(document).on('click','.delete',function(){
+        $(this).parent().parent().remove();
+    })
+
+    $('.to_html').on('click',function() {
+        generateCode();
+        $.ajax({
+            type: 'POST',
+            url: 'http://promotion-works.fengtaoyang.rdlab.meiliworks.com/activity/page/savecontent?id=1',
+            data: JSON.stringify({content:$("#data_code").val()}), // or JSON.stringify ({name: 'jonas'}),
+            success: function (data) {
+                alert('data: ' + data);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    })
+    $('.edit_cont').click(function(){
+        $.ajax({
+            type: 'GET',
+            url: 'http://promotion-works.fengtaoyang.rdlab.meiliworks.com/activity/page/getcontent?id=1',
+            success: function (data) {
+                alert('data: ' + data);
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+    })
+
+
+
+    function generateCode() {
+
+        $(".map-area").each(function(k){
+
+            var d = $(this).find("img").attr("src");
+            if (d == null) {
+                return
+            }
+            var e = $(this).find("img").width();
+            var c = $(this).find("img").height();
+            $("#preview").css({width: e});
+            var f = ($(this).find("img").height() / $(this).find("img").width()) * 100;
+
+
+            var a = "";
+            a = '<div class="litetooltip-hotspot-wrapper" style="max-width: ' + e + 'px">\n';
+            a += '<div class="litetooltip-hotspot-container" style="padding-bottom: ' + f + '%">\n';
+            a += '<img src="' + d + '" data-width="' + e + '" data-height="' + c + '" />\n';
+
+            $(this).find(".hotspot").each(function(kk) {
+                var g = $(this);
+                var n = ((g.parent().position().left + 6) / e) * 100;
+                var o = ((g.parent().position().top + 6) / c) * 100;
+                var q = (g.width() / e) * 100;
+                var m = (g.height() / c) * 100;
+                var i = g.data("hotspot-bgcolor");
+                var k = "1px solid " + g.data("hotspot-bordercolor");
+                var l = g.data("hotspot-borderradius");
+                var p = 0.8;
+                var j = String(g.data("hotspot-blink")) == "true" ? " blink" : "";
+                //var h = '<div class="hotspot' + j + '" style="top: ' + o + "%; left: " + n + "%; width: " + q + "%; height: " + m + "%; background: " + i + "; border: " + k + "; border-radius: " + l + "px; opacity: " + p + '" id="' + g.attr("id") + '" data-location="' + g.data("location") + '" data-template="' + (g.data("template") != null ? g.data("template") : "") + '" data-templatename="' + (g.data("templatename") != null ? g.data("templatename") : "") + '" data-opacity="' + g.data("opacity") + '" data-backcolor="' + g.data("backcolor") + '" data-textcolor="' + g.data("textcolor") + '" data-textalign="' + g.data("textalign") + '" data-margin="' + g.data("margin") + '" data-padding="' + g.data("padding") + '" data-width="' + g.data("width") + '" data-delay="' + g.data("delay") + '" data-trigger="' + g.data("trigger") + '" data-issticky="' + g.data("issticky") + '" data-hotspot-x="' + n + '" data-hotspot-y="' + o + '" data-hotspot-blink="' + g.data("hotspot-blink") + '" data-hotspot-bgcolor="' + g.data("hotspot-bgcolor") + '" data-hotspot-bordercolor="' + g.data("hotspot-bordercolor") + '" data-hotspot-borderradius="' + g.data("hotspot-borderradius") + '">\n<div class="data-container">' + g.find(".data-container").html() + "</div>\n</div>\n\n";
+                var h = '<div class="hotspot' + j + '" style="top: ' + o + '%; left: ' + n + '%; width: ' + q + '%; height: ' + m + '%;opacity: ' + p + '; id="' + g.attr("id") + '";data-backcolor=' + g.data("backcolor")+'">\n<div class="data-container">' + g.find(".data-container").html() + '</div>\n</div>\n\n';
+                a += h
+            });
+            a += "</div>\n";
+            a += "</div>";style="top:"
+            $("#data_code").val($("#data_code").val()+a);
+            $("#data_code2").val($('body').html());
+            $("#preview").html($("#data_code").val());
+        })
+    }
+
+
+    function saveHotspot() {
+        var a = "#" + $("#data_id").val();
+        var c = $(a).clone();
+        $(c).appendTo($(a).parent());
+        $(a).remove();
+        var d = $.now();
+        var b = "hotspot_" + d;
+        $(c).attr("id", b);
+        $("#data_id").val(b);
+        a = "#" + $("#data_id").val();
+        $(a).parent().resizable({alsoResize: $(a)});
+        $(a).find(".data-container").html($("#data_content").val());
+        $(a).find(".data-container a").attr('href',$("#data_link").val());
+
+//        $(a).data("location", $("#data_location").val());
+//        if ($("#data_template").val() != "default") {
+//            $(a).data("template", $("#data_template").val())
+//        }
+//        if ($("#data_templatename").val() != "default") {
+//            $(a).data("templatename", $("#data_templatename").val())
+//        }
+//        $(a).data("opacity", $("#data_opacity").val());
+//        $(a).data("backcolor", $("#data_backcolor").val());
+//        $(a).data("textcolor", $("#data_textcolor").val());
+//        $(a).data("textalign", $("#data_textalign").val());
+//        $(a).data("margin", $("#data_margin").val());
+//        $(a).data("padding", $("#data_padding").val());
+//        $(a).data("width", $("#data_width").val());
+//        $(a).data("delay", $("#data_delay").val());
+//        $(a).data("trigger", $("#data_trigger").val());
+//        $(a).data("issticky", $("#data_issticky").val());
+//        $(a).data("hotspot-blink", $("#data_h_blink").val());
+//        $(a).data("hotspot-bgcolor", $("#data_h_bgcolor").val());
+//        $(a).data("hotspot-bordercolor", $("#data_h_bordercolor").val());
+//        $(a).data("hotspot-borderradius", $("#data_h_borderradius").val());
+//        $(a).css({background: $("#data_h_bgcolor").val(),border: "1px solid " + $("#data_h_bordercolor").val(),"border-radius": $("#data_h_borderradius").val() + "px"});
+        //$(a).LiteTooltip({title: getDataTitle(a)});
+        generateCode();
+        $(".hotspot-properties-modal").hide();
+    }
+
+
+    function setProperties(a) {
+        a = $(a).find(".hotspot");
+        $("#data_id").val(a.attr("id"));
+        $("#data_content").val(a.find(".data-container").html());
+//        $("#data_location").val(a.data("location") != null ? a.data("location") : "top");
+//        $("#data_template").val(a.data("template") != null ? a.data("template") : "default");
+//        $("#data_templatename").val(a.data("templatename") != null ? a.data("templatename") : "default");
+//        $("#data_opacity").val(a.data("opacity") != null ? a.data("opacity") : 0.8);
+//        $("#data_backcolor").val(a.data("backcolor") != null ? a.data("backcolor") : "#000000");
+//        $("#data_textcolor").val(a.data("textcolor") != null ? a.data("textcolor") : "#ffffff");
+//        $("#data_textalign").val(a.data("textalign") != null ? a.data("textalign") : "center");
+//        $("#data_margin").val(a.data("margin") != null ? a.data("margin") : 5);
+//        $("#data_padding").val(a.data("padding") != null ? a.data("padding") : 10);
+//        $("#data_width").val(a.data("width") != null ? a.data("width") : 0);
+//        $("#data_delay").val(a.data("delay") != null ? a.data("delay") : 0);
+//        $("#data_trigger").val(a.data("trigger") != null ? a.data("trigger") : "hover");
+//        $("#data_issticky").val(a.data("issticky") != null ? String(a.data("issticky")) : "true");
+//        $("#data_h_blink").val(a.data("hotspot-blink") != null ? String(a.data("hotspot-blink")) : "true");
+//        $("#data_h_bgcolor").val(a.data("hotspot-bgcolor") != null ? a.data("hotspot-bgcolor") : "#cc0000");
+//        $("#data_h_bordercolor").val(a.data("hotspot-bordercolor") != null ? a.data("hotspot-bordercolor") : "#cc0000");
+//        $("#data_h_borderradius").val(a.data("hotspot-borderradius") != null ? a.data("hotspot-borderradius") : 20);
+        $(".hotspot-properties-modal").show();
+    }
+
+    function deleteHotspot() {
+        var a = "#" + $("#data_id").val();
+        $(a).parent().remove();
+        $("#data_id").val("");
+        $("#data_link").val("");
+//        $("#data_content").val("");
+//        $("#data_location").val("top");
+//        $("#data_template").val("default");
+//        $("#data_templatename").val("default");
+//        $("#data_opacity").val(0.8);
+//        $("#data_backcolor").val("#000000");
+//        $("#data_textcolor").val("#ffffff");
+//        $("#data_textalign").val("center");
+//        $("#data_margin").val(5);
+//        $("#data_padding").val(10);
+//        $("#data_width").val(0);
+//        $("#data_delay").val(0);
+//        $("#data_trigger").val("hover");
+//        $("#data_issticky").val("true");
+//        $("#data_h_blink").val("true");
+//        $("#data_h_bgcolor").val("#cc0000");
+//        $("#data_h_bordercolor").val("#cc0000");
+//        $("#data_h_borderradius").val(20);
+        generateCode()
+    }
+
+    $("#btn_data_save").click(function() {
+        $('#data_code').val('');
+        saveHotspot()
+    });
+
+    $("#btn_data_delete").click(function() {
+        $('#data_code').val('');
+        deleteHotspot()
+    });
+
+    $(document).on('click','.wrap .data-container a',function(event){
+        event.preventDefault();
+    })
+
+    $('.close').click(function(){
+        $(".hotspot-properties-modal").hide();
+    })
+
+</script>
+
+</body>
+</html>

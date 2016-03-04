@@ -45,5 +45,165 @@ span:hover{
     transition用法
 </div>
 
+
+<div class="stage s1">
+    <div class="container">
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="70" height="100" />
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="70" height="100" />
+    </div>
+</div>
+<div class="stage s2">
+    <div class="container">
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="70" height="100" />
+        <img src="http://www.w3cplus.com/sites/default/files/blogs/2013/1311/cardKingClub.png" alt="" width="70" height="100" />
+    </div>
+</div>
+
+<style>
+    .stage {
+        width: 300px;
+        height: 300px;
+        float: left;
+        margin: 15px;
+        position: relative;
+        background: url(http://www.w3cplus.com/sites/default/files/blogs/2013/1311/bg.jpg) repeat center center;
+
+        -webkit-perspective: 1200px;
+        -moz-perspective: 1200px;
+        -ms-perspective: 1200px;
+        -o-perspective: 1200px;
+        perspective: 1200px;
+    }
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+    }
+    .container img {
+        position: absolute;
+        margin-left: -35px;
+        margin-top: -50px;
+    }
+    .container img:nth-child(1){
+        z-index: 1;
+        opacity: .6;
+    }
+    .s1 img:nth-child(2){
+        z-index: 2;
+        -webkit-transform: translate3d(30px,30px,200px);
+        -moz-transform: translate3d(30px,30px,200px);
+        -ms-transform: translate3d(30px,30px,200px);
+        -o-transform: translate3d(30px,30px,200px);
+        transform: translate3d(30px,30px,200px);
+    }
+    .s2 img:nth-child(2){
+        z-index: 2;
+        -webkit-transform: translate3d(30px,30px,-200px);
+        -moz-transform: translate3d(30px,30px,-200px);
+        -ms-transform: translate3d(30px,30px,-200px);
+        -o-transform: translate3d(30px,30px,-200px);
+        transform: translate3d(30px,30px,-200px);
+    }
+
+
+
+
+
+
+    @-webkit-keyframes moveRight {
+        40% {
+            -webkit-transform: translate3d(5%, 0, 0);
+            transform: translate3d(5%, 0, 0);
+        }
+    }
+    @keyframes moveRight {
+        40% {
+            -webkit-transform: translate3d(5%, 0, 0);
+            transform: translate3d(5%, 0, 0);
+        }
+    }
+
+    @-webkit-keyframes moveLeft {
+        40% {
+            -webkit-transform: translate3d(-5%, 0, 0);
+            transform: translate3d(-5%, 0, 0);
+        }
+    }
+    @keyframes moveLeft {
+        40% {
+            -webkit-transform: translate3d(-5%, 0, 0);
+            transform: translate3d(-5%, 0, 0);
+        }
+    }
+
+
+    .m-flip-box .float-logo {
+        position: absolute;
+        z-index: 2;
+        background: url("http://img11.360buyimg.com/cms/jfs/t1864/58/808256114/110707/85c41846/5629ddbbNe0ff3083.png") no-repeat;
+    }
+    .m-flip-box .float-logo01 {
+        width: 201px;
+        height: 139px;
+        margin: -324px 0 0 -917px;
+        background-position: 0 0;
+        -webkit-animation: moveRight 4s infinite linear;
+        animation: moveRight 4s infinite linear;
+    }
+    .m-flip-box .float-logo02 {
+        width: 188px;
+        height: 133px;
+        margin: -325px 0 0 739px;
+        background-position: -201px 0;
+        -webkit-animation: moveRight 4s .2s infinite linear;
+        animation: moveRight 4s .2s infinite linear;
+    }
+    .m-flip-box .float-logo03 {
+        width: 194px;
+        height: 214px;
+        margin: -121px 0 0 -720px;
+        background-position: -389px 0;
+        -webkit-animation: moveLeft 4s 1.2s infinite linear;
+        animation: moveLeft 4s 1.2s infinite linear;
+    }
+    .m-flip-box .float-logo04 {
+        width: 256px;
+        height: 283px;
+        margin: -200px 0 0 606px;
+        background-position: -583px 0;
+        -webkit-animation: moveRight 4s .5s infinite linear;
+        animation: moveRight 4s .5s infinite linear;
+    }
+    .m-flip-box .float-logo05 {
+        width: 209px;
+        height: 200px;
+        margin: 90px 0 0 -846px;
+        background-position: -839px 0;
+        -webkit-animation: moveRight 4s .8s infinite linear;
+        animation: moveRight 4s .8s infinite linear;
+    }
+    .m-flip-box .float-logo06 {
+        width: 197px;
+        height: 204px;
+        margin: 83px 0 0 603px;
+        background-position: -1048px 0;
+        -webkit-animation: move 4s 1s infinite linear;
+        animation: moveRight 4s 1s infinite linear;
+    }
+</style>
+<div class="m-flip-box" id="top1">
+    <div class="float-logo float-logo01"></div>
+    <div class="float-logo float-logo02"></div>
+    <div class="float-logo float-logo03"></div>
+    <div class="float-logo float-logo04"></div>
+    <div class="float-logo float-logo05"></div>
+    <div class="float-logo float-logo06"></div>
+</div>
 </body>
 </html>

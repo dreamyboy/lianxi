@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <title>css多行文本垂直居中</title>
+   <!--参考：1.http://www.cnblogs.com/dearxinli/p/3865099.html-->
+        <!--2.http://muki.tw/tech/fix-display-table-cell-not-affected-by-margin/-->
+    <style type="text/css">
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{display: table;border-spacing:15px;border-collapse:separate;height: 90px;}
+        .wrap a{background: greenyellow;vertical-align: middle;text-align: center;display: table-cell;width: 150px;}
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <a href="">我们</a>
+    <a href="">我们的我们的我对门的我们的</a>
+    <a href=""></a>
+    <a href=""></a>
+</div>
+</body>
+</html>

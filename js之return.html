@@ -13,7 +13,7 @@
 <!--2. event.stopPropagation()-->
 <!--3. 停止回调函数执行并立即返回-->
 <!--如果使用了return false，它只会在你的回调函数执行结束才去取消浏览器的默认行为-->
-<body>
+<body style="height:2000px">
 
     <div class="page active">
         <h2><a href="http://www.baidu.com">Title one</a></h2>
@@ -42,7 +42,11 @@
             })
         })
 
-
+        $(document).on('click',function(e){
+            alert(e.offsetX+'and'+ e.offsetY);
+            alert(e.pageX+'and'+ e.pageY);
+        })
     </script>
+
 </body>
 </html>

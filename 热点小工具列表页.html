@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="jquery-ui-1.11.4/jquery-ui.js"></script>
+    <link href="jquery-ui-1.11.4/jquery-ui.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <!--<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+</head>
+<style>
+
+</style>
+<body>
+<div id="dialog-form">
+    <form>
+        <fieldset>
+            <legend>页面信息配置</legend>
+            <label for="title">*页面简介:</label>
+            <input type="text" name="title" id="title" value="111"/></br>
+            <div id="radiodiv">
+                <label>*页面类型:</label>
+                <input type="radio" name="pagetype" value="pc页面" checked />pc页面
+                <input type="radio" name="pagetype" value="MOB页面"/>MOB页面
+            </div>
+            <input type="submit" tabindex="-1" style="display: block;top:-1000px"/>
+        </fieldset>
+    </form>
+
+</div>
+<div id="ac_list">
+    <a href="#" id="new_activity">+创建新活动页面</a>
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>页面简介</th>
+                <th>链接</th>
+                <th>类型</th>
+                <th>创建时间</th>
+                <th>创建人</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>10</td>
+                <td>第一个营销页面</td>
+                <td>www.melishuo.com/huodong/</td>
+                <td>MOB</td>
+                <td>2015-5-10</td>
+                <td>XIJINDA</td>
+                <td>未发布</td>
+                <td><a href="#">编辑</a><a href="#">查看数据</a><a href="#">删除</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(function() {
+
+        var dialog,form;
+        var title=$(document).find('#title');
+
+        $( "input[type=submit], a, button" )
+                .button()
+                .click(function( event ) {
+                    event.preventDefault();
+                });
+        function addAc(){
+           var pagetype=$(document).find('input[name="pagetype"]:checked');
+            $('#ac_list tbody').append(
+            '<tr>'+
+            '<td>10</td>'+
+            '<td>'+title.val()+'</td>'+
+            '<td>www.melishuo.com/huodong/</td>'+
+            '<td>'+pagetype.val()+'</td>'+
+            '<td>2015-5-10</td>'+
+            '<td>XIJINDA</td>'+
+            '<td>未发布</td>'+
+            '<td><a class="btn btn-primary" href="#">编辑</a><a href="#">查看数据</a><a class="item_del" href="#">删除</a></td>'+
+            '</tr>'
+            );
+
+            dialog.dialog( "close" );
+
+        }
+            //allFields=$([]).add(title).add(pagetype);
+
+        dialog = $( "#dialog-form" ).dialog({
+            autoOpen: false,
+            height: 300,
+            width: 350,
+            modal: true,
+            buttons: {
+                "创建页面": addAc,
+                Cancel: function() {
+                    dialog.dialog( "close" );
+                }
+            },
+            close: function() {
+                form[ 0 ].reset();
+                //allFields.removeClass( "ui-state-error" );
+            }
+        });
+
+        form=dialog.find('form').on('submit',function(event){
+            event.preventDefault();
+            addAc();
+        })
+
+        $(document).on('click','.item_del',function(){
+            $(this).parent().parent().remove();
+        })
+        $( "#new_activity" ).button().on( "click", function() {
+            dialog.dialog( "open" );
+        });
+
+    });
+
+
+</script>
+
+
+</body>
+</html>
