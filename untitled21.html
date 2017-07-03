@@ -21,12 +21,29 @@ body{height:2000px}
 		  
 		  },300)	  
 			  
-			  }
+	}
 		  
 </script>
 </head>
 
 <body>
  <div id="foo">fff</div>
+ <script type="text/javascript">
+ 	var obj={
+ 		a:{w:1,y:2,x:3},
+ 		b:{s:4,j:5,x:6},
+ 		c:{car:7,mouse:{aa:11,bb:22,cc:33},cat:9}
+ 	}
+ 	function f(s){
+ 		for(var i in s){
+ 			if(typeof s[i]=="object"){
+ 				f(s[i])
+ 			}else{
+ 				console.log(s[i])
+ 			}
+ 		}
+ 	}
+ 	f(obj)
+ </script>
 </body>
 </html>

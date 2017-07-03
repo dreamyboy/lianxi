@@ -37,6 +37,48 @@ var bot='飞啊阿';
 alert(bot);
 
 </script>
+
+<script type="text/javascript">
+	var timearray={
+	    "models": [
+            {
+                "leftTime": "21:23:20",
+            },
+            {
+                "leftTime": "22:20:00",
+            }
+	    ]
+	}
+
+	var myDate = new Date();
+	var mydateyear=myDate.getFullYear()+'/';
+	var mydatemonth=myDate.getMonth()+1+'/';
+	var mydateday=myDate.getDate();
+
+	// var alltime=mydateyear+mydatemonth+mydateday +' '+'10:23:20';
+	// var timestamp=new Date(alltime).getTime()/1000;
+
+	var timearray=timearray.models;
+
+	var newtimearray=[];
+    timearray.forEach(function(k,index){
+    	var timestamp=new Date(mydateyear+mydatemonth+mydateday +' '+k.leftTime).getTime()/1000;
+        newtimearray.push(timestamp);
+    })
+
+
+    var nowdatetimestamp=myDate.getTime()/1000;
+	for(var i=0;i<newtimearray.length;i++){
+		if(newtimearray[i]>nowdatetimestamp){
+		var endtime=newtimearray[i];
+		break;
+		}
+	}
+
+
+</script>
+
+
 </head>
 
 <body>

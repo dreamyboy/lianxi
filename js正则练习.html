@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
     <script>
-     var str="fjjf fefefa faa a  ";
+     var str="fjjf fefefa faa a";
      var re=/a/i;
      console.log(str.search(re));
     </script>
@@ -24,7 +24,29 @@
         console.log(re.test(s));
     </script>
 
+<!--     匹配QQ号
+    合法qq号规则：
 
+    5-15位3
+
+    全是数字
+
+    不以0开头 -->
+    <script type="text/javascript">
+        var reg=/^[1-9][0-9]{4,14}$/;
+        var matchstring='238878'
+        alert(reg.test(matchstring));
+
+    </script>
+
+<!--     验证国内电话号码
+    0555-6581752、021-86128488 -->
+    <script type="text/javascript">
+        var reg=/(^0[0-9]{3}-[1-9][0-9]{6}$) | (^0[0-9]{2}-[1-9][0-9]{7}$)/;
+        var matchstring='889';
+        alert(reg.test(matchstring));
+        
+    </script>
 </head>
 
 <body>

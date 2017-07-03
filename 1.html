@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
-<style type="text/css">
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+
+    <style type="text/css">
     *html{margin:0;
           padding:0;}
     div {
@@ -20,6 +22,24 @@
 <body>
 
     <div>外边距的margin-width的值类型有：auto | length | percentage</div>
+    <div class="add">添加</div>
+    <div class="wrap">
+
+    </div>
+    <ul id="list">
+        <li>11</li>
+        <li>22</li>
+    </ul>
+    <script>
+        var item=document.getElementById('list');
+        item.addEventListener('click',function(ev){
+            var oEvent=ev||event;
+            var target=oEvent.target || oEvent.srcElement;
+            alert(target.innerHTML)
+
+        })
+
+    </script>
 
 </body>
 

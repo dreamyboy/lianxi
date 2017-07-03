@@ -1,0 +1,18 @@
+	<script>
+	function qc(arr){
+		var n=[];
+		for (var i=0;i<arr.length;i++){
+			if(n.indexOf(arr[i]))
+			n.push(arr[i]);
+
+		}
+
+		alert(11);
+
+
+	}
+
+var at=[1,2,5,8,5];
+qc(at);
+
+	</script>

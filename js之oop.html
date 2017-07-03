@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script> -->
+
+<!-- <script type="text/javascript">
+	function Person(name,age,job){ 
+		this.name = name; 
+		this.age = age; 
+		this.job = job; 
+		if (typeof sayName != "function" ){ 
+			Person.prototype.sayName= function(){ 
+				alert(this.name); 
+			}; 
+		} 
+	} 
+	var tanya = new Person("tanya","30","female"); 
+	var ansel = new Person("ansel","30","male"); 
+	ansel.sayName = function () { 
+		alert("Hi ansel, how hansome you are!"); 
+	} 
+	tanya.sayName(); 
+	ansel.sayName();
+</script> -->
+
+
+<script type="text/javascript">
+	function Person(name,age,job){ 
+		this.name = name; 
+		this.age = age; 
+		this.job = job; 
+	} 
+
+	Person.prototype.sayName= function(){ 
+		console.dir(this);
+		alert(this.name); 
+	}; 
+
+	var tanya = new Person("tanya","30","female"); 
+	tanya.sayName();
+</script>
+
+
+<script type="text/javascript">
+	function employee(name,job,born){
+		this.name=name;
+		this.job=job;
+		this.born=born;
+	}
+	var bill=new employee("bill GATE","Engineer",1985);
+	document.write(bill.constructor);
+	console.dir(bill.__proto__);
+</script>
+
+
+
+<style type="text/css">
+*{margin: 0;padding: 0}
+.grid{display: flex;}
+.fluid{flex:1;}
+.fixed{width: 500px;}
+</style>
+</head>
+
+<body>
+ <div class="grid">
+    <div class="fluid">
+    	左边
+    </div>
+    <div class="fixed">
+    	中间
+    </div>
+    <div class="fluid">
+    	右边
+   </div>
+ </div>
+</body>
+</html>

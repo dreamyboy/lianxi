@@ -21,5 +21,25 @@
     <td><input type="button" value="复制" onclick="clipboardData.setData('Text',document.getElementById('bbb').value);" /></td>
   </tr>
 </table>
+
+<script>
+
+    window.onload=function(){
+        try{
+
+            if(test&&typeof(test)=="function"){
+                test();
+            }
+
+        }catch(e){
+            alert("不存在的函数");
+        }
+    }
+
+
+
+
+</script>
+
 </body>
 </html>

@@ -3,29 +3,53 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 </head>
 <body>
+    <!-- http://www.jb51.net/article/74654.htm -->
     <script>
         var obj={
             'name':'xiaowang',
             'sex':'man'
         };
 
-        var oarr=['rose','paint','flower'];
+        var arr=['rose','paint','flower'];
 
         for(x in obj){
             document.write(x+'="'+obj[x]+'"'+'<br/>');
         }
+        for(x in arr){
+            document.write(x+'="'+arr[x]+'"'+'<br/>');
+        }
+        
 
-
-        oarr.forEach(function(k,index){
+        arr.forEach(function(k,index){
             console.log(k);
             alert(index+':'+k);
         })
 
-        oarr.map(function(k,index){
+        arr.map(function(k,index){
             alert(index+':'+k);
         })
+
+
+
+
+
+
+        $.each(arr,function(index,k){
+            alert(index+':'+k);
+        })
+        $.each(obj,function(key,val){
+            document.write(obj[key]);
+        })
+
+        $(selector).each(function(index,k){
+
+        })
+
+
+
 
 //        var dd='#d#dd##ttt#d##tttt#dd';
 //        var acc=dd.split('##');
@@ -53,6 +77,5 @@
 
         //http://www.zhangxinxu.com/wordpress/2013/04/es5%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95/
     </script>
-
 </body>
 </html>

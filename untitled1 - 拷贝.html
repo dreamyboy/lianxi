@@ -3,20 +3,78 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>搜索引擎营销2.0和大数据时代的集客营销解决方案</title>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script>
-document.onclick=function(s)
-{
-//	alert(event.clientX+','+event.clientY);
- alert(s.clientX+','+s.clientY);
+// document.onclick=function(s)
+// {
+// //	alert(event.clientX+','+event.clientY);
+//  alert(s.clientX+','+s.clientY);	
 
-//alert(s);
+// //alert(s);
 
 
-}
+// }
 </script>
+<style type="text/css">
+	*{margin:0;padding: 0;}
+	.itemIntro{float: left;margin-right:30px;}
+	.itemCont{float: left;}
+</style>
 </head>
 
 <body>
+<dl>
+	<dt>权限</dt>
+	<dd>
+		<div class="selectAll">
+			<span><input type="checkbox" class="selectAll j_selectall" value="1">全选</span>
+		</div>
+		<div class="itemWrap">
+			<div class="item">
+				<div class="itemIntro">
+					<span><input type="checkbox" id="product" name="product" value="1">产品</span>
+				</div>
+
+				<div class="itemCont">
+					<span><input type="checkbox" name="product-item" value="1">发布新产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="itemIntro">
+					<span><input type="checkbox" id="product" name="product" value="1">另外品类</span>
+				</div>
+
+				<div class="itemCont">
+					<span><input type="checkbox" name="product-item" value="1">发布新产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+					<span><input type="checkbox" name="product-item" value="1">导入产品</span>
+				</div>
+			</div>
+		</div>
+	</dd>
+</dl>
+
+<script type="text/javascript">
+	$(document).on('click','#product',function(){
+		$('[name=product-item]').attr('checked','true');
+	})
+	.on('click','.j_selectall',function(){
+		$(this).next('.itemWrap').find('input[type="checkbox"]').attr('checked','true')
+	})
+</script>
+<div id="abc">122</div>
+<script type="text/javascript">
+	$(document).on('click','#abc',function(){
+		alert(111);
+	})
+</script>
 
 </body>
 </html>

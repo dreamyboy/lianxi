@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<!-- $.proxy() -->
+<button>执行 test 函数</button>
+<p></p>
+<script type="text/javascript">
+  var objPerson={
+    name:"John Doe",
+    age:32,
+    test:function(){
+      $('p').after("Name:"+this.name+ "<br/> Age:" + this.age);
+    }
+  }
+
+  $('button').click($.proxy(objPerson,"test"))
+
+</script>
+
+
+
+
+<div>这是一个div元素</div>
+<script type="text/javascript">
+  var test=function(){
+    this.txt="这是一个对象属性";
+    $('div').click($.proxy(this.myClick,this));
+  }
+  test.prototype.myClick=function(event){
+    alert(this.txt);
+    alert(event.currentTarget.nodeName);
+  }
+  var x=new test();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<style>
+    *{padding: 0;margin:0;}
+    ul li{list-style: none;}
+    body{background: #027df1;font-size:1vw;}
+    .inner{position: relative;padding-top:62.89%;}
+    .topbar{position: absolute;width:100%;height:3.9%;left:0;top:0;background: url('http://pic.sueri.cn/di-I0FV.jpg') no-repeat;background-size: contain;}
+    .left-cont{color:#fff;position: absolute;left:1.09%;top:6.51%;width:11.42%;}
+    .nav-wrap1{margin-bottom:10.69%;text-align:center;padding:0 9.61%;width: 80.78%;height:56.25%;background: url('http://chuantu.biz/t2/24/1452768500x-1566638323.png') no-repeat;background-size: cover;}
+    .nav-wrap1 nav,.nav-wrap2 nav{width: 100%;height:100%;}
+    .listwrap ul{line-height: 2vw;background: #009fe7;border-radius: 5px;}
+    .listwrap ul li{border-bottom: 1px solid #0093cd}
+    .listwrap .title{margin: 5px 0;border-radius: 15px;background: #007dc4;padding: 5% 0;}
+    .mtitle{padding-top:15.09%;}
+    .nav-wrap2{text-align:center;padding:0 9.61%;padding-top:15.09%;width: 80.78%;height:34.11%;background: url('http://chuantu.biz/t2/24/1452768500x-1566638323.png') no-repeat;background-size: cover;}
+</style>
+<body>
+    <div class="main">
+        <div class="inner">
+            <div class="topbar"></div>
+            <div class="left-cont">
+                <div class="nav-wrap1">
+                    <div class="mtitle">火灾物证鉴定步骤</div>
+                    <div class="listwrap">
+                        <div class="title">环境勘测</div>
+                        <ul>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                        </ul>
+                    </div>
+
+                    <div class="listwrap" style="display: none;">
+                        <div class="title">初步勘测</div>
+                        <ul>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="nav-wrap2">
+                    <div class="listwrap">
+                        <div class="title">环境勘测</div>
+                        <ul>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测1</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                            <li>勘测2</li>
+                            <li>勘测3</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $('.listwrap .title').on('click',function(){
+            $(this).next('ul').toggle();
+        })
+    </script>
+</body>
+</html>

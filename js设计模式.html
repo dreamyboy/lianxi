@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>javascript 设计模式</title>
+<!-- 参考 -->
+<!-- http://blog.csdn.net/sunxinty/article/details/52596516 -->
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		Events=function(){
+			var listen,obj,one,remove,trigger,__this;
+			obj={};
+			__this=this;
+
+			listen=function(key,eventFn){
+				var stack,_ref;
+				stack=(_ref=obj[key]) !=null ? _ref :obj[key]=[];
+
+				return stack.push(eventFn);
+ 			}
+
+
+ 			one=function(key,eventFn){
+ 				remove(key);
+ 				return listen(key,eventFn);
+ 			}
+
+ 			remove=function(key){
+ 				var _ref;
+ 				return (_ref=obj[key])!==null ? _ref.length=0 : void 0;
+ 			}
+
+
+ 			trigger=function(){
+ 				var fn,stack,_i,_len,_ref,key;
+ 				key=Array.prototype.shift.call(arguments);
+ 				stack=(_ref=obj[key])!=null?_ref:obj[key]=[];
+ 				for(_i =0,_len=stack.length;_i<_len;_i++){
+ 					fn=stack[_i];
+ 					if(fn.apply(__this,arguments)==false){
+ 						return false;
+ 					}
+ 				}
+ 			}
+
+ 			return {
+ 				listen:listen,
+ 				one:one,
+ 				remove:remove,
+ 				trigger:trigger
+ 			}
+
+		}
+
+
+		var adultTv=Events();
+
+		adultTv.listen('play',function(data){
+			alert('今天是'+ data.name+'的电影');
+		})
+
+		adultTv.trigger('play',{name:'麻生希'})
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>js路由功能实现方法</title>
+<!-- 参考 -->
+<!-- http://blog.csdn.net/sunxinty/article/details/52586556 -->
+</head>
+
+<body>
+	<ul>
+		<li><a href="#/">turn white</a></li>
+		<li><a href="#/blue">turn blue</a></li>
+		<li><a href="#/green">turn green</a></li>
+	</ul>
+	<script type="text/javascript">
+		function Router(){
+			this.routes={};
+			this.currentUrl='';
+		}
+
+		Router.prototype.route=function(path,callback){
+			this.routes[path]=callback || function(){};
+		}
+		Router.prototype.refresh=function(){
+			this.currentUrl=location.hash.slice(1) || '/';
+			this.routes[this.currentUrl]();
+		}
+
+		Router.prototype.init=function(){
+			window.addEventListener('load',this.refresh.bind(this),false);
+			window.addEventListener('hashchange',this.refresh.bind(this),false);
+		}
+
+		window.Router=new Router();
+		window.Router.init()
+
+		var content=document.querySelector('body');
+		function changeBgColor(color){
+			content.style.background=color;
+		}
+		Router.route('/',function(){
+			changeBgColor('white')
+		})
+		Router.route('/blue',function(){
+			changeBgColor('blue')
+		})
+		Router.route('/green',function(){
+			changeBgColor('green');
+		})
+	</script>
+</body>
+</html>

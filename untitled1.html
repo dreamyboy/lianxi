@@ -1,13 +1,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<script type="text/javascript">
-    window.onbeforeunload=function(event){
-        return 'hello';
-    }
-</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <title>CSS House (3D Border Demo 2) by Chris Hester</title>
+</head>
+<!-- http://www.cnblogs.com/onepixel/p/5043523.html -->
+<body>
+	<script type="text/javascript">
+	    window.onbeforeunload=function(event){
+	    	alert(55);
+	        return 'hello';
+	    }
+	</script>
+	<script type="text/javascript">
+		var Point={
+			x:0,
+			y:0,
+			print:function(){console.log(this.x,this.y)}
+		}
+		var p={x:10,y:20,__proto__:Point};
+		p.print();
+	</script>
 
+	<script type="text/javascript">
+		function New(f){
+			var n={'__proto__':f.prototype};
+			return function (){
+				f.apply(n,arguments);
+				return n;
+			}
+		}
+
+		function Point(x,y){
+			this.x=x;
+			this.y=y;
+		}
+		Point.prototype={
+			print:function (){console.log(this.x,this.y)}
+		}
+
+		var p1=new Point(10,20);
+		p1.print();
+
+
+		var p2=New(Point)(101,20);
+		p2.print()
+
+	</script>
 </body>
 </html>
